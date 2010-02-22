@@ -21,6 +21,8 @@ sub index_scraper {
         process '//form[@action="futaba.php"]', sub {
             my $form = shift;
 
+            push @{ result->{threads} }, [];
+
             foreach ($form->content_list) {
                 if (ref && $_->tag eq 'hr') {
                     push @{ result->{threads} }, [];

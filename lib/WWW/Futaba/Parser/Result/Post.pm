@@ -34,6 +34,7 @@ sub body {
             unshift @nodes, $node->content_list;
         }
     }
+    $text =~ s/ +//; # trim
     return $text;
 }
 
