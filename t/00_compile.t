@@ -1,4 +1,7 @@
 use strict;
-use Test::More tests => 1;
+use warnings;
+use Test::More;
 
-BEGIN { use_ok 'WWW::Futaba::Parser' }
+use_ok 'WWW::Futaba::Parser';
+
+done_testing;
