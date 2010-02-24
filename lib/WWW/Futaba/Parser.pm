@@ -16,27 +16,27 @@ sub parse_index {
 
 sub index_scraper {
     scraper {
-        result->{threads} = [];
+        result->{contents} = [];
 
         process '//form[@action="futaba.php"]', sub {
             my $form = shift;
 
-            push @{ result->{threads} }, [];
+            push @{ result->{contents} }, [];
 
             foreach ($form->content_list) {
                 if (ref && $_->tag eq 'hr') {
-                    push @{ result->{threads} }, [];
+                    push @{ result->{contents} }, [];
                     next;
                 }
 
                 next if ref && $_->tag eq 'table' && ($_->attr('style') || $_->attr('align'));
-                next unless @{ result->{threads} };
+                next unless @{ result->{contents} };
 
-                push @{ result->{threads}->[-1] }, ref() ? $_->clone : $_;
+                push @{ result->{contents}->[-1] }, ref() ? $_->clone : $_;
             }
         };
 
-        pop @{ result->{threads} };
+        pop @{ result->{contents} };
         result;
     };
 }

@@ -1,26 +1,24 @@
 package WWW::Futaba::Parser::Result::Index;
-use strict;
-use warnings;
-use base 'Class::Accessor::Fast';
+use Any::Moose;
 use WWW::Futaba::Parser::Result::Thread;
 
-__PACKAGE__->mk_accessors(
-    qw(threads)
+extends 'WWW::Futaba::Parser::Result';
+
+has 'threads', (
+    is  => 'rw',
+    isa => 'ArrayRef',
+    auto_deref => 1,
+    lazy_build => 1,
 );
 
-sub threads {
+sub _build_threads {
     my $self = shift;
-
-    unless (@_) {
-        return map { $self->make_new_thread($_) } @{ $self->_threads_accessor || [] };
-    }
-
-    return $self->_threads_accessor(@_);
+    return [ map { $self->make_new_thread($_) } $self->contents ];
 }
 
 sub make_new_thread {
     my ($self, $contents) = @_;
-    return WWW::Futaba::Parser::Result::Thread->new({ contents => $contents });
+    return WWW::Futaba::Parser::Result::Thread->new(contents => $contents);
 }
 
 1;

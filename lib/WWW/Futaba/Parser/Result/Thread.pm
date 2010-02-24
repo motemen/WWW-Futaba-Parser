@@ -1,22 +1,17 @@
 package WWW::Futaba::Parser::Result::Thread;
-use strict;
-use warnings;
-use base 'Class::Accessor::Fast';
+use Any::Moose;
 use WWW::Futaba::Parser::Result::Post;
 use HTML::TreeBuilder::XPath;
+use URI;
 
-__PACKAGE__->mk_accessors(
-    qw(contents)
+extends 'WWW::Futaba::Parser::Result';
+
+has 'posts', (
+    is  => 'rw',
+    isa => 'ArrayRef',
+    auto_deref => 1,
+    lazy_build => 1,
 );
-
-sub tree {
-    my $self = shift;
-    $self->{tree} ||= do {
-        my $t = HTML::TreeBuilder::XPath->new;
-        $t->push_content(@{$self->contents});
-        $t;
-    };
-}
 
 sub image_link_elem {
     my $self = shift;
@@ -62,15 +57,15 @@ sub body {
     return $text;
 }
 
-sub meta_string {
+sub info_string {
     my $self = shift;
     return join '', map $_->string_value, $self->tree->findnodes('input[@type="checkbox"]/following-sibling::text() | input[@type="checkbox"]/following-sibling::a[starts-with(@href, "mailto:")]/text()');
 }
 
 # XXX
-sub meta {
+sub info {
     my $self = shift;
-    my $string = $self->meta_string;
+    my $string = $self->info_string;
     my ($year, $month, $day, $hour, $minute, $second, $no) = $string =~ m<(\d\d)/(\d\d)/(\d\d).*(\d\d):(\d\d):(\d\d)\s+No\.(\d+)>;
     return {
         datetime => DateTime->new(
@@ -81,14 +76,14 @@ sub meta {
     };
 }
 
-sub posts {
+sub _build_posts {
     my $self = shift;
-    return map { $self->make_new_post($_) } $self->tree->findnodes('table');
+    return [ map { $self->make_new_post($_) } $self->tree->findnodes('table') ];
 }
 
 sub make_new_post {
     my ($self, $content) = @_;
-    return WWW::Futaba::Parser::Result::Post->new({ contents => [ $content ] });
+    return WWW::Futaba::Parser::Result::Post->new(contents => [ $content ]);
 }
 
 1;
