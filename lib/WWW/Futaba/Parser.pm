@@ -1,45 +1,16 @@
 package WWW::Futaba::Parser;
-use strict;
-use warnings;
-use WWW::Futaba::Parser::Result::Index;
-use Web::Scraper;
+use Any::Moose;
+
+has 'base', (
+    is  => 'rw',
+    isa => 'URI',
+);
+
+no Any::Moose;
+
+__PACKAGE__->meta->make_immutable;
 
 our $VERSION = '0.01';
-
-sub new { __PACKAGE__ }
-
-sub parse_index {
-    my ($self, $content) = @_;
-    my $result = $self->index_scraper->scrape($content);
-    return WWW::Futaba::Parser::Result::Index->new($result);
-}
-
-sub index_scraper {
-    scraper {
-        result->{contents} = [];
-
-        process '//form[@action="futaba.php"]', sub {
-            my $form = shift;
-
-            push @{ result->{contents} }, [];
-
-            foreach ($form->content_list) {
-                if (ref && $_->tag eq 'hr') {
-                    push @{ result->{contents} }, [];
-                    next;
-                }
-
-                next if ref && $_->tag eq 'table' && ($_->attr('style') || $_->attr('align'));
-                next unless @{ result->{contents} };
-
-                push @{ result->{contents}->[-1] }, ref() ? $_->clone : $_;
-            }
-        };
-
-        pop @{ result->{contents} };
-        result;
-    };
-}
 
 1;
 

@@ -25,55 +25,27 @@ sub link_elem {
 
 sub uri {
     my $self = shift;
-    return $self->link_elem->attr('href');
+    return $self->make_uri($self->link_elem->attr('href'));
 }
 
 sub image_uri {
     my $self = shift;
-    return $self->image_link_elem->attr('href');
+    return $self->make_uri($self->image_link_elem->attr('href'));
 }
 
 sub thumbnail_uri {
     my $self = shift;
-    return $self->image_link_elem->find('img')->attr('src');
+    return $self->make_uri($self->image_link_elem->find('img')->attr('src'));
 }
 
-# TODO
 sub body {
     my $self = shift;
-    my $text = '';
-    my $node = $self->tree->findnodes('blockquote')->[0];
-    for (my @nodes; $node; $node = shift @nodes) {
-        if (!defined $node) {
-        } elsif (!ref $node) {
-            $text .= $node;
-        } elsif ($node->tag eq 'br') {
-            $text .= "\n";
-        } else {
-            unshift @nodes, $node->content_list;
-        }
-    }
-    $text =~ s/ +//; # trim
-    return $text;
+    return $self->parser->body($self->tree);
 }
 
-sub info_string {
-    my $self = shift;
-    return join '', map $_->string_value, $self->tree->findnodes('input[@type="checkbox"]/following-sibling::text() | input[@type="checkbox"]/following-sibling::a[starts-with(@href, "mailto:")]/text()');
-}
-
-# XXX
 sub info {
     my $self = shift;
-    my $string = $self->info_string;
-    my ($year, $month, $day, $hour, $minute, $second, $no) = $string =~ m<(\d\d)/(\d\d)/(\d\d).*(\d\d):(\d\d):(\d\d)\s+No\.(\d+)>;
-    return {
-        datetime => DateTime->new(
-            year => "20$year", month => $month, day => $day,
-            hour => $hour, minute => $minute, second => $second,
-        ),
-        no => $no,
-    };
+    return $self->parser->info($self->tree);
 }
 
 sub _build_posts {
@@ -83,7 +55,10 @@ sub _build_posts {
 
 sub make_new_post {
     my ($self, $content) = @_;
-    return WWW::Futaba::Parser::Result::Post->new(contents => [ $content ]);
+    return WWW::Futaba::Parser::Result::Post->new(
+        contents => [ $content ],
+        parser   => $self->parser->post_parser,
+    );
 }
 
 1;

@@ -18,7 +18,10 @@ sub _build_threads {
 
 sub make_new_thread {
     my ($self, $contents) = @_;
-    return WWW::Futaba::Parser::Result::Thread->new(contents => $contents);
+    return WWW::Futaba::Parser::Result::Thread->new(
+        contents => $contents, 
+        parser   => $self->parser->thread_parser,
+    );
 }
 
 1;

@@ -1,5 +1,12 @@
 package WWW::Futaba::Parser::Result;
 use Any::Moose;
+use URI;
+
+has 'parser', (
+    is  => 'rw',
+    isa => 'WWW::Futaba::Parser',
+    required => 1,
+);
 
 has 'contents', (
     is  => 'rw',
@@ -20,6 +27,8 @@ has 'tree', (
 
 no Any::Moose;
 
+__PACKAGE__->meta->make_immutable;
+
 sub _build_tree {
     my $self = shift;
     my $t = HTML::TreeBuilder::XPath->new;
@@ -27,6 +36,9 @@ sub _build_tree {
     return $t;
 }
 
-__PACKAGE__->meta->make_immutable;
+sub make_uri {
+    my ($self, $uri) = @_;
+    return URI->new_abs($uri, $self->parser->base);
+}
 
 1;
