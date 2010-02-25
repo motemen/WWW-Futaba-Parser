@@ -1,6 +1,8 @@
 package WWW::Futaba::Parser::Thread;
 use Any::Moose;
 
+use Web::Scraper;
+
 use WWW::Futaba::Parser::Post;
 
 extends 'WWW::Futaba::Parser';
@@ -62,6 +64,26 @@ sub info {
             hour => $hour, minute => $minute, second => $second,
         ),
         no => $no,
+    };
+}
+
+sub mail {
+    my ($self, $tree) = @_;
+    my $mail = $tree->findnodes_as_string(
+        'table//a[@href][1]/@href'
+    );
+    $mail =~ s/^href="(.+)"$/$1/;
+    $mail =~ s/^mailto://;
+    return $mail;
+}
+
+sub _build_web_scraper {
+    scraper {
+        process '//form[@action="futaba.php"]', sub {
+            my $form = shift;
+            result->{contents} = [ map { ref() ? $_->clone : $_ } $form->content_list ]
+        };
+        result;
     };
 }
 

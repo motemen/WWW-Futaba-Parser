@@ -5,13 +5,15 @@ use DateTime;
 extends 'WWW::Futaba::Parser::Result';
 
 sub body {
-    my $self = shift;
-    $self->parser->body($self->tree);
+    shift->call_parser('body');
 }
 
 sub info {
-    my $self = shift;
-    $self->parser->info($self->tree);
+    shift->call_parser('info');
+}
+
+sub mail {
+    shift->call_parser('mail');
 }
 
 1;

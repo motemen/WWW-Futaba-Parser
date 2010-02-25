@@ -1,5 +1,6 @@
 package WWW::Futaba::Parser::Index;
 use Any::Moose;
+
 use Web::Scraper;
 use UNIVERSAL::isa;
 
@@ -27,14 +28,14 @@ sub parse {
         $target = URI->new($target) unless UNIVERSAL::isa($target, 'URI');
         $self->base($target);
     }
-    my $result = $self->index_scraper->scrape($target);
+    my $result = $self->web_scraper->scrape($target);
     return WWW::Futaba::Parser::Result::Index->new(
         contents => $result->{contents},
         parser   => $self,
     );
 }
 
-sub index_scraper {
+sub _build_web_scraper {
     scraper {
         result->{contents} = [];
 

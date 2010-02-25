@@ -23,6 +23,7 @@ sub fake_http ($) {
 use_ok 'WWW::Futaba::Parser::Index';
 
 my $parser = WWW::Futaba::Parser::Index->new;
+isa_ok $parser->web_scraper, 'Web::Scraper';
 
 my $index = $parser->parse(fake_http 'http://img.2chan.net/b/');
 isa_ok $index, 'WWW::Futaba::Parser::Result::Index';

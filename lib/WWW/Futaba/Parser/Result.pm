@@ -41,4 +41,9 @@ sub make_uri {
     return URI->new_abs($uri, $self->parser->base);
 }
 
+sub call_parser {
+    my ($self, $method) = @_;
+    return $self->parser->$method($self->tree);
+}
+
 1;

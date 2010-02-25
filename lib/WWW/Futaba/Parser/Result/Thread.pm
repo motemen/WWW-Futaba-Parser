@@ -50,7 +50,7 @@ sub info {
 
 sub _build_posts {
     my $self = shift;
-    return [ map { $self->make_new_post($_) } $self->tree->findnodes('table') ];
+    return [ map { $self->make_new_post($_) } $self->tree->findnodes('//table') ];
 }
 
 sub make_new_post {
