@@ -2,23 +2,7 @@ use strict;
 use warnings;
 use utf8;
 use Test::More;
-use Path::Class qw(file);
-use HTTP::Response;
-use HTTP::Request::Common qw(GET);
-
-sub fake_http ($) {
-    my $url = shift;
-
-    (my $path = $url) =~ s<^http://><>;
-    $path =~ s</$><>;
-    $path =~ s</><->g;
-
-    my $content = file(__FILE__)->dir->file('samples', "$path.htm")->slurp;
-    my $res = HTTP::Response->new(200, 'OK', [ Content_Type => 'text/html' ], $content);
-    $res->request(GET $url);
-
-    return $res;
-}
+use t::WWWFutabaParser;
 
 use_ok 'WWW::Futaba::Parser::Index';
 
