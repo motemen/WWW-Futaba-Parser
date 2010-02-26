@@ -62,6 +62,7 @@ sub head {
         datetime => DateTime->new(
             year => "20$year", month => $month, day => $day,
             hour => $hour, minute => $minute, second => $second,
+            time_zone => 'Asia/Tokyo',
         ),
         no => $no,
     };

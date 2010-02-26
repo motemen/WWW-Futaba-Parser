@@ -25,6 +25,18 @@ has 'tree', (
     lazy_build => 1,
 );
 
+has 'head', (
+    is  => 'rw',
+    isa => 'HashRef',
+    lazy_build => 1,
+);
+
+has 'body', (
+    is  => 'rw',
+    isa => 'Str',
+    lazy_build => 1,
+);
+
 no Any::Moose;
 
 __PACKAGE__->meta->make_immutable;
@@ -34,6 +46,14 @@ sub _build_tree {
     my $t = HTML::TreeBuilder::XPath->new;
     $t->push_content($self->contents);
     return $t;
+}
+
+sub _build_body {
+    shift->call_parser('body');
+}
+
+sub _build_head {
+    shift->call_parser('head');
 }
 
 sub make_uri {

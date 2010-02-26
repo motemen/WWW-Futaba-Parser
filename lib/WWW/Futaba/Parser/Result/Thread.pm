@@ -38,16 +38,6 @@ sub thumbnail_uri {
     return $self->make_uri($self->image_link_elem->find('img')->attr('src'));
 }
 
-sub body {
-    my $self = shift;
-    return $self->call_parser('body');
-}
-
-sub head {
-    my $self = shift;
-    return $self->call_parser('head');
-}
-
 sub _build_posts {
     my $self = shift;
     return [ map { $self->make_new_post($_) } $self->tree->findnodes('//table') ];
