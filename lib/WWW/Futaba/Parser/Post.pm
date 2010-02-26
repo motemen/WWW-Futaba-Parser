@@ -8,7 +8,7 @@ sub body_node {
     return $tree->findnodes('table//blockquote')->[0];
 };
 
-sub info_nodes {
+sub head_nodes {
     my ($self, $tree) = @_;
     return $tree->findnodes(
         'table//td[2]/text() | table//td[2]/a[starts-with(@href, "mailto:")]/text()'

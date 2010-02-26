@@ -42,21 +42,21 @@ sub body {
     return $text;
 }
 
-sub info_nodes {
+sub head_nodes {
     my ($self, $tree) = @_;
     return $tree->findnodes(
         'input[@type="checkbox"]/following-sibling::text() | input[@type="checkbox"]/following-sibling::a[starts-with(@href, "mailto:")]/text()'
     );
 }
 
-sub info_string {
+sub head_string {
     my ($self, $tree) = @_;
-    return join '', map $_->string_value, $self->info_nodes($tree);
+    return join '', map $_->string_value, $self->head_nodes($tree);
 }
 
-sub info {
+sub head {
     my ($self, $tree) = @_;
-    my $string = $self->info_string($tree);
+    my $string = $self->head_string($tree);
     my ($year, $month, $day, $hour, $minute, $second, $no) = $string =~ m<(\d\d)/(\d\d)/(\d\d).*(\d\d):(\d\d):(\d\d)\s+No\.(\d+)>;
     return {
         datetime => DateTime->new(

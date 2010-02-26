@@ -8,8 +8,8 @@ sub body {
     shift->call_parser('body');
 }
 
-sub info {
-    shift->call_parser('info');
+sub head {
+    shift->call_parser('head');
 }
 
 sub mail {

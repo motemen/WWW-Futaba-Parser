@@ -40,12 +40,12 @@ sub thumbnail_uri {
 
 sub body {
     my $self = shift;
-    return $self->parser->body($self->tree);
+    return $self->call_parser('body');
 }
 
-sub info {
+sub head {
     my $self = shift;
-    return $self->parser->info($self->tree);
+    return $self->call_parser('head');
 }
 
 sub _build_posts {

@@ -20,21 +20,6 @@ sub _build_thread_parser {
     return WWW::Futaba::Parser::Thread->new(%$self);
 }
 
-sub parse {
-    my ($self, $target) = @_;
-    if (UNIVERSAL::isa($target, 'HTTP::Response')) {
-        $self->base($target->base);
-    } else {
-        $target = URI->new($target) unless UNIVERSAL::isa($target, 'URI');
-        $self->base($target);
-    }
-    my $result = $self->web_scraper->scrape($target);
-    return WWW::Futaba::Parser::Result::Index->new(
-        contents => $result->{contents},
-        parser   => $self,
-    );
-}
-
 sub _build_web_scraper {
     scraper {
         result->{contents} = [];
