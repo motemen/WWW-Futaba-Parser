@@ -27,6 +27,6 @@ isa_ok $posts[0]->parser, 'WWW::Futaba::Parser::Post';
 is $posts[26]->body, ">強いのならワイルドアームズに沢山居るぞ！\nｽｯ", 'post body';
 is $posts[26]->head->{datetime}, '2010-02-25T21:00:17',               'post datetime';
 is $posts[26]->head->{no},       '81261312',                          'post no';
-is $posts[26]->call_parser('mail'),     'ファイネストアーツ　ラクウェル';
+is $posts[26]->mail, 'ファイネストアーツ　ラクウェル',                'post mail';
 
 done_testing;

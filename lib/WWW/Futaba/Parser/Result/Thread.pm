@@ -25,12 +25,12 @@ sub link_elem {
 
 sub uri {
     my $self = shift;
-    return $self->make_uri($self->link_elem->attr('href'));
+    return $self->make_uri($self->link_elem);
 }
 
 sub image_uri {
     my $self = shift;
-    return $self->make_uri($self->image_link_elem->attr('href'));
+    return $self->make_uri($self->image_link_elem);
 }
 
 sub thumbnail_uri {

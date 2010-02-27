@@ -57,8 +57,16 @@ sub _build_head {
 }
 
 sub make_uri {
-    my ($self, $uri) = @_;
-    return URI->new_abs($uri, $self->parser->base);
+    my ($self, $node) = @_;
+    my $uri;
+    if (not ref $node) {
+        $uri = $node;
+    } elsif ($node->tag eq 'a') {
+        $uri = $node->attr('href');
+    } elsif ($node->tag eq 'img') {
+        $uri = $node->attr('src');
+    }
+    return $uri && URI->new_abs($uri, $self->parser->base);
 }
 
 sub call_parser {

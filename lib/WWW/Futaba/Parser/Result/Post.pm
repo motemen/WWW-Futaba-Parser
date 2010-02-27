@@ -15,12 +15,12 @@ sub image_link_node {
 
 sub image_uri {
     my $self = shift;
-    return $self->make_uri($self->image_link_node->attr('href'));
+    return $self->make_uri($self->image_link_node);
 }
 
 sub thumbnail_uri {
     my $self = shift;
-    return $self->make_uri($self->image_link_node->find('img')->attr('src'));
+    return $self->make_uri($self->image_link_node && $self->image_link_node->find('img'));
 }
 
 1;

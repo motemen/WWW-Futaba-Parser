@@ -22,8 +22,8 @@ is $threads[-1]->body . "\n", <<__BODY__;
 ロケテ開催中
 __BODY__
 
-is $threads[-1]->head->{title}, '無念';
-is $threads[-1]->head->{name},  'としあき';
+is $threads[-1]->head->{title},  '無念';
+is $threads[-1]->head->{author}, 'としあき';
 
 my @posts = $threads[-1]->posts;
 is scalar @posts, 5;

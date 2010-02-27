@@ -54,11 +54,16 @@ sub head_string {
     return join '', map $_->string_value, $self->head_nodes($tree);
 }
 
+sub head_title_and_author {
+    my ($self, $tree) = @_;
+    return map $_->string_value, $tree->findnodes('font/b/text()');
+}
+
 sub head {
     my ($self, $tree) = @_;
 
-    my ($title, $name) = map $_->string_value, $tree->findnodes('font/b/text()');
-    $name =~ s/ $// if $name;
+    my ($title, $author) = $self->head_title_and_author($tree);
+    $author =~ s/ $// if $author;
 
     my $string = $self->head_string($tree);
     my ($year, $month, $day, $hour, $minute, $second, $no) = $string =~ m<(\d\d)/(\d\d)/(\d\d).*(\d\d):(\d\d):(\d\d)\s+No\.(\d+)>;
@@ -68,9 +73,9 @@ sub head {
             hour => $hour, minute => $minute, second => $second,
             time_zone => 'Asia/Tokyo',
         ),
-        no    => $no,
-        title => $title,
-        name  => $name,
+        no     => $no,
+        title  => $title,
+        author => $author,
     };
 }
 

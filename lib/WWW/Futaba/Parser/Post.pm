@@ -15,4 +15,9 @@ sub head_nodes {
     );
 }
 
+sub head_title_and_author {
+    my ($self, $tree) = @_;
+    return map $_->string_value, $tree->findnodes('table//font/b//text()');
+}
+
 1;
