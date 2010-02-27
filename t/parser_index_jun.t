@@ -23,7 +23,7 @@ is $threads[-1]->body . "\n", <<__BODY__;
 __BODY__
 
 {
-    local $TODO = '';
+    local $TODO = 'jun未対応';
     is $threads[-1]->head->{title}, '無念';
     is $threads[-1]->head->{name},  'としあき';
 }

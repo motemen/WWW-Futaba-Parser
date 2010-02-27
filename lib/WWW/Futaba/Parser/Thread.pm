@@ -73,7 +73,7 @@ sub mail {
     my $mail = $tree->findnodes_as_string(
         'table//a[@href][1]/@href'
     );
-    $mail =~ s/^href="(.+)"$/$1/;
+    $mail =~ s/^\s*href="(.+)"$/$1/;
     $mail =~ s/^mailto://;
     return $mail;
 }
