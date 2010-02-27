@@ -56,6 +56,10 @@ sub head_string {
 
 sub head {
     my ($self, $tree) = @_;
+
+    my ($title, $name) = map $_->string_value, $tree->findnodes('font/b/text()');
+    $name =~ s/ $// if $name;
+
     my $string = $self->head_string($tree);
     my ($year, $month, $day, $hour, $minute, $second, $no) = $string =~ m<(\d\d)/(\d\d)/(\d\d).*(\d\d):(\d\d):(\d\d)\s+No\.(\d+)>;
     return {
@@ -64,7 +68,9 @@ sub head {
             hour => $hour, minute => $minute, second => $second,
             time_zone => 'Asia/Tokyo',
         ),
-        no => $no,
+        no    => $no,
+        title => $title,
+        name  => $name,
     };
 }
 

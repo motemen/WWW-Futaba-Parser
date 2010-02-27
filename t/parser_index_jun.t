@@ -22,11 +22,8 @@ is $threads[-1]->body . "\n", <<__BODY__;
 ロケテ開催中
 __BODY__
 
-{
-    local $TODO = 'jun未対応';
-    is $threads[-1]->head->{title}, '無念';
-    is $threads[-1]->head->{name},  'としあき';
-}
+is $threads[-1]->head->{title}, '無念';
+is $threads[-1]->head->{name},  'としあき';
 
 my @posts = $threads[-1]->posts;
 is scalar @posts, 5;
