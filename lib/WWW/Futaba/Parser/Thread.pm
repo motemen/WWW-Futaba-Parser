@@ -85,6 +85,7 @@ sub mail {
         'table//a[@href][1]/@href'
     );
     $mail =~ s/^\s*href="(.+)"$/$1/;
+    $mail =~ s/^(.+)"\s*href="javascript:void\(0\);$/$1/;
     $mail =~ s/^mailto://;
     return $mail;
 }

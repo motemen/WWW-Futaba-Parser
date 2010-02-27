@@ -25,6 +25,7 @@ is scalar @posts, 13;
 isa_ok $posts[0], 'WWW::Futaba::Parser::Result::Post';
 isa_ok $posts[0]->parser, 'WWW::Futaba::Parser::Post';
 
+# simple_post
 is $posts[0]->body, 'ストレージにうｐ汁';
 is $posts[0]->head->{title}, '無念';
 is $posts[0]->head->{author}, 'としあき';
@@ -33,6 +34,7 @@ is $posts[0]->head->{no}, '13042346';
 ok !$posts[0]->image_uri;
 ok !$posts[0]->thumbnail_uri;
 
+# post_with_image
 is $posts[1]->body, "俺はアインフォルダ\nどうしようか\n迷ってる・・・。";
 is $posts[1]->head->{title}, '無念';
 is $posts[1]->head->{author}, 'としあき';
@@ -40,5 +42,15 @@ is $posts[1]->head->{datetime}, '2010-02-27T08:30:13';
 is $posts[1]->head->{no}, '13042356';
 is $posts[1]->image_uri, 'http://feb.2chan.net/jun/b/src/1267227013425.jpg';
 is $posts[1]->thumbnail_uri, 'http://feb.2chan.net/jun/b/thumb/1267227013425s.jpg';
+
+# post_with_mail
+is $posts[2]->body, "死ね";
+is $posts[2]->head->{title}, '無念';
+is $posts[2]->head->{author}, 'としあき';
+is $posts[2]->head->{datetime}, '2010-02-27T08:34:08';
+is $posts[2]->head->{no}, '13042361';
+is $posts[2]->mail, 'sage';
+ok !$posts[2]->image_uri;
+ok !$posts[2]->thumbnail_uri;
 
 done_testing;
