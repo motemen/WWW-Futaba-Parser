@@ -7,11 +7,11 @@ use UNIVERSAL::isa;
 use WWW::Futaba::Parser::Thread;
 use WWW::Futaba::Parser::Result::Index;
 
-extends 'WWW::Futaba::Parser';
+extends 'WWW::Futaba::Parser::Base';
 
 has 'thread_parser', (
     is  => 'rw',
-    isa => 'WWW::Futaba::Parser',
+    isa => 'WWW::Futaba::Parser::Base',
     lazy_build => 1,
 );
 

@@ -4,7 +4,7 @@ use URI;
 
 has 'parser', (
     is  => 'rw',
-    isa => 'WWW::Futaba::Parser',
+    isa => 'WWW::Futaba::Parser::Base',
     required => 1,
 );
 
@@ -16,7 +16,7 @@ has 'contents', (
 
 has 'parser', (
     is  => 'rw',
-    isa => 'WWW::Futaba::Parser',
+    isa => 'WWW::Futaba::Parser::Base',
 );
 
 has 'tree', (

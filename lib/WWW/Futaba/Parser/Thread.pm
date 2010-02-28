@@ -5,11 +5,11 @@ use Web::Scraper;
 
 use WWW::Futaba::Parser::Post;
 
-extends 'WWW::Futaba::Parser';
+extends 'WWW::Futaba::Parser::Base';
 
 has 'post_parser', (
     is  => 'rw',
-    isa => 'WWW::Futaba::Parser',
+    isa => 'WWW::Futaba::Parser::Base',
     lazy_build => 1,
 );
 

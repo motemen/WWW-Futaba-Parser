@@ -3,6 +3,7 @@ use warnings;
 use Test::More;
 
 use_ok 'WWW::Futaba::Parser';
+use_ok 'WWW::Futaba::Parser::Base';
 use_ok 'WWW::Futaba::Parser::Index';
 use_ok 'WWW::Futaba::Parser::Thread';
 use_ok 'WWW::Futaba::Parser::Post';
