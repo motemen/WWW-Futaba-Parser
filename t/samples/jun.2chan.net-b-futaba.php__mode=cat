@@ -1,0 +1,121 @@
+<html><head>
+<META HTTP-EQUIV="Content-type" CONTENT="text/html; charset=Shift_JIS">
+<!-- meta HTTP-EQUIV="pragma" CONTENT="no-cache" -->
+<STYLE TYPE="text/css">
+<!--
+body,tr,td,th { font-size:12pt }
+a.del {color:#800000;}
+a:hover { color:#DD0000; }
+span { font-size:20pt }
+small { font-size:10pt }
+.delform {position:absolute;right:0;white-space:nowrap;text-align:center;}
+.chui {font-size:small;}
+ul {margin:0px;}
+.ftbl {table-layout:fixed;width:476px;margin:0 auto;}
+.ftdc {background-color:#ea8;width:4.5em;white-space:nowrap;}
+.ftxa {height:8em;width:98%;}
+form {margin:0px;}
+.ama {text-align:left;width:468px;border:2px ridge;}
+-->
+</STYLE>
+<title>二次元裏＠ふたば</title>
+<script language="JavaScript"><!--
+function l(e){var P=getCookie("pwdc"),N=getCookie("namec"),i;with(document){for(i=0;i<forms.length;i++){if(forms[i].pwd)with(forms[i]){if(!pwd.value)pwd.value=P;}if(forms[i].name)with(forms[i]){if(!name.value)name.value=N;}}}};function getCookie(key, tmp1, tmp2, xx1, xx2, xx3) {tmp1 = " " + document.cookie + ";";xx1 = xx2 = 0;len = tmp1.length;	while (xx1 < len) {xx2 = tmp1.indexOf(";", xx1);tmp2 = tmp1.substring(xx1 + 1, xx2);xx3 = tmp2.indexOf("=");if (tmp2.substring(0, xx3) == key) {return(unescape(tmp2.substring(xx3 + 1, xx2 - xx1 - 1)));}xx1 = xx2 + 1;}return("");};function allchk(){var i;with(document){for(i=0;i<forms[0].elements.length;i++){with(forms[0].elements[i]){if(value=="delete"){checked=true;}}}}};function del(d){self.location.href="/del.php?b=b&d="+d;};
+//--></script>
+</head>
+<body bgcolor="#FFFFEE" text="#800000" link="#0000EE" vlink="#0000EE">
+<p align=right>
+[<a href="../" target="_top">ホーム</a>]
+<p align=center>
+<font color="#800000" size=5>
+<b><div style="font-size: 20pt;text-align: center;">二次元裏＠ふたば</div></b></font>
+<hr width="90%" size=1>
+[<a href="futaba.htm">掲示板に戻る</a>]
+<b><a href="futaba.php?mode=cat">カタログ</a></b> <a href="futaba.php?mode=cat&sort=1">新順</a> <a href="futaba.php?mode=cat&sort=2">古順</a> <a href="futaba.php?mode=cat&sort=3">多順</a> <a href="futaba.php?mode=cat&sort=4">少順</a>
+<table width='100%'><tr><th bgcolor=#0040e0>
+<font color=#FFFFFF>カタログモード</font>
+</th></tr></table>
+<table border=1 align=center><tr><td><a href=res/13043024.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267240530961s.jpg border=0 width=50 height=50 alt=""></a><br><font size=2>0</font></td>
+<td><a href=res/13040954.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267201571528s.jpg border=0 width=47 height=50 alt=""></a><br><font size=2>78</font></td>
+<td><a href=res/13042918.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267239203375s.jpg border=0 width=50 height=32 alt=""></a><br><font size=2>22</font></td>
+<td><a href=res/13041148.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267202684509s.jpg border=0 width=47 height=50 alt=""></a><br><font size=2>65</font></td>
+<td><a href=res/13037132.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267181960886s.jpg border=0 width=50 height=34 alt=""></a><br><font size=2>60</font></td>
+<td><a href=res/13039546.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267193574469s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>59</font></td>
+<td><a href=res/13036790.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267178742381s.jpg border=0 width=50 height=50 alt=""></a><br><font size=2>33</font></td>
+<td><a href=res/13035997.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267168487297s.jpg border=0 width=49 height=50 alt=""></a><br><font size=2>96</font></td>
+<td><a href=res/13040331.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267197567707s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>36</font></td>
+<td><a href=res/13039820.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267195105997s.jpg border=0 width=50 height=50 alt=""></a><br><font size=2>42</font></td>
+<td><a href=res/13040091.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267196476361s.jpg border=0 width=50 height=35 alt=""></a><br><font size=2>69</font></td>
+<td><a href=res/13038150.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267187314209s.jpg border=0 width=50 height=50 alt=""></a><br><font size=2>103</font></td>
+</tr>
+<tr><td><a href=res/13036249.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267172157532s.jpg border=0 width=50 height=50 alt=""></a><br><font size=2>71</font></td>
+<td><a href=res/13041991.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267214870516s.jpg border=0 width=34 height=50 alt=""></a><br><font size=2>23</font></td>
+<td><a href=res/13040699.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267199679504s.jpg border=0 width=50 height=34 alt=""></a><br><font size=2>10</font></td>
+<td><a href=res/13042419.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267229026904s.jpg border=0 width=50 height=44 alt=""></a><br><font size=2>3</font></td>
+<td><a href=res/13042187.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267222387609s.jpg border=0 width=50 height=43 alt=""></a><br><font size=2>32</font></td>
+<td><a href=res/13035903.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267167211690s.jpg border=0 width=35 height=50 alt=""></a><br><font size=2>76</font></td>
+<td><a href=res/13040233.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267197134846s.jpg border=0 width=44 height=50 alt=""></a><br><font size=2>84</font></td>
+<td><a href=res/13042338.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267226534116s.jpg border=0 width=50 height=41 alt=""></a><br><font size=2>13</font></td>
+<td><a href=res/13037036.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267181093346s.jpg border=0 width=38 height=50 alt=""></a><br><font size=2>67</font></td>
+<td><a href=res/13035983.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267168252060s.jpg border=0 width=37 height=50 alt=""></a><br><font size=2>77</font></td>
+<td><a href=res/13036679.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267177111656s.jpg border=0 width=36 height=50 alt=""></a><br><font size=2>83</font></td>
+<td><a href=res/13037688.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267185513717s.jpg border=0 width=50 height=40 alt=""></a><br><font size=2>90</font></td>
+</tr>
+<tr><td><a href=res/13036485.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267174910819s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>59</font></td>
+<td><a href=res/13040821.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267200611727s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>10</font></td>
+<td><a href=res/13042453.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267229954266s.jpg border=0 width=35 height=50 alt=""></a><br><font size=2>9</font></td>
+<td><a href=res/13036448.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267174537236s.jpg border=0 width=50 height=36 alt=""></a><br><font size=2>19</font></td>
+<td><a href=res/13037351.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267183391908s.jpg border=0 width=50 height=50 alt=""></a><br><font size=2>49</font></td>
+<td><a href=res/13036475.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267174777398s.jpg border=0 width=50 height=35 alt=""></a><br><font size=2>35</font></td>
+<td><a href=res/13038997.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267190442136s.jpg border=0 width=50 height=37 alt=""></a><br><font size=2>3</font></td>
+<td><a href=res/13037787.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267185932919s.jpg border=0 width=41 height=50 alt=""></a><br><font size=2>30</font></td>
+<td><a href=res/13042766.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267236541054s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>0</font></td>
+<td><a href=res/13035349.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267159439163s.jpg border=0 width=33 height=50 alt=""></a><br><font size=2>23</font></td>
+<td><a href=res/13036878.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267179581478s.jpg border=0 width=35 height=50 alt=""></a><br><font size=2>41</font></td>
+<td><a href=res/13035142.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267156279388s.jpg border=0 width=35 height=50 alt=""></a><br><font size=2>33</font></td>
+</tr>
+<tr><td><a href=res/13035162.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267156565592s.jpg border=0 width=50 height=49 alt=""></a><br><font size=2>32</font></td>
+<td><a href=res/13039983.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267195816894s.jpg border=0 width=50 height=39 alt=""></a><br><font size=2>44</font></td>
+<td><a href=res/13039744.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267194689118s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>20</font></td>
+<td><a href=res/13036699.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267177270526s.jpg border=0 width=38 height=50 alt=""></a><br><font size=2>26</font></td>
+<td><a href=res/13041665.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267208459544s.jpg border=0 width=50 height=41 alt=""></a><br><font size=2>167</font></td>
+<td><a href=res/13040185.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267196924742s.jpg border=0 width=39 height=50 alt=""></a><br><font size=2>47</font></td>
+<td><a href=res/13036657.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267176935777s.jpg border=0 width=38 height=50 alt=""></a><br><font size=2>21</font></td>
+<td><a href=res/13035394.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267160439919s.jpg border=0 width=50 height=34 alt=""></a><br><font size=2>85</font></td>
+<td><a href=res/13042175.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267221802255s.jpg border=0 width=39 height=50 alt=""></a><br><font size=2>25</font></td>
+<td><a href=res/13035890.htm target=_blank><small>メンヘル</small></a><br><font size=2>10</font></td>
+<td><a href=res/13042467.htm target=_blank><small>http://a</small></a><br><font size=2>2</font></td>
+<td><a href=res/13041364.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267204496715s.jpg border=0 width=38 height=50 alt=""></a><br><font size=2>4</font></td>
+</tr>
+<tr><td><a href=res/13035851.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267166646649s.jpg border=0 width=49 height=50 alt=""></a><br><font size=2>30</font></td>
+<td><a href=res/13036512.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267175216244s.jpg border=0 width=50 height=49 alt=""></a><br><font size=2>23</font></td>
+<td><a href=res/13042415.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267228958042s.jpg border=0 width=32 height=50 alt=""></a><br><font size=2>0</font></td>
+<td><a href=res/13036354.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267173371340s.jpg border=0 width=50 height=46 alt=""></a><br><font size=2>18</font></td>
+<td><a href=res/13041284.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267203660700s.jpg border=0 width=50 height=50 alt=""></a><br><font size=2>142</font></td>
+<td><a href=res/13042394.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267228389147s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>1</font></td>
+<td><a href=res/13036423.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267174252923s.jpg border=0 width=43 height=50 alt=""></a><br><font size=2>2</font></td>
+<td><a href=res/13036687.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267177168383s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>24</font></td>
+<td><a href=res/13042068.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267218043849s.jpg border=0 width=50 height=36 alt=""></a><br><font size=2>13</font></td>
+<td><a href=res/13036795.htm target=_blank><img src=http://feb.2chan.net/jun/b/cat/1267178805025s.jpg border=0 width=50 height=47 alt=""></a><br><font size=2>23</font></td>
+<td><a href=res/13042342.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267226683805s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>0</font></td>
+<td><a href=res/13036432.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267174322834s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>1</font></td>
+</tr>
+<tr><td><a href=res/13036731.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267177751576s.jpg border=0 width=28 height=50 alt=""></a><br><font size=2>3</font></td>
+<td><a href=res/13040472.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267198256339s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>4</font></td>
+<td><a href=res/13040888.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267201099647s.jpg border=0 width=36 height=50 alt=""></a><br><font size=2>18</font></td>
+<td><a href=res/13041474.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267205402710s.jpg border=0 width=50 height=34 alt=""></a><br><font size=2>4</font></td>
+<td><a href=res/13038021.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267186855909s.jpg border=0 width=45 height=50 alt=""></a><br><font size=2>37</font></td>
+<td><a href=res/13035216.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267157335290s.jpg border=0 width=42 height=50 alt=""></a><br><font size=2>9</font></td>
+<td><a href=res/13035185.htm target=_blank><img src=http://112.78.201.90/jun/b/cat/1267156964317s.jpg border=0 width=32 height=50 alt=""></a><br><font size=2>16</font></td>
+<td><a href=res/13039273.htm target=_blank><img src=http://apr.2chan.net/jun/b/cat/1267191922994s.jpg border=0 width=50 height=44 alt=""></a><br><font size=2>7</font></td>
+<td><a href=res/13037618.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267185103831s.jpg border=0 width=48 height=50 alt=""></a><br><font size=2>41</font></td>
+<td><a href=res/13038536.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267188695753s.jpg border=0 width=42 height=50 alt=""></a><br><font size=2>127</font></td>
+<td><a href=res/13040819.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267200579922s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>211</font></td>
+<td><a href=res/13040735.htm target=_blank><img src=http://112.78.198.230/jun/b/cat/1267199895374s.jpg border=0 width=50 height=38 alt=""></a><br><font size=2>1</font></td>
+</tr>
+</table><hr>
+<center>
+<small><!-- GazouBBS v3.0 --><!-- ふたば改0.8 -->
+- <a href="http://php.s3.to" target=_top>GazouBBS</a> + <a href="http://www.2chan.net/" target=_top>futaba</a>-
+</small></center>
+</body></html><!--cache-->

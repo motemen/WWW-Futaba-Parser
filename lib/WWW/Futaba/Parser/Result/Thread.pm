@@ -1,8 +1,7 @@
 package WWW::Futaba::Parser::Result::Thread;
 use Any::Moose;
+
 use WWW::Futaba::Parser::Result::Post;
-use HTML::TreeBuilder::XPath;
-use URI;
 
 extends 'WWW::Futaba::Parser::Result';
 
