@@ -30,12 +30,14 @@ our $VERSION = '0.01';
 
 sub parse {
     my ($self, $target) = @_;
+
     if (UNIVERSAL::isa($target, 'HTTP::Response')) {
         $self->base($target->base);
     } else {
         $target = URI->new($target) unless UNIVERSAL::isa($target, 'URI');
         $self->base($target);
     }
+
     my $result = $self->web_scraper->scrape($target);
     return $self->result_class->new(
         contents => $result->{contents},
