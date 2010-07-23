@@ -37,8 +37,6 @@ has 'body', (
     lazy_build => 1,
 );
 
-no Any::Moose;
-
 __PACKAGE__->meta->make_immutable;
 
 sub _build_tree {
@@ -72,6 +70,18 @@ sub make_uri {
 sub call_parser {
     my ($self, $method) = @_;
     return $self->parser->$method($self->tree);
+}
+
+sub DEMOLISH {
+    my $self = shift;
+    if ($self->tree) {
+        $self->tree->delete;
+    }
+    foreach ($self->contents) {
+        if (blessed $_ && $_->can('delete')) {
+            $_->delete;
+        }
+    }
 }
 
 1;
