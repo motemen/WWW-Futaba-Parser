@@ -1,103 +1,83 @@
 package WWW::Futaba::Parser::Thread;
-use Any::Moose;
+use strict;
+use warnings;
+use Carp;
+use WWW::Futaba::Parser::Result::Thread;
+use WWW::Futaba::Parser::Result::Post;
 
-use Web::Scraper;
+sub parse {
+    my ($class, $object) = @_;
 
-use WWW::Futaba::Parser::Post;
-
-extends 'WWW::Futaba::Parser::Base';
-
-has 'post_parser', (
-    is  => 'rw',
-    isa => 'WWW::Futaba::Parser::Base',
-    lazy_build => 1,
-);
-
-sub _build_post_parser {
-    my $self = shift;
-    return WWW::Futaba::Parser::Post->new(%$self);
-}
-
-sub body_node {
-    my ($self, $tree) = @_;
-    return $tree->findnodes('blockquote')->[0];
-}
-
-sub body {
-    my ($self, $tree) = @_;
-
-    my $text = '';
-    my $node = $self->body_node($tree);
-    for (my @nodes; $node; $node = shift @nodes) {
-        if (!defined $node) {
-        } elsif (!ref $node) {
-            $text .= $node;
-        } elsif ($node->tag eq 'br') {
-            $text .= "\n";
-        } else {
-            unshift @nodes, $node->content_list;
-        }
+    if (not ref $object) {
+        return $class->parse_string($object);
+    } elsif (ref $object eq 'SCALAR') {
+        return $class->parse_string($$object);
+    } elsif ($object->isa('HTTP::Message')) {
+        return $class->parse_string($object->decoded_content);
+    } else {
+        die 'not implemented';
     }
-    $text =~ s/ +//; # trim
-    return $text;
 }
 
-sub head_nodes {
-    my ($self, $tree) = @_;
-    return $tree->findnodes(
-        'input[@type="checkbox"]/following-sibling::text() | input[@type="checkbox"]/following-sibling::a[starts-with(@href, "mailto:")]/text()'
+sub parse_string {
+    my ($class, $string) = @_;
+
+    my ($meta, $body, $posts) = $string =~ m#<form action="futaba\.php".+?<input type=checkbox[^>]*>(.+?)<blockquote>(.+?) ?</blockquote>(.+)#s or croak 'Could not parse';
+
+    my ($date, $no)      = $meta =~ m#(\d\d/\d\d/\d\d.*?\d\d:\d\d:\d\d)\s+No\.(\d+)#;
+    my ($title, $author) = $meta =~ m|<font color=#cc1105[^>]*><b>(.*?)</b></font>.*?<font color=#117743[^>]*><b>(.*?) ?</b>|s;
+
+    for ($body) {
+        s/<br>/\n/g;
+        s/<[^>]*>//g;
+        s/&lt;/</g;
+        s/&gt;/>/g;
+        s/&quot;/"/g;
+        s/&amp;/&/g;
+    }
+
+    my @posts = map { $class->parse_post_string($_) } $posts =~ m#<table border=0>(.+?)</table>#gs;
+
+    return WWW::Futaba::Parser::Result::Thread->new(
+        body => $body,
+        head => {
+            date   => $date,
+            no     => $no,
+            author => $author,
+            title  => $title,
+        },
+        posts  => \@posts,
     );
 }
 
-sub head_string {
-    my ($self, $tree) = @_;
-    return join '', map $_->string_value, $self->head_nodes($tree);
-}
+sub parse_post_string {
+    my ($class, $string) = @_;
 
-sub head_title_and_author {
-    my ($self, $tree) = @_;
-    return map $_->string_value, $tree->findnodes('font/b/text()');
-}
+    my ($meta, $body, $posts) = $string =~ m#<input type=checkbox[^>]*>(.+?)<blockquote>(.+?) ?</blockquote>(.+)#s or croak "Could not parse: $string";
 
-sub head {
-    my ($self, $tree) = @_;
+    my ($date, $no)      = $meta =~ m#(\d\d/\d\d/\d\d.*?\d\d:\d\d:\d\d)(?:</a>)?\s+No\.(\d+)# or die "Could not parse: $meta";
+    my ($title, $author) = $meta =~ m|<font color=#cc1105[^>]*><b>(.*?)</b></font>.*?<font color=#117743[^>]*><b>.*?<b>(.*?) ?</b>|s;
+    my ($mail)           = $meta =~ /<a href="mailto:([^"]+)"[^>]*?>/;
 
-    my ($title, $author) = $self->head_title_and_author($tree);
-    $author =~ s/ $// if $author;
+    for ($body) {
+        s/<br>/\n/g;
+        s/<[^>]*>//g;
+        s/&lt;/</g;
+        s/&gt;/>/g;
+        s/&quot;/"/g;
+        s/&amp;/&/g;
+    }
 
-    my $string = $self->head_string($tree);
-    my ($year, $month, $day, $hour, $minute, $second, $no) = $string =~ m<(\d\d)/(\d\d)/(\d\d).*(\d\d):(\d\d):(\d\d)\s+No\.(\d+)>;
-    return {
-        datetime => DateTime->new(
-            year => "20$year", month => $month, day => $day,
-            hour => $hour, minute => $minute, second => $second,
-            time_zone => 'Asia/Tokyo',
-        ),
-        no     => $no,
-        title  => $title,
-        author => $author,
-    };
-}
-
-sub mail {
-    my ($self, $tree) = @_;
-    my $mail = $tree->findnodes_as_string(
-        'table//a[@href][1]/@href'
+    return WWW::Futaba::Parser::Result::Post->new(
+        body => $body,
+        head => {
+            date   => $date,
+            no     => $no,
+            mail   => $mail,
+            title  => $title,
+            author => $author,
+        },
     );
-    $mail =~ s/^\s*href="(.+)"$/$1/;
-    $mail =~ s/^(.+)"\s*href="javascript:void\(0\);$/$1/;
-    $mail =~ s/^mailto://;
-    return $mail;
-}
-
-sub _build_web_scraper {
-    scraper {
-        process '//form[@action="futaba.php"]', sub {
-            my $form = shift;
-            result->{contents} = [ map { ref() ? $_->clone : $_ } $form->content_list ]
-        };
-        result;
-    };
 }
 
 1;

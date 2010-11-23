@@ -1,26 +1,39 @@
 package WWW::Futaba::Parser::Result::Post;
 use Any::Moose;
-use DateTime;
 
-extends 'WWW::Futaba::Parser::Result';
+has body => (
+    is  => 'rw',
+    isa => 'Str',
+);
 
-sub mail {
-    shift->call_parser('mail');
-}
+has head => (
+    is  => 'rw',
+    isa => 'HashRef',
+);
 
-sub image_link_node {
+has datetime => (
+    is  => 'rw',
+    isa => 'Maybe[DateTime]',
+    lazy_build => 1,
+);
+
+sub _build_datetime {
     my $self = shift;
-    return $self->tree->findnodes('//a/img/..')->[0];
+
+    my $string = $self->head->{date} or return undef;
+    my ($d, $t) = $string =~ m#(\d\d/\d\d/\d\d).*?(\d\d:\d\d:\d\d)# or do {
+        warn "Could not parse date: $string";
+        return undef;
+    };
+
+    require DateTime::Format::Strptime;
+    return  DateTime::Format::Strptime::strptime(
+        '%y/%m/%d %H:%M:%S', "$d $t"
+    );
 }
 
-sub image_uri {
-    my $self = shift;
-    return $self->make_uri($self->image_link_node);
-}
+no Any::Moose;
 
-sub thumbnail_uri {
-    my $self = shift;
-    return $self->make_uri($self->image_link_node && $self->image_link_node->find('img'));
-}
+__PACKAGE__->meta->make_immutable;
 
 1;
