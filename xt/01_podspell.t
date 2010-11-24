@@ -8,3 +8,6 @@ __DATA__
 motemen
 motemen@gmail.com
 WWW::Futaba::Parser
+HTML
+HTMLs
+chan

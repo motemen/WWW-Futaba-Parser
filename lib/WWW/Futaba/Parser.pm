@@ -4,6 +4,8 @@ use warnings;
 use URI;
 use Scalar::Util qw(blessed);
 
+our $VERSION = '0.01';
+
 sub parse {
     my ($class, $object) = @_;
 
@@ -28,21 +30,26 @@ __END__
 
 =head1 NAME
 
-WWW::Futaba::Parser -
+WWW::Futaba::Parser - Parse 2chan.net HTML
 
 =head1 SYNOPSIS
 
-  use WWW::Futaba::Parser;
+    use WWW::Futaba::Parser::Index;
+
+    my $index = WWW::Futaba::Parser::Index->parse($ua->get('http://jun.2chan.net/b/'));
+    foreach my $thread ($index->threads) {
+        say $thread->body;
+    }
 
 =head1 DESCRIPTION
 
-WWW::Futaba::Parser is
+WWW::Futaba::Parser parses 2chan.net HTML. 
+This module uses regular expression for parsing rather than HTML parser such as HTML::TreeBuilder,
+which is not useful for broken HTMLs.
 
 =head1 AUTHOR
 
 motemen E<lt>motemen@gmail.comE<gt>
-
-=head1 SEE ALSO
 
 =head1 LICENSE
 
