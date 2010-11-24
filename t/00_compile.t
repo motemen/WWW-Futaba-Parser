@@ -1,14 +1,15 @@
 use strict;
 use warnings;
 use Test::More;
+use File::Find::Rule;
 
-use_ok 'WWW::Futaba::Parser';
-use_ok 'WWW::Futaba::Parser::Base';
-use_ok 'WWW::Futaba::Parser::Index';
-use_ok 'WWW::Futaba::Parser::Thread';
-use_ok 'WWW::Futaba::Parser::Post';
-use_ok 'WWW::Futaba::Parser::Result::Index';
-use_ok 'WWW::Futaba::Parser::Result::Thread';
-use_ok 'WWW::Futaba::Parser::Result::Post';
+my @files = File::Find::Rule->file->name('*.pm')->in('lib');
 
-done_testing;
+plan tests => scalar @files;
+
+foreach (@files) {
+    s/\.pm$//;
+    s#^lib/##;
+    s</><::>g;
+    use_ok $_;
+}

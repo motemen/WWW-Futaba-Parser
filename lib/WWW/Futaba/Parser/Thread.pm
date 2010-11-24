@@ -1,29 +1,19 @@
 package WWW::Futaba::Parser::Thread;
 use strict;
 use warnings;
-use Carp;
+use base 'WWW::Futaba::Parser';
 use WWW::Futaba::Parser::Result::Thread;
 use WWW::Futaba::Parser::Result::Post;
-
-sub parse {
-    my ($class, $object) = @_;
-
-    if (not ref $object) {
-        return $class->parse_string($object);
-    } elsif (ref $object eq 'SCALAR') {
-        return $class->parse_string($$object);
-    } elsif ($object->isa('HTTP::Message')) {
-        return $class->parse_string($object->decoded_content);
-    } else {
-        die 'not implemented';
-    }
-}
+use Carp;
 
 sub parse_string {
     my ($class, $string) = @_;
 
-    my ($meta, $body, $posts) = $string =~ m#<form action="futaba\.php".+?<input type=checkbox[^>]*>(.+?)<blockquote>(.+?) ?</blockquote>(.+)#s or croak 'Could not parse';
+    $string =~ s/<form action="futaba\.php"[^>]*>//;
 
+    my ($meta, $body, $posts) = $string =~ m#<input type=checkbox[^>]*>(.+?)<blockquote>(.+?) ?</blockquote>(.+)#s or croak 'Could not parse';
+
+    # TODO 共通化
     my ($date, $no)      = $meta =~ m#(\d\d/\d\d/\d\d.*?\d\d:\d\d:\d\d)\s+No\.(\d+)#;
     my ($title, $author) = $meta =~ m|<font color=#cc1105[^>]*><b>(.*?)</b></font>.*?<font color=#117743[^>]*><b>(.*?) ?</b>|s;
 

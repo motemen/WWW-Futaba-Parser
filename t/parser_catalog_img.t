@@ -16,6 +16,7 @@ my @threads = $index->threads;
 is scalar @threads, 75;
 
 local $TODO = 'todo';
+
 isa_ok $threads[0], 'WWW::Futaba::Parser::Result::Thread';
 
 done_testing;

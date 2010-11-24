@@ -5,14 +5,19 @@ use t::WWWFutabaParser;
 
 use_ok 'WWW::Futaba::Parser';
 
-{
-    ok my $res = WWW::Futaba::Parser->parse(fake_http 'http://img.2chan.net/b/');
-    isa_ok $res, 'WWW::Futaba::Parser::Result::Index';
-}
+TODO: {
+    todo_skip 'not implemented', 4;
 
-{
-    ok my $res = WWW::Futaba::Parser->parse(fake_http 'http://img.2chan.net/b/res/81259855.htm');
-    isa_ok $res, 'WWW::Futaba::Parser::Result::Thread';
+    {
+        ok my $res = WWW::Futaba::Parser->parse(fake_http 'http://img.2chan.net/b/');
+        isa_ok $res, 'WWW::Futaba::Parser::Result::Index';
+    }
+
+    {
+        ok my $res = WWW::Futaba::Parser->parse(fake_http 'http://img.2chan.net/b/res/81259855.htm');
+        isa_ok $res, 'WWW::Futaba::Parser::Result::Thread';
+    }
+
 }
 
 done_testing;

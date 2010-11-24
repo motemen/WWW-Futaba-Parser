@@ -1,40 +1,25 @@
 package WWW::Futaba::Parser;
 use strict;
 use warnings;
-use UNIVERSAL::isa;
-use UNIVERSAL::require;
 use URI;
-
-our @Parsers = (
-    qw<^/\w+/res/\d+\.htm> => 'Thread',
-    qw<^/\w+/futaba\.php>  => 'Catalog',
-    qw<^/\w+/>             => 'Index',
-);
+use Scalar::Util qw(blessed);
 
 sub parse {
-    my ($class, $target) = @_;
+    my ($class, $object) = @_;
 
-    my $uri;
-    if (UNIVERSAL::isa($target, 'HTTP::Response')) {
-        $uri = $target->base;
-    } elsif (UNIVERSAL::isa($target, 'URI')) {
-        $uri = $target;
+    if (not ref $object) {
+        return $class->parse_string($object);
+    } elsif (ref $object eq 'SCALAR') {
+        return $class->parse_string($$object);
+    } elsif (blessed $object && $object->isa('HTTP::Message')) {
+        return $class->parse_string($object->decoded_content);
     } else {
-        $uri = URI->new($target);
+        die 'not implemented';
     }
+}
 
-    my $path = $uri->path;
-    my @parsers = @Parsers;
-    while (my ($regexp, $kind) = splice @parsers, 0, 2) {
-        if ($path =~ $regexp) {
-            my $parser_class = __PACKAGE__ . '::' . $kind;
-            $parser_class->require or die $@;
-            my $parser = $parser_class->new;
-            return $parser->parse($target);
-        }
-    }
-
-    die "Could not parse $target";
+sub parse_string {
+    die 'not implemented';
 }
 
 1;
