@@ -1,11 +1,12 @@
 use strict;
 use warnings;
 use Curses::UI;
+use LWP::Simple qw($ua);
 
 use lib 'lib';
 use WWW::Futaba::Parser;
 
-our $uri = shift or usage();
+our $url = shift or usage();
 
 my $cui = Curses::UI->new(-color_support => 1);
 $cui->set_binding(sub { exit 0 }, 'q');
@@ -13,9 +14,9 @@ $cui->set_binding(sub { exit 0 }, 'q');
 my $w = $cui->add('window', 'Window');
 
 sub update {
-    $cui->status("fetching $uri...");
+    $cui->status("fetching $url...");
 
-    my $res = WWW::Futaba::Parser->parse($uri);
+    my $res = WWW::Futaba::Parser->parser_for_url($url)->parse($ua->get($url));
 
     if ($res->isa('WWW::Futaba::Parser::Result::Index')) {
         my @threads = $res->threads;
@@ -26,12 +27,12 @@ sub update {
         my $list = $w->getobj('threads') || $w->add(
             'threads', 'Listbox',
             -onchange => sub {
-                local $uri = shift->get;
+                local $url = shift->get;
                 update();
             }
         );
-        $list->values([ map { $_->uri } @threads ]);
-        $list->labels({ map { $_->uri => $format->($_) } @threads });
+        $list->values([ map { $_->{url} } @threads ]);
+        $list->labels({ map { $_->{url} => $format->($_) } @threads });
         $list->set_binding(sub { goto \&update }, 'r');
     }
     elsif ($res->isa('WWW::Futaba::Parser::Result::Thread')) {

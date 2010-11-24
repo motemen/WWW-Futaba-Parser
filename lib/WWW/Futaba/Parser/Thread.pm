@@ -4,7 +4,6 @@ use warnings;
 use base 'WWW::Futaba::Parser';
 use WWW::Futaba::Parser::Result::Thread;
 use WWW::Futaba::Parser::Result::Post;
-use Carp;
 
 sub _to_plain_string {
     for (@_) {
@@ -41,7 +40,7 @@ sub parse_string {
 
     $string =~ s/^.*<form action="futaba\.php"[^>]*>//s;
 
-    my ($meta, $body, $posts) = $string =~ m#<input type=checkbox[^>]*>(.+?)<blockquote>(.+?) ?</blockquote>(.+)#s or croak 'Could not parse';
+    my ($meta, $body, $posts) = $string =~ m#<input type=checkbox[^>]*>(.+?)<blockquote>(.+?) ?</blockquote>(.+)#s or die "Could not parse: $string";
 
     my %meta = $class->parse_meta_string($meta);
 
@@ -59,7 +58,7 @@ sub parse_string {
 sub parse_post_string {
     my ($class, $string) = @_;
 
-    my ($meta, $body, $posts) = $string =~ m#<input type=checkbox[^>]*>(.+?)<blockquote>(.+?) ?</blockquote>(.+)#s or croak "Could not parse: $string";
+    my ($meta, $body, $posts) = $string =~ m#<input type=checkbox[^>]*>(.+?)<blockquote>(.+?) ?</blockquote>(.+)#s or die "Could not parse: $string";
 
     my %meta = $class->parse_meta_string($meta);
 

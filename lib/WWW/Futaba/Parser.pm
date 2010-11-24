@@ -6,6 +6,23 @@ use Scalar::Util qw(blessed);
 
 our $VERSION = '0.01';
 
+sub parser_for_url {
+    my ($class, $url) = @_;
+
+    $url = URI->new($url) unless blessed $url;
+
+    if ($url->path =~ m(^/\w+/res/\d+\.htm$)) {
+        require WWW::Futaba::Parser::Thread;
+        return 'WWW::Futaba::Parser::Thread';
+    } elsif ($url->path =~ m(^/\w+/futaba\.php)) {
+        require WWW::Futaba::Parser::Catalog;
+        return 'WWW::Futaba::Parser::Catalog';
+    } elsif ($url->path =~ m(^/\w+/)) {
+        require WWW::Futaba::Parser::Index;
+        return 'WWW::Futaba::Parser::Index';
+    }
+}
+
 sub parse {
     my ($class, $object) = @_;
 
@@ -39,6 +56,12 @@ WWW::Futaba::Parser - Parse 2chan.net HTML
     my $index = WWW::Futaba::Parser::Index->parse($ua->get('http://jun.2chan.net/b/'));
     foreach my $thread ($index->threads) {
         say $thread->body;
+    }
+
+    use WWW::Futaba::Parser;
+    my $thread = WWW::Futaba::Parser->parser_for_url($thread_url)->parse($html);
+    foreach my $post ($thread->posts) {
+        say $post->body;
     }
 
 =head1 DESCRIPTION
