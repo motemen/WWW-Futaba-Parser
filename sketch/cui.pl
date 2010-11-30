@@ -22,7 +22,7 @@ sub update {
         my @threads = $res->threads;
         my $format = sub {
             my $t = shift;
-            '[' . $t->head->{no} . '] ' . [split /\n/, $t->body]->[0];
+            '[' . $t->head->{no} . '] ' . [ split /\n/, $t->body ]->[0] . ' <' . $t->head->{path} . '>';
         };
         my $list = $w->getobj('threads') || $w->add(
             'threads', 'Listbox',
@@ -31,14 +31,14 @@ sub update {
                 update();
             }
         );
-        $list->values([ map { $_->{url} } @threads ]);
-        $list->labels({ map { $_->{url} => $format->($_) } @threads });
+        $list->values([ map { $_->url } @threads ]);
+        $list->labels({ map { $_->url => $format->($_) } @threads });
         $list->set_binding(sub { goto \&update }, 'r');
     }
     elsif ($res->isa('WWW::Futaba::Parser::Result::Thread')) {
         my $format = sub {
             my $p = shift;
-            $p->head->{datetime} . "\n" . $p->body;
+            $p->datetime . "\n" . $p->body;
         };
         my $text = $w->getobj('thread_text') || $w->add(
             'thread_text', 'TextViewer',

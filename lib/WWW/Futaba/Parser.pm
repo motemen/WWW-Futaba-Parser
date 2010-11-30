@@ -30,8 +30,8 @@ sub parse {
         return $class->parse_string($object);
     } elsif (ref $object eq 'SCALAR') {
         return $class->parse_string($$object);
-    } elsif (blessed $object && $object->isa('HTTP::Message')) {
-        return $class->parse_string($object->decoded_content);
+    } elsif (blessed $object && $object->isa('HTTP::Response')) {
+        return $class->parse_string($object->decoded_content, { base => $object->base });
     } else {
         die 'not implemented';
     }

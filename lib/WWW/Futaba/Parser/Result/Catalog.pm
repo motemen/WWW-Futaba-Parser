@@ -3,8 +3,6 @@ use Any::Moose;
 
 use WWW::Futaba::Parser::Result::Thread;
 
-extends 'WWW::Futaba::Parser::Result';
-
 has 'threads', (
     is  => 'rw',
     isa => 'ArrayRef',

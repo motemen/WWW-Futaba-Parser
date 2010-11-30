@@ -32,6 +32,11 @@ sub _build_datetime {
     );
 }
 
+has source => (
+    is  => 'ro',
+    isa => 'Str',
+);
+
 no Any::Moose;
 
 __PACKAGE__->meta->make_immutable;

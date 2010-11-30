@@ -1,5 +1,6 @@
 package WWW::Futaba::Parser::Result::Thread;
 use Any::Moose;
+use URI;
 
 has body => (
     is  => 'rw',
@@ -32,14 +33,47 @@ sub _build_datetime {
     );
 }
 
-has posts => (
+has url => (
     is  => 'rw',
-    isa => 'ArrayRef',
-    auto_deref => 1,
+    isa => 'Maybe[URI]',
     lazy_build => 1,
 );
 
-no Any::Moose;
+sub _build_url {
+    my $self = shift;
+    my $path = $self->head->{path} or return undef;
+    return URI->new_abs($path, $self->base);
+}
+
+has image_url => (
+    is  => 'rw',
+    isa => 'Maybe[URI]',
+    builder => sub {
+        my $url = $_[0]->head->{image_url} or return undef;
+        URI->new($url);
+    },
+);
+
+has thumbnail_url => (
+    is  => 'rw',
+    isa => 'Maybe[URI]',
+    builder => sub {
+        my $url = $_[0]->head->{thumbnail_url} or return undef;
+        URI->new($url);
+    },
+);
+
+has base => (
+    is  => 'rw',
+    isa => 'URI',
+    default => sub { URI->new('http:') },
+);
+
+has posts => (
+    is  => 'rw',
+    isa => 'ArrayRef[WWW::Futaba::Parser::Result::Post]',
+    auto_deref => 1,
+);
 
 __PACKAGE__->meta->make_immutable;
 

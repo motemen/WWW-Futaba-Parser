@@ -6,14 +6,14 @@ use WWW::Futaba::Parser::Result::Index;
 use WWW::Futaba::Parser::Thread;
 
 sub parse_string {
-    my ($class, $string) = @_;
+    my ($class, $string, $args) = @_;
 
     my ($threads) = $string =~ m#<form action="futaba\.php\b[^>]*>(.+)#s
         or die "Could not parse: $string";
 
-    my @threads = map { WWW::Futaba::Parser::Thread->parse_string($_) } $threads =~ m#(.+?<blockquote>.+?)<hr>#gs;
-
+    my @threads = map { WWW::Futaba::Parser::Thread->parse_string($_, $args) } $threads =~ m#(.+?<blockquote>.+?)<hr>#gs;
     return WWW::Futaba::Parser::Result::Index->new(
+        %$args,
         threads => \@threads,
     );
 }
