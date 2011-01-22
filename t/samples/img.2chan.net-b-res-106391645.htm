@@ -1,0 +1,105 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+<META http-equiv="Content-type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<META http-equiv="Content-Style-Type" content="text/css">
+<META http-equiv="pragma" content="no-cache">
+<STYLE TYPE="text/css">
+<!--
+body,tr,td,th{font-size:12pt}
+a.del{color:#800000;}
+a:hover { color:#DD0000; }
+small { font-size:10pt }
+.delform {position:absolute;right:0;white-space:nowrap;text-align:center;}
+.chui {font-size:small;}
+ul {margin:0px;}
+.ftbl {table-layout:fixed;width:476px;margin:0 auto;}
+.ftdc {background-color:#ea8;width:4.5em;white-space:nowrap;}
+#ftxa {width:388px;height:130px;visibility:visible;}
+form {margin:0px;}
+.ama {text-align:left;width:468px;border:2px ridge;}
+table.deleted{display:none;}
+#ddel{display:none;font-size:8pt}
+#ddbut{cursor:pointer;text-decoration:underline;}
+-->
+</STYLE>
+<title>二次元裏＠ふたば</title><script type="text/javascript" src="/bin/swfobject.js"></script><script type="text/javascript" src="/bin/cachemt5.php"></script><script type="text/javascript"><!--
+function l(e){var P=getCookie("pwdc"),N=getCookie("namec"),i;with(document){for(i=0;i<forms.length;i++){if(forms[i].pwd)with(forms[i]){if(!pwd.value)pwd.value=P;}if(forms[i].name)with(forms[i]){if(!name.value)name.value=N;}}}};function getCookie(key, tmp1, tmp2, xx1, xx2, xx3) {tmp1 = " " + document.cookie + ";";xx1 = xx2 = 0;len = tmp1.length;	while (xx1 < len) {xx2 = tmp1.indexOf(";", xx1);tmp2 = tmp1.substring(xx1 + 1, xx2);xx3 = tmp2.indexOf("=");if (tmp2.substring(0, xx3) == key) {return(unescape(tmp2.substring(xx3 + 1, xx2 - xx1 - 1)));}xx1 = xx2 + 1;}return("");};function allchk(){var i;with(document){for(i=0;i<forms[0].elements.length;i++){with(forms[0].elements[i]){if(value=="delete"){checked=true;}}}}};function del(d){self.location.href="/del.php?b=b&d="+d;};var dispdel=0;function ddrefl(){var c=0;var ddtags=document.getElementsByTagName("table");for(var i in ddtags){if(ddtags[i].className=="deleted"){ddtags[i].style.display=dispdel?(/*@cc_on!@*/true?"table":"block"):"none";c++;}}if(c>0){document.getElementById("ddel").style.display="inline";document.getElementById("ddnum").innerHTML=c;}};function onddbut(){dispdel=1-dispdel;document.getElementById("ddbut").innerHTML=dispdel?"隠す":"見る";ddrefl();};function ptfk(){var flvr=swfobject.getFlashPlayerVersion();document.getElementById("flvr").value=flvr.major+"."+flvr.minor+"."+flvr.release;document.getElementById("scsz").value=screen.width+"x"+screen.height+"x"+screen.colorDepth;try{caco();}catch(e){}try{lspt=window.localStorage.futabapt;fpt=true;}catch(e){fpt=false;}if(fpt){cname="posttime";if(lspt!=null&&lspt!=""){document.cookie=cname+"="+escape(lspt)+"; max-age=8640000; path=/; domain=.2chan.net;";}else{lspt=getCookie(cname);if(lspt!=null&&lspt!=""){window.localStorage.futabapt=lspt;}}}document.getElementById("js").value="on";return true;};function ucount(){var flashvars={};var params={};var attributes={id:"cnt"};swfobject.embedSWF("/bin/count.swf","usercounter","0","0","9.0.124","/bin/expressInstall.swf",flashvars,params,attributes);};function setpthd(prop){document.getElementById("pthd").value=prop;};
+//--></script>
+<base href="http://img.2chan.net/b/"></head>
+<body bgcolor="#FFFFEE" text="#800000" link="#0000EE" vlink="#0000EE" alink="#FF0000">
+<p align=right>[<a href="../" target="_top">ホーム</a>]</p>
+<div style="font-size: 20pt;text-align: center;"><b>二次元裏＠ふたば</b></div>
+<hr width="90%" size=1>
+[<a href="futaba.htm">掲示板に戻る</a>]
+<table width='100%'><tr><th bgcolor='#e04000'>
+<font color='#FFFFFF'>レス送信モード</font>
+</th></tr></table>
+
+<form action="futaba.php?guid=on" method="POST" enctype="multipart/form-data">
+<input type=hidden name=mode value="regist">
+
+<input type=hidden name="MAX_FILE_SIZE" value="512000">
+<input type=hidden id="pthd" name="pthd" value="">
+<input type=hidden id="flvr" name="flvr" value="">
+<input type=hidden id="scsz" name="scsz" value="">
+<input type=hidden id="js" name="js" value="off">
+<input type=hidden name=resto value="106391645">
+<table class="ftbl"><tr><td class="ftdc"><b>E-mail</b></td><td><input type=text name=email size="28"><input type=submit value="返信する" onClick="ptfk()"></td></tr>
+<tr><td class="ftdc"><b>コメント</b></td><td><textarea name=com cols="48" rows="4" id="ftxa"></textarea></td></tr>
+<tr><td class="ftdc"><b>削除キー</b></td><td><input type=password name=pwd size=8 maxlength=8 value=""><small>(記事の削除用。英数字で8文字以内)</small><div id="usercounter"></div></td></tr>
+<tr><td colspan=2 class=chui><ul>
+<li>添付可能：GIF, JPG, PNG. 500KBまで. 250x250以上は縮小.</li>
+<li>現在240人くらいが見てます.<a href="futaba.php?mode=cat">カタログ</a> <a href="futaba.php?mode=cat&amp;sort=1">新順</a> <a href="futaba.php?mode=cat&amp;sort=2">古順</a> <a href="futaba.php?mode=cat&amp;sort=3">多順</a> <a href="futaba.php?mode=cat&amp;sort=4">少順</a> <a href="futaba.php?mode=cat&amp;sort=9&amp;guid=on">履歴</a>
+</li><li>スレッドを立てた人がレスを削除してスレッド内に限ってアク禁にできます.</li>
+<li>政治はだめ. 同人関連のアップロード依頼はだめ.</li>
+<li>管理人への連絡は<a href="http://www.2chan.net/junbi/futaba.htm">準備板</a>へ. 削除依頼は記事番号の右の<u>del</u>を押して下さい.</li>
+<li><a href="http://www.2chan.net/ktinv.htm" target="_blank">携帯ふたば入口</a> 
+この板の保存数は6000件です. 新しい板:<a href="http://dat.2chan.net/49/futaba.htm">アクアリウム</a> <a href="http://img.2chan.net/9/futaba.htm">雑談</a></li>
+</ul><br><div style="width:468px;height:60px;"><a href="http://www.i-cute.jp/monthly-banner/6009.php" target="_blank"><img src="http://gyutto.jp/data/banner_img/102.gif" width=468 height=60 border=0 alt=""></a></div>
+<a href="http://www.i-cute.jp/monthly-banner/5371.php" target="_blank"><img src="http://59.106.154.123/futaba_banner2.gif" width=468 height=60 border=0 alt=""></a><br>
+<a href="http://www.i-cute.jp/monthly-banner/5731.php" target="_blank"><img src="http://aqua.dmm.co.jp/integ-inc/468_60.gif" width=468 height=60 border=0 alt=""></a><br>
+<a href="http://www.getchu.com/mbanner/php/clickBanner.php?bid=972" target="_blank"><img src="http://www.getchu.com/mbanner/img/972.jpg" width=468 height=60 border=0 alt="Getchu.com　美少女ゲーム・アニメの情報＆通販サイト"></a><br>
+</td></tr></table></form><script type="text/javascript"><!--
+l();ucount();
+--></script>
+<hr><form action="futaba.php?guid=on" method=POST>広告:::<b><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B003M0OFA6/futabachannel-22/ref=nosim/" target="_blank">劇場版“文学少女&quot; ねんどろいど 天野遠子</a></b><br>画像ファイル名：<a href="http://mar.2chan.net/img/b/src/1295728358066.jpg" target="_blank">1295728358066.jpg</a>-(38452 B)<small>サムネ表示</small><br><a href="http://mar.2chan.net/img/b/src/1295728358066.jpg" target="_blank"><img src="http://mar.2chan.net/img/b/thumb/1295728358066s.jpg" border=0 align=left width=250 height=226 hspace=20 alt="38452 B"></a><input type=checkbox name="106391645" value=delete id=delcheck106391645><a href="mailto:代理">11/01/23(日)05:32:38</a> No.106391645 <a class=del href="javascript:void(0);" onclick="del(106391645);return(false);">del</a>
+<small>08:06頃消えます</small>
+<blockquote>あさのにじうらはすみきったそらのようにキレイなのよー<br><br>なのだわ！ <br><br>いちにちおくれたけど　カレーにするのよー</blockquote><span id=ddel>削除された記事が<span id=ddnum>0</span>件あります.<span id=ddbut onclick="onddbut()">見る</span><br></span>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="106391790" value=delete id=delcheck106391790>11/01/23(日)05:37:17 No.106391790 <a class=del href="javascript:void(0);" onclick="del(106391790);return(false);">del</a>&nbsp; 
+<blockquote>いただくのよー　きゅうりたっぷりぐりーんかれーなのよー</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="106391834" value=delete id=delcheck106391834>11/01/23(日)05:39:04 No.106391834 <a class=del href="javascript:void(0);" onclick="del(106391834);return(false);">del</a>&nbsp; 
+<blockquote>おはようなのよー<br>かれーたべるのよー<br>ほっとこーひーのむのよー</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="106391866" value=delete id=delcheck106391866>11/01/23(日)05:40:08 No.106391866 <a class=del href="javascript:void(0);" onclick="del(106391866);return(false);">del</a>&nbsp; 
+<blockquote>カレーをたべると<br>こーひーがのみたくなるのよー</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="106391960" value=delete id=delcheck106391960>11/01/23(日)05:43:41 No.106391960 <a class=del href="javascript:void(0);" onclick="del(106391960);return(false);">del</a>&nbsp; 
+<blockquote>こひーをもらおうか</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="106391977" value=delete id=delcheck106391977>11/01/23(日)05:44:15 No.106391977 <a class=del href="javascript:void(0);" onclick="del(106391977);return(false);">del</a>&nbsp; 
+<blockquote>カレーなべにいんすたんとこひーぶちこむのよー</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="106392261" value=delete id=delcheck106392261>11/01/23(日)05:55:55 No.106392261 <a class=del href="javascript:void(0);" onclick="del(106392261);return(false);">del</a>&nbsp; 
+<blockquote>おはようなのよー<br>きのうのばんはカレーをたべたのよ<br>きょうはカツをたすだけなのよー</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="106392437" value=delete id=delcheck106392437>11/01/23(日)06:03:30 No.106392437 <a class=del href="javascript:void(0);" onclick="del(106392437);return(false);">del</a>&nbsp; 
+<blockquote>おはよー<br>さんぽからかえってきたのよー<br>ひとやすみしたらこーひーいれてのむのよー</blockquote></td></tr></table>
+<br clear=left><hr>
+<div class="delform">
+<input type=hidden name=mode value=usrdel>【記事削除】[<input type=checkbox name=onlyimgdel value=on>画像だけ消す]<br>
+削除キー<input type=password name=pwd size=8 maxlength=8 value="">
+<input type=submit value="削除"></div></form>
+<script type="text/javascript"><!--
+l();ddrefl();
+//--></script>
+<div align=center><a href="http://dl.getchu.com/index.php?action=gcosla" target="_blank"><img src="http://rrd.2chan.net/dec/ad/src/1295235112543.gif" width=468 height=60 border=0 alt="商業・同人ダウンロード_DL.Getchu.com(ディーエルゲッチュコム)"></a><br>
+<a href="http://www.i-cute.jp/monthly-banner/6402.php" target="_blank"><img src="http://img.digiket.net/cg/banner/468_60_002.gif" width=468 height=60 border=0 alt=""></a><br>
+<table class="ama"><tr><td><a href="http://www.amazon.co.jp/%E3%83%A1%E3%82%AC%E3%83%8F%E3%82%A6%E3%82%B9-%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AC%E3%83%B3%E3%83%88%E3%83%A2%E3%83%87%E3%83%ABCORE-%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3%E3%82%BA%E3%83%96%E3%83%AC%E3%82%A4%E3%83%89P-8-%E6%B5%81%E6%B5%AA%E3%81%AE%E6%88%A6%E5%A3%AB%E3%83%AC%E3%82%A4%E3%83%8A-2P%E3%82%AB%E3%83%A9%E3%83%BCVer/dp/B001F8TSYK%3FSubscriptionId%3D0XQKY64EREXJAJKTDNG2%26tag%3Dfutabachanimg-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB001F8TSYK" target='_blank'><img src='http://ecx.images-amazon.com/images/I/413MSbODeIL._SL160_.jpg' border=0 align=left width=99 height=160 hspace=20 alt=''></a>
+<blockquote>『 エクセレントモデルCORE クイーンズブレイドP-8 流浪の戦士レイナ 2PカラーVer. 』<br><div style="font-size:0pt;display:none;">http://www.amazon.co.jp/dp/B001F8TSYK?tag=futabachanimg-22<br></div>メガハウス<br>形式：おもちゃ＆ホビー<br><small><strike>参考価格：￥ 5,985</strike></small><br>価格：<font size='+2' color='#ff0000'>￥ 4,900</font><br><a href="http://www.amazon.co.jp/%E3%83%A1%E3%82%AC%E3%83%8F%E3%82%A6%E3%82%B9-%E3%82%A8%E3%82%AF%E3%82%BB%E3%83%AC%E3%83%B3%E3%83%88%E3%83%A2%E3%83%87%E3%83%ABCORE-%E3%82%AF%E3%82%A4%E3%83%BC%E3%83%B3%E3%82%BA%E3%83%96%E3%83%AC%E3%82%A4%E3%83%89P-8-%E6%B5%81%E6%B5%AA%E3%81%AE%E6%88%A6%E5%A3%AB%E3%83%AC%E3%82%A4%E3%83%8A-2P%E3%82%AB%E3%83%A9%E3%83%BCVer/dp/B001F8TSYK%3FSubscriptionId%3D0XQKY64EREXJAJKTDNG2%26tag%3Dfutabachanimg-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB001F8TSYK" target='_blank'><img src="http://rcm-images.amazon.com/images/G/09/buttons/buy-from-tan.gif" width=90 height=28 border=0 alt=''></a><br><form method="get" action="http://www.amazon.co.jp/gp/search" target="_blank"><input type="text" name="keywords" size="30" value=""><input type="hidden" name="tag" value="futabachanimg-22"><input type="hidden" name="__mk_ja_JP" value="カタカナ"><input type="hidden" name="search-alias" value="aps"><input type="hidden" name="linkCode" value="as2"><input type=submit value="amazon検索"></form></blockquote></td></tr></table>
+
+<small><!-- GazouBBS v3.0 --><!-- ふたば改0.8 -->
+- <a href="http://php.s3.to" target="_top">GazouBBS</a> + <a href="http://www.2chan.net/" target="_top">futaba</a>-
+</small></div>
+</body></html>

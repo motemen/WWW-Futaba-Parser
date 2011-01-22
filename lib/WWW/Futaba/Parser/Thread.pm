@@ -21,7 +21,8 @@ sub _to_plain_string {
 sub parse_string {
     my ($class, $string, $args) = @_;
 
-    $string =~ s/^.*<form action="futaba\.php"[^>]*>//s;
+    $string =~ s/^.*<form action="futaba\.php(?:[^>]*)>//s
+        or warn 'Cutoff failed';
 
     my ($meta, $body, $posts) =
         $string =~ m#([[:print:]]+?<input type=checkbox[^>]*>.+?)<blockquote>(.+?) ?</blockquote>(.+)#s
@@ -55,7 +56,7 @@ sub parse_meta_string {
     my ($path) =
         $string =~ /<a href=["']?([^ >"']+)["']?>返信/;
     my ($image_url, $thumnail_url) =
-        $string =~ /<a href="([^"]+)" target=_blank><img src=([^ ]+)/;
+        $string =~ m#<a href="([^"]+)" target=(?:_blank|"_blank")><img src=([^ ]+)[^>]+></a>#;
 
     _to_plain_string $date, $no, $title, $author, $mail;
 

@@ -48,7 +48,7 @@ sub _build_url {
 has image_url => (
     is  => 'rw',
     isa => 'Maybe[URI]',
-    builder => sub {
+    default => sub {
         my $url = $_[0]->head->{image_url} or return undef;
         URI->new($url);
     },
@@ -57,7 +57,7 @@ has image_url => (
 has thumbnail_url => (
     is  => 'rw',
     isa => 'Maybe[URI]',
-    builder => sub {
+    default => sub {
         my $url = $_[0]->head->{thumbnail_url} or return undef;
         URI->new($url);
     },
