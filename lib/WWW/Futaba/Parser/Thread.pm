@@ -21,8 +21,7 @@ sub _to_plain_string {
 sub parse_string {
     my ($class, $string, $args) = @_;
 
-    $string =~ s/^.*<form action="futaba\.php(?:[^>]*)>//s
-        or warn 'Cutoff failed';
+    $string =~ s/^.*<form action="futaba\.php(?:[^>]*)>//s;
 
     my ($meta, $body, $posts) =
         $string =~ m#([[:print:]]+?<input type=checkbox[^>]*>.+?)<blockquote>(.+?) ?</blockquote>(.+)#s
@@ -50,13 +49,14 @@ sub parse_meta_string {
 
     # not required
     my ($title, $author) =
-        $string =~ m|<font color=#cc1105[^>]*><b>(.*?)</b></font>.*?<font color=#117743[^>]*><b>.*?([^<>]*?) ?</b>|s;
+        $string =~ m|<font color='?#cc1105[^>]*><b>(.*?)</b></font>.*?<font color='?#117743[^>]*><b>.*?([^<>]*?) ?</b>|s;
     my ($mail) =
         $string =~ /<a href="mailto:([^"]+)"[^>]*?>/;
     my ($path) =
         $string =~ /<a href=["']?([^ >"']+)["']?>返信/;
-    my ($image_url, $thumnail_url) =
+    my ($image_url, $thumbnail_url) =
         $string =~ m#<a href="([^"]+)" target=(?:_blank|"_blank")><img src=([^ ]+)[^>]+></a>#;
+    $thumbnail_url =~ s/^"(.+)"$/$1/ if $thumbnail_url;
 
     _to_plain_string $date, $no, $title, $author, $mail;
 
@@ -68,15 +68,16 @@ sub parse_meta_string {
         mail   => $mail,
         path   => $path,
         image_url => $image_url,
-        thumbnail_url => $thumnail_url,
+        thumbnail_url => $thumbnail_url,
     );
 }
 
+# TODO image
 sub parse_post_string {
     my ($class, $string) = @_;
 
     my ($meta, $body, $posts) =
-        $string =~ m#<input type=checkbox[^>]*>(.+?)<blockquote>(.+?) ?</blockquote>(.+)#s
+        $string =~ m#<input type=checkbox[^>]*>(.+?)<blockquote[^>]*>(.+?) ?</blockquote>(.+)#s
             or die "Could not parse: $string";
 
     my %meta = $class->parse_meta_string($meta);

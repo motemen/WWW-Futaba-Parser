@@ -1,0 +1,240 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+<META http-equiv="Content-type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<META http-equiv="Content-Style-Type" content="text/css">
+<META http-equiv="pragma" content="no-cache">
+<STYLE TYPE="text/css">
+<!--
+body,tr,td,th{font-size:12pt}
+a.del{color:#800000;}
+a:hover { color:#DD0000; }
+small { font-size:10pt }
+.delform {position:absolute;right:0;white-space:nowrap;text-align:center;}
+.chui {font-size:small;}
+ul {margin:0px;}
+.ftbl {table-layout:fixed;width:476px;margin:0 auto;}
+.ftdc {background-color:#ea8;width:4.5em;white-space:nowrap;}
+#ftxa {width:388px;height:130px;visibility:visible;}
+form {margin:0px;}
+.ama {text-align:left;width:468px;border:2px ridge;}
+table.deleted{display:none;}
+#ddel{display:none;font-size:8pt}
+#ddbut{cursor:pointer;text-decoration:underline;}
+-->
+</STYLE>
+<title>二次元裏＠ふたば</title><script type="text/javascript" src="/bin/swfobject.js"></script><script type="text/javascript" src="/bin/cachemt5.php"></script><script type="text/javascript"><!--
+function l(e){var P=getCookie("pwdc"),N=getCookie("namec"),i;with(document){for(i=0;i<forms.length;i++){if(forms[i].pwd)with(forms[i]){if(!pwd.value)pwd.value=P;}if(forms[i].name)with(forms[i]){if(!name.value)name.value=N;}}}};function getCookie(key, tmp1, tmp2, xx1, xx2, xx3) {tmp1 = " " + document.cookie + ";";xx1 = xx2 = 0;len = tmp1.length;	while (xx1 < len) {xx2 = tmp1.indexOf(";", xx1);tmp2 = tmp1.substring(xx1 + 1, xx2);xx3 = tmp2.indexOf("=");if (tmp2.substring(0, xx3) == key) {return(unescape(tmp2.substring(xx3 + 1, xx2 - xx1 - 1)));}xx1 = xx2 + 1;}return("");};function allchk(){var i;with(document){for(i=0;i<forms[0].elements.length;i++){with(forms[0].elements[i]){if(value=="delete"){checked=true;}}}}};function del(d){self.location.href="/del.php?b=b&d="+d;};var dispdel=0;function ddrefl(){var c=0;var ddtags=document.getElementsByTagName("table");for(var i in ddtags){if(ddtags[i].className=="deleted"){ddtags[i].style.display=dispdel?(/*@cc_on!@*/true?"table":"block"):"none";c++;}}if(c>0){document.getElementById("ddel").style.display="inline";document.getElementById("ddnum").innerHTML=c;}};function onddbut(){dispdel=1-dispdel;document.getElementById("ddbut").innerHTML=dispdel?"隠す":"見る";ddrefl();};function ptfk(){var flvr=swfobject.getFlashPlayerVersion();document.getElementById("flvr").value=flvr.major+"."+flvr.minor+"."+flvr.release;document.getElementById("scsz").value=screen.width+"x"+screen.height+"x"+screen.colorDepth;try{caco();}catch(e){}try{lspt=window.localStorage.futabapt;fpt=true;}catch(e){fpt=false;}if(fpt){cname="posttime";if(lspt!=null&&lspt!=""){document.cookie=cname+"="+escape(lspt)+"; max-age=8640000; path=/; domain=.2chan.net;";}else{lspt=getCookie(cname);if(lspt!=null&&lspt!=""){window.localStorage.futabapt=lspt;}}}document.getElementById("js").value="on";return true;};function ucount(){var flashvars={};var params={};var attributes={id:"cnt"};swfobject.embedSWF("/bin/count.swf","usercounter","0","0","9.0.124","/bin/expressInstall.swf",flashvars,params,attributes);};function setpthd(prop){document.getElementById("pthd").value=prop;};
+//--></script>
+<base href="http://dat.2chan.net/b/"></head>
+<body bgcolor="#FFFFEE" text="#800000" link="#0000EE" vlink="#0000EE" alink="#FF0000">
+<p align=right>[<a href="../" target="_top">ホーム</a>]</p>
+<div style="font-size: 20pt;text-align: center;"><b>二次元裏＠ふたば</b></div>
+<hr width="90%" size=1>
+[<a href="futaba.htm">掲示板に戻る</a>]
+<table width='100%'><tr><th bgcolor='#e04000'>
+<font color='#FFFFFF'>レス送信モード</font>
+</th></tr></table>
+
+<form action="futaba.php?guid=on" method="POST" enctype="multipart/form-data">
+<input type=hidden name=mode value="regist">
+
+<input type=hidden name="MAX_FILE_SIZE" value="512000">
+<input type=hidden id="pthd" name="pthd" value="">
+<input type=hidden id="flvr" name="flvr" value="">
+<input type=hidden id="scsz" name="scsz" value="">
+<input type=hidden id="js" name="js" value="off">
+<input type=hidden name=resto value="62973238">
+<table class="ftbl"><tr><td class="ftdc"><b>E-mail</b></td><td><input type=text name=email size="28"><input type=submit value="返信する" onClick="ptfk()"></td></tr>
+<tr><td class="ftdc"><b>コメント</b></td><td><textarea name=com cols="48" rows="4" id="ftxa"></textarea></td></tr>
+<tr><td class="ftdc"><b>削除キー</b></td><td><input type=password name=pwd size=8 maxlength=8 value=""><small>(記事の削除用。英数字で8文字以内)</small><div id="usercounter"></div></td></tr>
+<tr><td colspan=2 class=chui><ul>
+<li>添付可能：GIF, JPG, PNG. 500KBまで. 250x250以上は縮小.</li>
+<li>現在100人くらいが見てます.<a href="futaba.php?mode=cat">カタログ</a> <a href="futaba.php?mode=cat&amp;sort=1">新順</a> <a href="futaba.php?mode=cat&amp;sort=2">古順</a> <a href="futaba.php?mode=cat&amp;sort=3">多順</a> <a href="futaba.php?mode=cat&amp;sort=4">少順</a> <a href="futaba.php?mode=cat&amp;sort=9&amp;guid=on">履歴</a>
+</li><li>スレッドを立てた人がレスを削除してスレッド内に限ってアク禁にできます.</li>
+<li>政治はだめ. 同人関連のアップロード依頼はだめ.</li>
+<li>管理人への連絡は<a href="http://www.2chan.net/junbi/futaba.htm">準備板</a>へ. 削除依頼は記事番号の右の<u>del</u>を押して下さい.</li>
+<li><a href="http://www.2chan.net/ktinv.htm" target="_blank">携帯ふたば入口</a> 
+この板の保存数は4000件です. 新しい板:<a href="http://dat.2chan.net/49/futaba.htm">アクアリウム</a> <a href="http://img.2chan.net/9/futaba.htm">雑談</a></li>
+</ul><br><div style="width:468px;height:60px;"><a href="http://www.i-cute.jp/monthly-banner/6009.php" target="_blank"><img src="http://gyutto.jp/data/banner_img/102.gif" width=468 height=60 border=0 alt=""></a></div>
+<a href="http://www.i-cute.jp/monthly-banner/5371.php" target="_blank"><img src="http://59.106.154.123/futaba_banner2.gif" width=468 height=60 border=0 alt=""></a><br>
+<a href="http://www.i-cute.jp/monthly-banner/5731.php" target="_blank"><img src="http://aqua.dmm.co.jp/integ-inc/468_60.gif" width=468 height=60 border=0 alt=""></a><br>
+<a href="http://www.getchu.com/mbanner/php/clickBanner.php?bid=972" target="_blank"><img src="http://www.getchu.com/mbanner/img/972.jpg" width=468 height=60 border=0 alt="Getchu.com　美少女ゲーム・アニメの情報＆通販サイト"></a><br>
+</td></tr></table></form><script type="text/javascript"><!--
+l();ucount();
+--></script>
+<hr><form action="futaba.php?guid=on" method=POST>広告:::<b><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B003U2SBLA/futabachannel-22/ref=nosim/" target="_blank">figma 巡音ルカ</a></b><br>画像ファイル名：<a href="http://jul.2chan.net/dat/b/src/1295827200356.gif" target="_blank">1295827200356.gif</a>-(1685 B)<small>サムネ表示</small><br><a href="http://jul.2chan.net/dat/b/src/1295827200356.gif" target="_blank"><img src="http://jul.2chan.net/dat/b/thumb/1295827200356s.jpg" border=0 align=left width=178 height=36 hspace=20 alt="1685 B"></a><input type=checkbox name="62973238" value=delete id=delcheck62973238><a href="mailto:りそな">11/01/24(月)09:00:00</a> No.62973238 <a class=del href="javascript:void(0);" onclick="del(62973238);return(false);">del</a>
+<small>25日04:53頃消えます</small>
+<blockquote>♪あなたの街にある埼玉りそな銀行<br>9時です</blockquote><span id=ddel>削除された記事が<span id=ddnum>0</span>件あります.<span id=ddbut onclick="onddbut()">見る</span><br></span>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973274" value=delete id=delcheck62973274>11/01/24(月)09:28:05 No.62973274 <a class=del href="javascript:void(0);" onclick="del(62973274);return(false);">del</a>&nbsp; 
+<blockquote>うむ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973279" value=delete id=delcheck62973279>11/01/24(月)09:30:15 No.62973279 <a class=del href="javascript:void(0);" onclick="del(62973279);return(false);">del</a>&nbsp; 
+<blockquote>O<br>K</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973328" value=delete id=delcheck62973328><a href="mailto:りそな">11/01/24(月)10:00:00</a> No.62973328 <a class=del href="javascript:void(0);" onclick="del(62973328);return(false);">del</a>&nbsp; 
+<blockquote>♪あなたの街にある埼玉りそな銀行<br>10時です</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973331" value=delete id=delcheck62973331>11/01/24(月)10:01:21 No.62973331 <a class=del href="javascript:void(0);" onclick="del(62973331);return(false);">del</a>&nbsp; 
+<blockquote>パーフェクト！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973381" value=delete id=delcheck62973381>11/01/24(月)10:14:21 No.62973381 <a class=del href="javascript:void(0);" onclick="del(62973381);return(false);">del</a>&nbsp; 
+<blockquote>今日は期待しちゃうぞ！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973399" value=delete id=delcheck62973399>11/01/24(月)10:20:43 No.62973399 <a class=del href="javascript:void(0);" onclick="del(62973399);return(false);">del</a>&nbsp; 
+<blockquote>Y<br>E<br>S</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973528" value=delete id=delcheck62973528><a href="mailto:りそな">11/01/24(月)11:00:00</a> No.62973528 <a class=del href="javascript:void(0);" onclick="del(62973528);return(false);">del</a>&nbsp; 
+<blockquote>♪あなたの街にある埼玉りそな銀行<br>11時です</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973534" value=delete id=delcheck62973534>11/01/24(月)11:01:32 No.62973534 <a class=del href="javascript:void(0);" onclick="del(62973534);return(false);">del</a>&nbsp; 
+<blockquote>うむ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973539" value=delete id=delcheck62973539>11/01/24(月)11:02:24 No.62973539 <a class=del href="javascript:void(0);" onclick="del(62973539);return(false);">del</a>&nbsp; 
+<blockquote>G<br>O<br>O<br>D</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973724" value=delete id=delcheck62973724><a href="mailto:りそな">11/01/24(月)12:00:00</a> No.62973724 <a class=del href="javascript:void(0);" onclick="del(62973724);return(false);">del</a>&nbsp; 
+<blockquote>♪あなたの街にある埼玉りそな銀行<br>12時です</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973727" value=delete id=delcheck62973727>11/01/24(月)12:00:45 No.62973727 <a class=del href="javascript:void(0);" onclick="del(62973727);return(false);">del</a>&nbsp; 
+<blockquote>昼飯いっぱい食え</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973745" value=delete id=delcheck62973745>11/01/24(月)12:04:14 No.62973745 <a class=del href="javascript:void(0);" onclick="del(62973745);return(false);">del</a>&nbsp; 
+<blockquote>パーヘクトだったら口座つくってやんよ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973783" value=delete id=delcheck62973783>11/01/24(月)12:11:07 No.62973783 <a class=del href="javascript:void(0);" onclick="del(62973783);return(false);">del</a>&nbsp; 
+<blockquote>G<br>R<br>E<br>A<br>T</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973963" value=delete id=delcheck62973963><a href="mailto:りそな">11/01/24(月)13:00:00</a> No.62973963 <a class=del href="javascript:void(0);" onclick="del(62973963);return(false);">del</a>&nbsp; 
+<blockquote>♪あなたの街にある埼玉りそな銀行<br>1時です</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973965" value=delete id=delcheck62973965>11/01/24(月)13:00:18 No.62973965 <a class=del href="javascript:void(0);" onclick="del(62973965);return(false);">del</a>&nbsp; 
+<blockquote>うむ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973966" value=delete id=delcheck62973966>11/01/24(月)13:00:36 No.62973966 <a class=del href="javascript:void(0);" onclick="del(62973966);return(false);">del</a>&nbsp; 
+<blockquote>まじか</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62973970" value=delete id=delcheck62973970>11/01/24(月)13:02:02 No.62973970 <a class=del href="javascript:void(0);" onclick="del(62973970);return(false);">del</a>&nbsp; 
+<blockquote>O<br>H<br> <br>Y<br>E<br>A<br>H</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974225" value=delete id=delcheck62974225><a href="mailto:りそな">11/01/24(月)14:00:00</a> No.62974225 <a class=del href="javascript:void(0);" onclick="del(62974225);return(false);">del</a>&nbsp; 
+<blockquote>♪あなたの街にある埼玉りそな銀行<br>2時です</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974229" value=delete id=delcheck62974229>11/01/24(月)14:00:50 No.62974229 <a class=del href="javascript:void(0);" onclick="del(62974229);return(false);">del</a>&nbsp; 
+<blockquote>こいつはやべぇ…</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974247" value=delete id=delcheck62974247>11/01/24(月)14:06:39 No.62974247 <a class=del href="javascript:void(0);" onclick="del(62974247);return(false);">del</a>&nbsp; 
+<blockquote>F<br>A<br>B<br>U<br>L<br>O<br>U<br>S</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974441" value=delete id=delcheck62974441><a href="mailto:りそな">11/01/24(月)15:00:00</a> No.62974441 <a class=del href="javascript:void(0);" onclick="del(62974441);return(false);">del</a>&nbsp; 
+<blockquote>♪あなたの街にある埼玉りそな銀行<br>3時です</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974448" value=delete id=delcheck62974448>11/01/24(月)15:00:53 No.62974448 <a class=del href="javascript:void(0);" onclick="del(62974448);return(false);">del</a>&nbsp; 
+<blockquote>H<br>O<br>L<br>Y <br><br>S<br>H<br>I<br>T</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974450" value=delete id=delcheck62974450>11/01/24(月)15:01:03 No.62974450 <a class=del href="javascript:void(0);" onclick="del(62974450);return(false);">del</a>&nbsp; 
+<blockquote>なんだと…</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974455" value=delete id=delcheck62974455>11/01/24(月)15:02:14 No.62974455 <a class=del href="javascript:void(0);" onclick="del(62974455);return(false);">del</a>&nbsp; 
+<blockquote>おやつ食え</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974467" value=delete id=delcheck62974467>11/01/24(月)15:05:24 No.62974467 <a class=del href="javascript:void(0);" onclick="del(62974467);return(false);">del</a>&nbsp; 
+<blockquote>これパーフェクトしたら引退だよね？</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974667" value=delete id=delcheck62974667><a href="mailto:りそな">11/01/24(月)16:00:00</a> No.62974667 <a class=del href="javascript:void(0);" onclick="del(62974667);return(false);">del</a>&nbsp; 
+<blockquote>♪あなたの街にある埼玉りそな銀行<br>4時です</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974673" value=delete id=delcheck62974673>11/01/24(月)16:01:00 No.62974673 <a class=del href="javascript:void(0);" onclick="del(62974673);return(false);">del</a>&nbsp; 
+<blockquote>datはもうおしまいだ・・・</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974680" value=delete id=delcheck62974680>11/01/24(月)16:01:42 No.62974680 <a class=del href="javascript:void(0);" onclick="del(62974680);return(false);">del</a>&nbsp; 
+<blockquote>終焉の時が近付いているのか</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974681" value=delete id=delcheck62974681>11/01/24(月)16:01:51 No.62974681 <a class=del href="javascript:void(0);" onclick="del(62974681);return(false);">del</a>&nbsp; 
+<blockquote>S<br>P<br>L<br>E<br>N<br>D<br>I<br>D</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974723" value=delete id=delcheck62974723>11/01/24(月)16:21:24 No.62974723 <a class=del href="javascript:void(0);" onclick="del(62974723);return(false);">del</a>&nbsp; 
+<blockquote>りそながパーフェクト間近か</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974750" value=delete id=delcheck62974750>11/01/24(月)16:30:21 No.62974750 <a class=del href="javascript:void(0);" onclick="del(62974750);return(false);">del</a>&nbsp; 
+<blockquote>まあ心配しなくても最後にやってくれる</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974769" value=delete id=delcheck62974769>11/01/24(月)16:36:23 No.62974769 <a class=del href="javascript:void(0);" onclick="del(62974769);return(false);">del</a>&nbsp; 
+<blockquote>それはどうかな？</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974819" value=delete id=delcheck62974819>11/01/24(月)16:59:28 No.62974819 <a class=del href="javascript:void(0);" onclick="del(62974819);return(false);">del</a>&nbsp; 
+<blockquote>うん</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974821" value=delete id=delcheck62974821><a href="mailto:りそな">11/01/24(月)17:00:00</a> No.62974821 <a class=del href="javascript:void(0);" onclick="del(62974821);return(false);">del</a>&nbsp; 
+<blockquote>♪あなたの街にある埼玉りそな銀行<br>5時です</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974823" value=delete id=delcheck62974823>11/01/24(月)17:00:11 No.62974823 <a class=del href="javascript:void(0);" onclick="del(62974823);return(false);">del</a>&nbsp; 
+<blockquote>(ひときわ大きく響くりそなコール)</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974825" value=delete id=delcheck62974825>11/01/24(月)17:00:38 No.62974825 <a class=del href="javascript:void(0);" onclick="del(62974825);return(false);">del</a>&nbsp; 
+<blockquote>やっちまったか…</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974826" value=delete id=delcheck62974826>11/01/24(月)17:00:50 No.62974826 <a class=del href="javascript:void(0);" onclick="del(62974826);return(false);">del</a>&nbsp; 
+<blockquote>カタストロフじゃ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974827" value=delete id=delcheck62974827>11/01/24(月)17:01:00 No.62974827 <a class=del href="javascript:void(0);" onclick="del(62974827);return(false);">del</a>&nbsp; 
+<blockquote><font color="#789922">&gt;No.62973745</font><br>口座開設しろよ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974828" value=delete id=delcheck62974828>11/01/24(月)17:01:56 No.62974828 <a class=del href="javascript:void(0);" onclick="del(62974828);return(false);">del</a>&nbsp; 
+<blockquote>こんなのりそなじゃないやい！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974830" value=delete id=delcheck62974830>11/01/24(月)17:02:15 No.62974830 <a class=del href="javascript:void(0);" onclick="del(62974830);return(false);">del</a>&nbsp; 
+<blockquote>C<br>O<br>N<br>G<br>R<br>A<br>T<br>U<br>L<br>A<br>T<br>I<br>O<br>N</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974832" value=delete id=delcheck62974832>11/01/24(月)17:02:32 No.62974832 <a class=del href="javascript:void(0);" onclick="del(62974832);return(false);">del</a>&nbsp; 
+<blockquote>りそなはやれば出来る子</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974840" value=delete id=delcheck62974840>11/01/24(月)17:05:02 No.62974840 <a class=del href="javascript:void(0);" onclick="del(62974840);return(false);">del</a>&nbsp; 
+<blockquote>No.62973745じゃないけどりそなの口座作ってくる</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974845" value=delete id=delcheck62974845>11/01/24(月)17:05:56 No.62974845 <a class=del href="javascript:void(0);" onclick="del(62974845);return(false);">del</a>&nbsp; 
+<blockquote>りそなじゃなくて埼玉りそなで作るんだぞ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974852" value=delete id=delcheck62974852>11/01/24(月)17:08:25 No.62974852 <a class=del href="javascript:void(0);" onclick="del(62974852);return(false);">del</a>&nbsp; 
+<blockquote>どうせなら変な支店で作りたい</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974888" value=delete id=delcheck62974888>11/01/24(月)17:25:39 No.62974888 <a class=del href="javascript:void(0);" onclick="del(62974888);return(false);">del</a>&nbsp; 
+<blockquote>今年入って初か？</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974927" value=delete id=delcheck62974927>11/01/24(月)17:38:02 No.62974927 <a class=del href="javascript:void(0);" onclick="del(62974927);return(false);">del</a>&nbsp; 
+<blockquote>7日に成功してたはず</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62974956" value=delete id=delcheck62974956>11/01/24(月)17:48:52 No.62974956 <a class=del href="javascript:void(0);" onclick="del(62974956);return(false);">del</a>&nbsp; 
+<blockquote><font color="#789922">&gt;りそなじゃなくて埼玉りそなで作るんだぞ</font><br>むり<br>埼玉とか遠すぎる</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62975293" value=delete id=delcheck62975293>11/01/24(月)18:27:10 No.62975293 <a class=del href="javascript:void(0);" onclick="del(62975293);return(false);">del</a>&nbsp; 
+<blockquote>浜銀で勘弁してくれ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62975310" value=delete id=delcheck62975310>11/01/24(月)18:30:27 No.62975310 <a class=del href="javascript:void(0);" onclick="del(62975310);return(false);">del</a>&nbsp; 
+<blockquote>にじうらの</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62975772" value=delete id=delcheck62975772><a href="mailto:No.62973745">11/01/24(月)20:04:23</a> No.62975772 <a class=del href="javascript:void(0);" onclick="del(62975772);return(false);">del</a>&nbsp; 
+<blockquote>帰ってきたらえらい事になってるじゃないか</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62976228" value=delete id=delcheck62976228>11/01/24(月)21:00:41 No.62976228 <a class=del href="javascript:void(0);" onclick="del(62976228);return(false);">del</a>&nbsp; 
+<blockquote>何このスレ？</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="62976263" value=delete id=delcheck62976263>11/01/24(月)21:05:29 No.62976263 <a class=del href="javascript:void(0);" onclick="del(62976263);return(false);">del</a>&nbsp; 
+<blockquote><font color="#789922">&gt;何このスレ？</font><br>ss131992.mp3</blockquote></td></tr></table>
+<br clear=left><hr>
+<div class="delform">
+<input type=hidden name=mode value=usrdel>【記事削除】[<input type=checkbox name=onlyimgdel value=on>画像だけ消す]<br>
+削除キー<input type=password name=pwd size=8 maxlength=8 value="">
+<input type=submit value="削除"></div></form>
+<script type="text/javascript"><!--
+l();ddrefl();
+//--></script>
+<div align=center><a href="http://dl.getchu.com/index.php?action=gcosla" target="_blank"><img src="http://rrd.2chan.net/dec/ad/src/1295235112543.gif" width=468 height=60 border=0 alt="商業・同人ダウンロード_DL.Getchu.com(ディーエルゲッチュコム)"></a><br>
+<a href="http://www.i-cute.jp/monthly-banner/6402.php" target="_blank"><img src="http://img.digiket.net/cg/banner/468_60_002.gif" width=468 height=60 border=0 alt=""></a><br>
+<table class="ama"><tr><td><a href="http://www.amazon.co.jp/%E3%81%91%E3%81%84%E3%81%8A%E3%82%93-%E7%AC%AC2%E6%9C%9F-Blu-ray-%E5%88%9D%E5%9B%9E%E9%99%90%E5%AE%9A%E7%94%9F%E7%94%A3/dp/B003FG9L6K%3FSubscriptionId%3D0XQKY64EREXJAJKTDNG2%26tag%3Dfutabachannel-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB003FG9L6K" target='_blank'><img src='http://ecx.images-amazon.com/images/I/51cBksj%2BzeL._SL160_.jpg' border=0 align=left width=112 height=160 hspace=20 alt=''></a>
+<blockquote>『 けいおん!!(第2期) 9 (Blu-ray 初回限定生産) [Blu-ray] 』<br><div style="font-size:0pt;display:none;">http://www.amazon.co.jp/dp/B003FG9L6K?tag=futabachannel-22<br></div>出演：豊崎愛生, 日笠陽子, 佐藤聡美<br>形式：Blu-ray<br><small><strike>参考価格：￥ 8,400</strike></small><br>価格：<font size='+2' color='#ff0000'>￥ 6,160</font><br>発売予定日：2011年3月16日(発売まであと51日)<br><a href="http://www.amazon.co.jp/%E3%81%91%E3%81%84%E3%81%8A%E3%82%93-%E7%AC%AC2%E6%9C%9F-Blu-ray-%E5%88%9D%E5%9B%9E%E9%99%90%E5%AE%9A%E7%94%9F%E7%94%A3/dp/B003FG9L6K%3FSubscriptionId%3D0XQKY64EREXJAJKTDNG2%26tag%3Dfutabachannel-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB003FG9L6K" target='_blank'><img src="http://rcm-images.amazon.com/images/G/09/buttons/buy-from-tan.gif" width=90 height=28 border=0 alt=''></a><br><form method="get" action="http://www.amazon.co.jp/gp/search" target="_blank"><input type="text" name="keywords" size="30" value=""><input type="hidden" name="tag" value="futabachannel-22"><input type="hidden" name="__mk_ja_JP" value="カタカナ"><input type="hidden" name="search-alias" value="aps"><input type="hidden" name="linkCode" value="as2"><input type=submit value="amazon検索"></form></blockquote></td></tr></table>
+
+<small><!-- GazouBBS v3.0 --><!-- ふたば改0.8 -->
+- <a href="http://php.s3.to" target="_top">GazouBBS</a> + <a href="http://www.2chan.net/" target="_top">futaba</a>-
+</small></div>
+</body></html><!---->

@@ -32,6 +32,24 @@ sub _build_datetime {
     );
 }
 
+has image_url => (
+    is  => 'rw',
+    isa => 'Maybe[URI]',
+    default => sub {
+        my $url = $_[0]->head->{image_url} or return undef;
+        URI->new($url);
+    },
+);
+
+has thumbnail_url => (
+    is  => 'rw',
+    isa => 'Maybe[URI]',
+    default => sub {
+        my $url = $_[0]->head->{thumbnail_url} or return undef;
+        URI->new($url);
+    },
+);
+
 has source => (
     is  => 'ro',
     isa => 'Str',
