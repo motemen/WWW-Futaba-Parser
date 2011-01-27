@@ -20,29 +20,51 @@ plan tests => 2 * blocks;
 
 run {
     my $block = shift;
-    my $url = $block->url;
-    chomp $url;
+    my $url = $block->name;
     my $parsed = parse_url($url);
     cmp_deeply $parsed, noclass(superhashof $block->attr), $url;
     cmp_deeply [ $parsed->posts ], $block->posts, "$url (posts)" if $block->posts;
-    use Test::More;
-    diag explain $parsed->posts->[1];
 };
 
 __END__
 
-=== dat
---- url
-http://dat.2chan.net/b/res/62973238.htm
+=== http://dat.2chan.net/b/res/62973238.htm
 --- attr yaml
 body: "♪あなたの街にある埼玉りそな銀行\n9時です"
+head:
+  title: ~
+  author: ~
+  mail: りそな
+  no: 62973238
+  date: 11/01/24(月)09:00:00
+  thumbnail_url: http://jul.2chan.net/dat/b/thumb/1295827200356s.jpg
+  image_url: http://jul.2chan.net/dat/b/src/1295827200356.gif
+  path: ~
 --- posts yaml as_list_length=52
 0:
   body: うむ
+  head:
+    title: ~
+    author: ~
+    mail: ~
+    no: 62973274
+    date: 11/01/24(月)09:28:05
+    thumbnail_url: ~
+    image_url: ~
+    path: ~
+2:
+  body: "♪あなたの街にある埼玉りそな銀行\n10時です"
+  head:
+    title: ~
+    author: ~
+    mail: りそな
+    no: 62973328
+    date: 11/01/24(月)10:00:00
+    thumbnail_url: ~
+    image_url: ~
+    path: ~
 
-=== jun
---- url
-http://jun.2chan.net/b/res/15299641.htm
+=== http://jun.2chan.net/b/res/15299641.htm
 --- attr yaml
 body: 画像会話スレ
 head:
@@ -76,4 +98,48 @@ head:
     image_url: http://sep.2chan.net/jun/b/src/1295954533771.jpg
     thumbnail_url: http://sep.2chan.net/jun/b/thumb/1295954533771s.jpg
     date: 11/01/25(火)20:22:13
+    path: ~
+
+=== http://jun.2chan.net/b/res/15306056.htm
+--- attr yaml
+body: |-
+ スレのルール
+ ・100レスまではsage進行
+ ・依頼の際は具体的に何をどうして欲しいかはっきり説明
+ 　職人におまかせみたいな依頼はだめ
+ ・依頼をスルーされても泣かない
+ ・督促厳禁
+ ・職人の少ない時はなるべく依頼を控えるように
+ ・再依頼OK、一度作ってもらったものでもOK
+ ・依頼できるのは1スレで1回のみ
+ ・複数の依頼、よそとのマルチは厳禁
+ ・依頼あき、職人あき共に落ちる際はスレで報告
+ ・赤字が出たら依頼はNG
+ 
+ ID表示スレ立て暫定導入
+head:
+  author: としあき
+  mail: id表示
+  title: 無念
+  no: 15306056
+  image_url: http://jan.2chan.net/jun/b/src/1296057602991.jpg
+  thumbnail_url: http://jan.2chan.net/jun/b/thumb/1296057602991s.jpg
+  date: 11/01/27(木)01:00:02
+  path: ~
+
+--- posts yaml as_list_length=146
+10:
+  body: |-
+   スレ立ておつです
+
+   右上の文字を消してください
+   よろしくお願いします
+  head:
+    author: としあき
+    mail: sage
+    title: 無念
+    no: 15306220
+    image_url: http://aug.2chan.net/jun/b/src/1296059265938.jpg
+    thumbnail_url: http://aug.2chan.net/jun/b/thumb/1296059265938s.jpg
+    date: 11/01/27(木)01:27:45
     path: ~

@@ -45,11 +45,11 @@ sub parse_meta_string {
 
     # required
     my ($date, $no) =
-        $string =~ m#(\d\d/\d\d/\d\d.*?\d\d:\d\d:\d\d)(?:</a>)?(?:<!--.*?-->|\s)+No\.(\d+)# or die "Could not parse date, no.: $string";
+        $string =~ m#(\d\d/\d\d/\d\d.*?\d\d:\d\d:\d\d)(?:</a>)?(?:<!--.*?-->|\s+|ID:\S+)+No\.(\d+)# or die "Could not parse date, no.: $string";
 
     # not required
     my ($title, $author) =
-        $string =~ m|<font color='?#cc1105[^>]*><b>(.*?)</b></font>.*?<font color='?#117743[^>]*><b>.*?([^<>]*?) ?</b>|s;
+        $string =~ m|<font color='?#cc1105[^>]*><b>(.*?)</b></font>.*?<font color='?#117743[^>]*><b>.*?([^<>]*?) ?</[ab]>|s;
     my ($mail) =
         $string =~ /<a href="mailto:([^"]+)"[^>]*?>/;
     my ($path) =
