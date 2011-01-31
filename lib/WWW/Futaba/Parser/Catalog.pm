@@ -8,13 +8,14 @@ use WWW::Futaba::Parser::Result::Thread;
 sub parse_string {
     my ($class, $string, $args) = @_;
     my @threads;
-    while ($string =~ m#<td><a href=['"](res/\d+\.htm)['"][^>]*><img src=['"](.+?)['"][^>]*>(?:<[^>]+>)*(\d+)(?:<[^>]+>)*</td>#g) {
+    while ($string =~ m#<td><a href=['"](res/\d+\.htm)['"][^>]*><img src=['"](.+?)['"][^>]*>(?:<small>(.*)</small>|<[^>]+>)*(\d+)(?:<[^>]+>)*</td>#g) {
         push @threads, WWW::Futaba::Parser::Result::Thread->new(
             %$args,
             head => {
                 path => $1,
                 catalog_thumbnail_url => $2,
-                posts_count => $3,
+                body_snippet => $3,
+                posts_count => $4,
             }
         );
     }

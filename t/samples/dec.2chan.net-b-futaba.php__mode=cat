@@ -1,0 +1,101 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head>
+<META http-equiv="Content-type" content="text/html; charset=Shift_JIS">
+<META http-equiv="Content-Script-Type" content="text/javascript">
+<META http-equiv="Content-Style-Type" content="text/css">
+<META http-equiv="pragma" content="no-cache">
+<STYLE TYPE="text/css">
+<!--
+body,tr,td,th{font-size:12pt}
+a.del{color:#800000;}
+a:hover { color:#DD0000; }
+small { font-size:10pt }
+.delform {position:absolute;right:0;white-space:nowrap;text-align:center;}
+.chui {font-size:small;}
+ul {margin:0px;}
+.ftbl {table-layout:fixed;width:476px;margin:0 auto;}
+.ftdc {background-color:#ea8;width:4.5em;white-space:nowrap;}
+#ftxa {width:388px;height:130px;visibility:visible;}
+form {margin:0px;}
+.ama {text-align:left;width:468px;border:2px ridge;}
+table.deleted{display:none;}
+#ddel{display:none;font-size:8pt}
+#ddbut{cursor:pointer;text-decoration:underline;}
+#oebtn{cursor:pointer;text-decoration:underline;}
+#oe3{visibility:hidden;width:390px;height:135px;position:absolute;margin-top:0px;margin-left:1px;}
+-->
+</STYLE>
+<title>二次元裏＠ふたば</title><script type="text/javascript" src="/bin/swfobject.js"></script><script type="text/javascript" src="/bin/cachemt5.php"></script><script type="text/javascript"><!--
+function l(e){var P=getCookie("pwdc"),N=getCookie("namec"),i;with(document){for(i=0;i<forms.length;i++){if(forms[i].pwd)with(forms[i]){if(!pwd.value)pwd.value=P;}if(forms[i].name)with(forms[i]){if(!name.value)name.value=N;}}}};function getCookie(key, tmp1, tmp2, xx1, xx2, xx3) {tmp1 = " " + document.cookie + ";";xx1 = xx2 = 0;len = tmp1.length;	while (xx1 < len) {xx2 = tmp1.indexOf(";", xx1);tmp2 = tmp1.substring(xx1 + 1, xx2);xx3 = tmp2.indexOf("=");if (tmp2.substring(0, xx3) == key) {return(unescape(tmp2.substring(xx3 + 1, xx2 - xx1 - 1)));}xx1 = xx2 + 1;}return("");};function allchk(){var i;with(document){for(i=0;i<forms[0].elements.length;i++){with(forms[0].elements[i]){if(value=="delete"){checked=true;}}}}};function del(d){self.location.href="/del.php?b=b&d="+d;};function FlashPlayerVer(){var flashplayer_ver=0;if(navigator.plugins && navigator.mimeTypes["application/x-shockwave-flash"]){var plugin = navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin;if(plugin){flashplayer_ver=parseInt(plugin.description.match(/\d+\.\d+/));}}else{try{var flashOCX=new ActiveXObject("ShockwaveFlash.ShockwaveFlash").GetVariable("$version").match(/([0-9]+)/);if(flashOCX){flashplayer_ver = parseInt(flashOCX[0]);}}catch(e){}}if(flashplayer_ver<=6){flashplayer_ver=0;}return flashplayer_ver;};function setBase(prop){document.getElementById("baseform").value=prop;}var swfloaded=false;function ChangeDraw(){if(!swfloaded){swfloaded=true;var flashvars={};var params={};var attributes={id:"oe3"};swfobject.embedSWF("/bin/oe3_7.swf","swfContents","390","135","9.0.124","/bin/expressInstall.swf",flashvars,params,attributes);}with(document){var oevs,oemd;if(getElementById("oe3").style.visibility=="visible"){txvs="visible";oevs="hidden";oemd="手書き";}else{txvs="hidden";oevs="visible";oemd="文字入力";}if(getElementById("ftxa")){getElementById("ftxa").style.visibility=txvs;}getElementById("oe3").style.visibility=oevs;getElementById("oebtn").innerHTML=oemd;}}var dispdel=0;function ddrefl(){var c=0;var ddtags=document.getElementsByTagName("table");for(var i in ddtags){if(ddtags[i].className=="deleted"){ddtags[i].style.display=dispdel?(/*@cc_on!@*/true?"table":"block"):"none";c++;}}if(c>0){document.getElementById("ddel").style.display="inline";document.getElementById("ddnum").innerHTML=c;}};function onddbut(){dispdel=1-dispdel;document.getElementById("ddbut").innerHTML=dispdel?"隠す":"見る";ddrefl();};function ptfk(){var flvr=swfobject.getFlashPlayerVersion();document.getElementById("flvr").value=flvr.major+"."+flvr.minor+"."+flvr.release;document.getElementById("scsz").value=screen.width+"x"+screen.height+"x"+screen.colorDepth;try{caco();}catch(e){}try{lspt=window.localStorage.futabapt;fpt=true;}catch(e){fpt=false;}if(fpt){cname="posttime";if(lspt!=null&&lspt!=""){document.cookie=cname+"="+escape(lspt)+"; max-age=8640000; path=/; domain=.2chan.net;";}else{lspt=getCookie(cname);if(lspt!=null&&lspt!=""){window.localStorage.futabapt=lspt;}}}document.getElementById("js").value="on";return true;};function ucount(){var flashvars={};var params={};var attributes={id:"cnt"};swfobject.embedSWF("/bin/count.swf","usercounter","0","0","9.0.124","/bin/expressInstall.swf",flashvars,params,attributes);};function setpthd(prop){document.getElementById("pthd").value=prop;};
+//--></script>
+</head>
+<body bgcolor="#FFFFEE" text="#800000" link="#0000EE" vlink="#0000EE" alink="#FF0000">
+<p align=right>[<a href="../" target="_top">ホーム</a>]</p>
+<div style="font-size: 20pt;text-align: center;"><b>二次元裏＠ふたば</b></div>
+<hr width="90%" size=1>
+[<a href="futaba.htm">掲示板に戻る</a>]
+<b><a href="futaba.php?mode=cat">カタログ</a></b> <a href="futaba.php?mode=cat&amp;sort=1">新順</a> <a href="futaba.php?mode=cat&amp;sort=2">古順</a> <a href="futaba.php?mode=cat&amp;sort=3">多順</a> <a href="futaba.php?mode=cat&amp;sort=4">少順</a> <a href="futaba.php?mode=cat&amp;sort=9&amp;guid=on">履歴</a> <span style="white-space:nowrap;"><a href="futaba.php?mode=catset">設定</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+<table width='100%'><tr><th bgcolor='#0040e0'>
+<font color='#FFFFFF'>カタログモード</font>
+</th></tr></table>
+<table border=1 align=center><tr><td><a href='res/6113300.htm' target='_blank'><img src='http://jan.2chan.net/dec/b/cat/1296478891216s.jpg' border=0 width=50 height=38 alt=""></a><br><small>さーて、</small><br><font size=2>0</font></td>
+<td><a href='res/6112688.htm' target='_blank'><img src='http://feb.2chan.net/dec/b/cat/1296465902005s.jpg' border=0 width=50 height=50 alt=""></a><br><small>A＆G NE</small><br><font size=2>110</font></td>
+<td><a href='res/6112429.htm' target='_blank'><img src='http://mar.2chan.net/dec/b/cat/1296462946035s.jpg' border=0 width=50 height=36 alt=""></a><br><small>神凪いつ</small><br><font size=2>1</font></td>
+<td><a href='res/6112375.htm' target='_blank'><img src='http://jul.2chan.net/dec/b/cat/1296459811705s.jpg' border=0 width=39 height=50 alt=""></a><br><small>彼氏募集</small><br><font size=2>14</font></td>
+<td><a href='res/6108690.htm' target='_blank'><img src='http://jan.2chan.net/dec/b/cat/1296373968392s.jpg' border=0 width=36 height=50 alt=""></a><br><small>ミラディ</small><br><font size=2>18</font></td>
+<td><a href='res/6110189.htm' target='_blank'><img src='http://feb.2chan.net/dec/b/cat/1296388797901s.jpg' border=0 width=50 height=50 alt=""></a><br><small>日曜夜の</small><br><font size=2>28</font></td>
+<td><a href='res/6108668.htm' target='_blank'><img src='http://aug.2chan.net/dec/b/cat/1296373398136s.jpg' border=0 width=50 height=50 alt=""></a><br><small>やってる</small><br><font size=2>51</font></td>
+<td><a href='res/6111207.htm' target='_blank'><img src='http://sep.2chan.net/dec/b/cat/1296400468318s.jpg' border=0 width=50 height=33 alt=""></a><br><small>虹裏イダ</small><br><font size=2>31</font></td>
+<td><a href='res/6111353.htm' target='_blank'><img src='http://jan.2chan.net/dec/b/cat/1296402255311s.jpg' border=0 width=50 height=32 alt=""></a><br><small>自転車ス</small><br><font size=2>13</font></td>
+<td><a href='res/6112776.htm' target='_blank'><img src='http://jan.2chan.net/dec/b/cat/1296467999648s.jpg' border=0 width=50 height=50 alt=""></a><br><small>俺キャラ</small><br><font size=2>119</font></td>
+</tr>
+<tr><td><a href='res/6111333.htm' target='_blank'><img src='http://aug.2chan.net/dec/b/cat/1296401930551s.jpg' border=0 width=50 height=46 alt=""></a><br><small>黒歴史・</small><br><font size=2>13</font></td>
+<td><a href='res/6110998.htm' target='_blank'><img src='http://jan.2chan.net/dec/b/cat/1296398251801s.jpg' border=0 width=50 height=15 alt=""></a><br><small>ゲームも</small><br><font size=2>10</font></td>
+<td><a href='res/6112985.htm' target='_blank'><img src='http://feb.2chan.net/dec/b/cat/1296474120126s.jpg' border=0 width=50 height=50 alt=""></a><br><small>実況てき</small><br><font size=2>16</font></td>
+<td><a href='res/6108675.htm' target='_blank'><img src='http://apr.2chan.net/dec/b/cat/1296373624210s.jpg' border=0 width=49 height=50 alt=""></a><br><small>はっはっ</small><br><font size=2>34</font></td>
+<td><a href='res/6111632.htm' target='_blank'><img src='http://feb.2chan.net/dec/b/cat/1296407123957s.jpg' border=0 width=42 height=50 alt=""></a><br><small>風俗スレ</small><br><font size=2>15</font></td>
+<td><a href='res/6108373.htm' target='_blank'><img src='http://sep.2chan.net/dec/b/cat/1296368191519s.jpg' border=0 width=36 height=50 alt=""></a><br><small>効果はと</small><br><font size=2>16</font></td>
+<td><a href='res/6113160.htm' target='_blank'><img src='http://sep.2chan.net/dec/b/cat/1296477104702s.jpg' border=0 width=35 height=50 alt=""></a><br><small>誰も知ら</small><br><font size=2>1</font></td>
+<td><a href='res/6112379.htm' target='_blank'><img src='http://aug.2chan.net/dec/b/cat/1296460303107s.jpg' border=0 width=50 height=28 alt=""></a><br><small>チャージ</small><br><font size=2>16</font></td>
+<td><a href='res/6109922.htm' target='_blank'><img src='http://aug.2chan.net/dec/b/cat/1296385865559s.jpg' border=0 width=50 height=29 alt=""></a><br><small>お姉ちゃ</small><br><font size=2>22</font></td>
+<td><a href='res/6111620.htm' target='_blank'><img src='http://sep.2chan.net/dec/b/cat/1296406929543s.jpg' border=0 width=50 height=39 alt=""></a><br><small>そろそろ</small><br><font size=2>2</font></td>
+</tr>
+<tr><td><a href='res/6109601.htm' target='_blank'><img src='http://jul.2chan.net/dec/b/cat/1296379129984s.jpg' border=0 width=50 height=46 alt=""></a><br><small>アニマス</small><br><font size=2>21</font></td>
+<td><a href='res/6113097.htm' target='_blank'><img src='http://jul.2chan.net/dec/b/cat/1296476359606s.jpg' border=0 width=50 height=38 alt=""></a><br><small>ｷﾀ━━━</small><br><font size=2>0</font></td>
+<td><a href='res/6113049.htm' target='_blank'><img src='http://apr.2chan.net/dec/b/cat/1296475663514s.jpg' border=0 width=38 height=50 alt=""></a><br><small>勝手に木</small><br><font size=2>1</font></td>
+<td><a href='res/6109470.htm' target='_blank'><img src='http://jul.2chan.net/dec/b/cat/1296376182679s.jpg' border=0 width=50 height=50 alt=""></a><br><small>エビオス</small><br><font size=2>33</font></td>
+<td><a href='res/6111989.htm' target='_blank'><img src='http://sep.2chan.net/dec/b/cat/1296426123113s.jpg' border=0 width=50 height=50 alt=""></a><br><small>黒歴史・</small><br><font size=2>8</font></td>
+<td><a href='res/6107804.htm' target='_blank'><img src='http://mar.2chan.net/dec/b/cat/1296352157579s.jpg' border=0 width=50 height=50 alt=""></a><br><small>ふたそヒ</small><br><font size=2>21</font></td>
+<td><a href='res/6112270.htm' target='_blank'><img src='http://feb.2chan.net/dec/b/cat/1296449921398s.jpg' border=0 width=41 height=50 alt=""></a><br><small>黒雪はこ</small><br><font size=2>2</font></td>
+<td><a href='res/6112684.htm' target='_blank'><img src='http://sep.2chan.net/dec/b/cat/1296465771305s.jpg' border=0 width=50 height=36 alt=""></a><br><small>DEAD_S</small><br><font size=2>10</font></td>
+<td><a href='res/6107358.htm' target='_blank'><img src='http://aug.2chan.net/dec/b/cat/1296345657795s.jpg' border=0 width=50 height=38 alt=""></a><br><small>水着スレ</small><br><font size=2>56</font></td>
+<td><a href='res/6109686.htm' target='_blank'><img src='http://jul.2chan.net/dec/b/cat/1296381663172s.jpg' border=0 width=50 height=50 alt=""></a><br><small>ふたばの</small><br><font size=2>7</font></td>
+</tr>
+<tr><td><a href='res/6110250.htm' target='_blank'><img src='http://sep.2chan.net/dec/b/cat/1296389646851s.jpg' border=0 width=50 height=50 alt=""></a><br><small>ふぅ</small><br><font size=2>30</font></td>
+<td><a href='res/6112101.htm' target='_blank'><img src='http://mar.2chan.net/dec/b/cat/1296438096829s.jpg' border=0 width=50 height=29 alt=""></a><br><small>キュゥべ</small><br><font size=2>9</font></td>
+<td><a href='res/6112791.htm' target='_blank'><img src='http://jul.2chan.net/dec/b/cat/1296468260136s.jpg' border=0 width=50 height=50 alt=""></a><br><small>ｷﾀ━━━</small><br><font size=2>0</font></td>
+<td><a href='res/6107841.htm' target='_blank'><img src='http://apr.2chan.net/dec/b/cat/1296354276911s.jpg' border=0 width=50 height=29 alt=""></a><br><small>咲さｎ・</small><br><font size=2>23</font></td>
+<td><a href='res/6107871.htm' target='_blank'><img src='http://jul.2chan.net/dec/b/cat/1296355987681s.jpg' border=0 width=50 height=50 alt=""></a><br><small>風邪予防</small><br><font size=2>7</font></td>
+<td><a href='res/6112268.htm' target='_blank'><img src='http://aug.2chan.net/dec/b/cat/1296449551671s.jpg' border=0 width=50 height=38 alt=""></a><br><small>くまのが</small><br><font size=2>1</font></td>
+<td><a href='res/6112431.htm' target='_blank'><img src='http://mar.2chan.net/dec/b/cat/1296463016238s.jpg' border=0 width=50 height=50 alt=""></a><br><small>まいん①</small><br><font size=2>195</font></td>
+<td><a href='res/6112315.htm' target='_blank'><img src='http://feb.2chan.net/dec/b/cat/1296454296138s.jpg' border=0 width=34 height=50 alt=""></a><br><small>&gt;田辺先</small><br><font size=2>5</font></td>
+<td><a href='res/6106181.htm' target='_blank'><img src='http://mar.2chan.net/dec/b/cat/1296344317974s.jpg' border=0 width=50 height=47 alt=""></a><br><small>戦場の絆</small><br><font size=2>153</font></td>
+<td><a href='res/6112205.htm' target='_blank'><img src='http://jul.2chan.net/dec/b/cat/1296446602714s.jpg' border=0 width=50 height=45 alt=""></a><br><small>ポケスレ</small><br><font size=2>320</font></td>
+</tr>
+<tr><td><a href='res/6110387.htm' target='_blank'><img src='http://mar.2chan.net/dec/b/cat/1296391567106s.jpg' border=0 width=50 height=50 alt=""></a><br><small>ホラーで</small><br><font size=2>2</font></td>
+<td><a href='res/6111872.htm' target='_blank'><img src='http://aug.2chan.net/dec/b/cat/1296411611722s.jpg' border=0 width=41 height=50 alt=""></a><br><small>まじこい</small><br><font size=2>1</font></td>
+<td><a href='res/6111303.htm' target='_blank'><img src='http://jan.2chan.net/dec/b/cat/1296401443215s.jpg' border=0 width=50 height=43 alt=""></a><br><small>せっかく</small><br><font size=2>1</font></td>
+<td><a href='res/6111964.htm' target='_blank'><img src='http://mar.2chan.net/dec/b/cat/1296421331228s.jpg' border=0 width=36 height=50 alt=""></a><br><small>パイロッ</small><br><font size=2>0</font></td>
+<td><a href='res/6109677.htm' target='_blank'><img src='http://feb.2chan.net/dec/b/cat/1296381314204s.jpg' border=0 width=50 height=38 alt=""></a><br><small>嫉妬して</small><br><font size=2>7</font></td>
+<td><a href='res/6111113.htm' target='_blank'><img src='http://sep.2chan.net/dec/b/cat/1296399600667s.jpg' border=0 width=50 height=35 alt=""></a><br><small>で　起　</small><br><font size=2>14</font></td>
+<td><a href='res/6110445.htm' target='_blank'><img src='http://apr.2chan.net/dec/b/cat/1296392433922s.jpg' border=0 width=50 height=43 alt=""></a><br><small>ふたラジ</small><br><font size=2>52</font></td>
+<td><a href='res/6108020.htm' target='_blank'><img src='http://apr.2chan.net/dec/b/cat/1296362382429s.jpg' border=0 width=34 height=50 alt=""></a><br><small>ハピレス</small><br><font size=2>4</font></td>
+<td><a href='res/6110773.htm' target='_blank'><img src='http://jul.2chan.net/dec/b/cat/1296396034428s.jpg' border=0 width=50 height=38 alt=""></a><br><small>実況ゲロ</small><br><font size=2>291</font></td>
+<td><a href='res/6110232.htm' target='_blank'><img src='http://sep.2chan.net/dec/b/cat/1296389471786s.jpg' border=0 width=50 height=38 alt=""></a><br><small>丹下桜ま</small><br><font size=2>101</font></td>
+</tr>
+</table><hr>
+<div align=center>
+<table class="ama"><tr><td><a href="http://www.amazon.co.jp/%E3%82%B3%E3%83%8A%E3%83%9F-CR154-%E6%AD%A6%E8%A3%85%E7%A5%9E%E5%A7%AB-%E3%83%9E%E3%83%AA%E3%83%BC%E3%82%BB%E3%83%AC%E3%82%B9/dp/B0045OVSUS%3FSubscriptionId%3D0XQKY64EREXJAJKTDNG2%26tag%3Dfutabachannel-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0045OVSUS" target='_blank'><img src='http://ecx.images-amazon.com/images/I/41vPm7S8TmL._SL160_.jpg' border=0 align=left width=120 height=160 hspace=20 alt=''></a>
+<blockquote>『 武装神姫 マリーセレス 』<br><div style="font-size:0pt;display:none;">http://www.amazon.co.jp/dp/B0045OVSUS?tag=futabachannel-22<br></div>コナミ<br>形式：おもちゃ＆ホビー<br><small><strike>参考価格：￥ 6,090</strike></small><br>価格：<font size='+2' color='#ff0000'>￥ 4,320</font><br><a href="http://www.amazon.co.jp/%E3%82%B3%E3%83%8A%E3%83%9F-CR154-%E6%AD%A6%E8%A3%85%E7%A5%9E%E5%A7%AB-%E3%83%9E%E3%83%AA%E3%83%BC%E3%82%BB%E3%83%AC%E3%82%B9/dp/B0045OVSUS%3FSubscriptionId%3D0XQKY64EREXJAJKTDNG2%26tag%3Dfutabachannel-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0045OVSUS" target='_blank'><img src="http://rcm-images.amazon.com/images/G/09/buttons/buy-from-tan.gif" width=90 height=28 border=0 alt=''></a><br><form method="get" action="http://www.amazon.co.jp/gp/search" target="_blank"><input type="text" name="keywords" size="30" value=""><input type="hidden" name="tag" value="futabachannel-22"><input type="hidden" name="__mk_ja_JP" value="カタカナ"><input type="hidden" name="search-alias" value="aps"><input type="hidden" name="linkCode" value="as2"><input type=submit value="amazon検索"></form></blockquote></td></tr></table><small><!-- GazouBBS v3.0 --><!-- ふたば改0.8 -->
+- <a href="http://php.s3.to" target="_top">GazouBBS</a> + <a href="http://www.2chan.net/" target="_top">futaba</a>-
+</small></div>
+</body></html><!--cache-->

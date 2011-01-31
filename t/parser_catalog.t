@@ -30,4 +30,16 @@ subtest jun => sub {
     is $threads[0]->url, 'http://jun.2chan.net/b/res/15330189.htm';
 };
 
+subtest dec => sub {
+    my $index = WWW::Futaba::Parser::Catalog->parse(fake_http 'http://dec.2chan.net/b/futaba.php?mode=cat');
+    isa_ok $index, 'WWW::Futaba::Parser::Result::Catalog';
+
+    my @threads = $index->threads;
+    is scalar @threads, 50;
+
+    isa_ok $threads[0], 'WWW::Futaba::Parser::Result::Thread';
+    ok !defined $threads[0]->image_url;
+    is $threads[0]->url, 'http://dec.2chan.net/b/res/6113300.htm';
+};
+
 done_testing;
