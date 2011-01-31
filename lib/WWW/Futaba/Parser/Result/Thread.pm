@@ -58,7 +58,21 @@ has thumbnail_url => (
     is  => 'rw',
     isa => 'Maybe[URI]',
     default => sub {
-        my $url = $_[0]->head->{thumbnail_url} or return undef;
+        my $url = $_[0]->head->{thumbnail_url} || do {
+            # XXX
+            my $url = $_[0]->head->{catalog_thumbnail_url};
+            $url =~ s(/cat/)(/thumb/);
+            $url;
+        } or return undef;
+        URI->new($url);
+    },
+);
+
+has catalog_thumbnail_url => (
+    is  => 'rw',
+    isa => 'Maybe[URI]',
+    default => sub {
+        my $url = $_[0]->head->{catalog_thumbnail_url} or return undef;
         URI->new($url);
     },
 );

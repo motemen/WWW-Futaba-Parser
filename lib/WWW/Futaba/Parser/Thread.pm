@@ -5,16 +5,18 @@ use utf8;
 use base 'WWW::Futaba::Parser';
 use WWW::Futaba::Parser::Result::Thread;
 use WWW::Futaba::Parser::Result::Post;
+use HTML::Entities;
 
 sub _to_plain_string {
     for (@_) {
         next unless defined $_;
         s/<br>/\n/g;
         s/<[^>]*>//g;
-        s/&lt;/</g;
-        s/&gt;/>/g;
-        s/&quot;/"/g;
-        s/&amp;/&/g;
+        $_ = decode_entities $_;
+        # s/&lt;/</g;
+        # s/&gt;/>/g;
+        # s/&quot;/"/g;
+        # s/&amp;/&/g;
     }
 }
 

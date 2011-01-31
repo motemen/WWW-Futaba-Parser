@@ -6,6 +6,7 @@ all_from 'lib/WWW/Futaba/Parser.pm';
 requires 'Any::Moose';
 requires 'Scalar::Util';
 requires 'DateTime::Format::Strptime';
+requires 'HTML::Entities';
 
 tests 't/*.t';
 author_tests 'xt';
