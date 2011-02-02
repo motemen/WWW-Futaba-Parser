@@ -38,6 +38,22 @@ subtest thread => sub {
     }
 };
 
+subtest thread => sub {
+    my $thread = $threads[0];
+    is $thread->body, 'ｷﾀ━━━(ﾟ∀ﾟ)━━━!!';
+    cmp_deeply $thread->head, {
+        no     => '13031930',
+        author => 'としあき',
+        date   => ignore,
+        mail   => undef,
+        path   => 'res/13031930.htm',
+        title  => '無念',
+        image_url => 'http://feb.2chan.net/jun/b/src/1267105653045.jpg',
+        thumbnail_url => 'http://feb.2chan.net/jun/b/thumb/1267105653045s.jpg',
+        omitted_posts => 70,
+    };
+};
+
 my @posts = $threads[-1]->posts;
 is scalar @posts, 5;
 

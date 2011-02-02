@@ -30,6 +30,8 @@ sub parse_string {
             or die "Could not parse: $string";
 
     my %meta = $class->parse_meta_string($meta);
+    my ($omitted_posts) = $posts =~ m#(?:<[^>]+>)*レス(\d+)件省略.*?</table>#s;
+    $meta{omitted_posts} = $omitted_posts if $omitted_posts;
 
     _to_plain_string $body;
 

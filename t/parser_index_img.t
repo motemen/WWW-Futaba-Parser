@@ -30,6 +30,7 @@ subtest 'first thread' => sub {
         title  => undef,
         image_url => 'http://feb.2chan.net/img/b/src/1266846140104.jpg',
         thumbnail_url => 'http://feb.2chan.net/img/b/thumb/1266846140104s.jpg',
+        omitted_posts => 64,
     }, '$thread->head';
 
     cmp_deeply $thread->image_url,     isa('URI') && str('http://feb.2chan.net/img/b/src/1266846140104.jpg'),    'thread image';
