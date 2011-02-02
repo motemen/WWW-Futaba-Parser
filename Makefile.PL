@@ -18,6 +18,7 @@ test_requires 'File::Find::Rule';
 test_requires 'Path::Class';
 test_requires 'HTTP::Response';
 test_requires 'HTTP::Request::Common';
+test_requires 'Exporter::Lite';
 
 auto_include;
 
