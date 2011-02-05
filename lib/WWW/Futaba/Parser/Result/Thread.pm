@@ -61,7 +61,7 @@ has thumbnail_url => (
         my $url = $_[0]->head->{thumbnail_url} || do {
             # XXX
             my $url = $_[0]->head->{catalog_thumbnail_url};
-            $url =~ s(/cat/)(/thumb/);
+            $url =~ s(/cat/)(/thumb/) if $url;
             $url;
         } or return undef;
         URI->new($url);

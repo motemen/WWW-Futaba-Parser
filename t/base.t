@@ -143,3 +143,41 @@ head:
     thumbnail_url: http://aug.2chan.net/jun/b/thumb/1296059265938s.jpg
     date: 11/01/27(木)01:27:45
     path: ~
+
+=== http://may.2chan.net/b/res/34693953.htm
+--- attr yaml
+body: ＩＳスレ
+head:
+  author: としあき
+  date: 11/02/05(土)21:19:03
+  mail: ~
+  no: 34693953
+  path: ~
+  title: 無念
+  thumbnail_url: http://feb.2chan.net/may/b/thumb/1296908343395s.jpg
+  image_url: http://feb.2chan.net/may/b/src/1296908343395.jpg
+--- posts yaml as_list_length=110
+107:
+  body: 渋いおばさんキャラでもいいぞ
+  head:
+    thumbnail_url: http://aug.2chan.net/may/b/thumb/1296909639219s.jpg
+    image_url: http://aug.2chan.net/may/b/src/1296909639219.jpg
+    author: としあき
+    date: 11/02/05(土)21:40:39
+    mail: ~
+    no: 34699313
+    path: ~
+    title: 無念
+109:
+  body: |-
+   >全員で大合唱とか
+   出席番号１番さん埋めろやコラ
+  head:
+    thumbnail_url: ~
+    image_url: ~
+    author: としあき
+    date: 11/02/05(土)21:40:48
+    mail: ~
+    no: 34699338 
+    path: ~
+    title: 無念

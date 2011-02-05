@@ -59,8 +59,8 @@ sub parse_meta_string {
     my ($path) =
         $string =~ /<a href=["']?([^ >"']+)["']?>返信/;
     my ($image_url, $thumbnail_url) =
-        $string =~ m#<a href="([^"]+)" target=(?:_blank|"_blank")><img src=([^ ]+)[^>]+></a>#;
-    $thumbnail_url =~ s/^"(.+)"$/$1/ if $thumbnail_url;
+        $string =~ m#<a href="([^"]+)" target=["']?_blank["']?><img src=([^ ]+)[^>]+></a>#;
+    $thumbnail_url =~ s/^["'](.+)["']$/$1/ if $thumbnail_url;
 
     _to_plain_string $date, $no, $title, $author, $mail;
 

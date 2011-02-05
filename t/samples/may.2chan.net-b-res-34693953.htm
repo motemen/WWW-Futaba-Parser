@@ -1,0 +1,553 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"><html><head><META http-equiv="Content-type" content="text/html; charset=Shift_JIS"><META http-equiv="Content-Script-Type" content="text/javascript"><META http-equiv="Content-Style-Type" content="text/css"><META http-equiv="pragma" content="no-cache"><STYLE TYPE="text/css">
+<!--
+body,tr,td,th{font-size:12pt;}
+a.del{color:#800000;}
+a:hover{color:#DD0000;}
+small{font-size:10pt;}
+.delform {position:absolute;right:0;white-space:nowrap;text-align:center;}
+.chui{font-size:small;}
+ul{margin:0px;}
+.ftbl{table-layout:fixed;width:476px;margin:0 auto;}
+.ftdc{background-color:#ea8;width:4.5em;white-space:nowrap;}
+#ftxa {width:388px;height:130px;}
+#undercom {width:388px;height:60px;}
+form{margin:0px;}
+.ama{text-align:left;width:468px;border:2px ridge;}
+#oebtn{cursor:pointer;text-decoration:underline;}
+#oe3{visibility:hidden;width:390px;height:135px;position:absolute;margin-top:0px;margin-left:1px;}
+table.deleted{display:none;}
+#ddel{display:none;font-size:8pt}
+#ddbut{cursor:pointer;text-decoration:underline;}
+#contres{position:relative;left:1.5em;}
+#contdisp{font-size:10pt;}
+#reszb{cursor:pointer;text-decoration:underline;}
+--></STYLE><base href="http://may.2chan.net/b/"><title>二次元裏＠ふたば</title><script type="text/javascript" src="/bin/swfobject.js"></script><script type="text/javascript" src="/bin/cachemt7.php"></script><script type="text/javascript"><!--
+
+function l(e){var P=getCookie("pwdc"),N=getCookie("namec"),i;with(document){for(i=0;i<forms.length;i++){if(forms[i].pwd)with(forms[i]){if(!pwd.value)pwd.value=P;}if(forms[i].name)with(forms[i]){if(!name.value)name.value=N;}}}};
+function getCookie(key,tmp1,tmp2,xx1,xx2,xx3){tmp1=" "+document.cookie+";";xx1=xx2=0;len=tmp1.length;while(xx1<len){xx2=tmp1.indexOf(";",xx1);tmp2=tmp1.substring(xx1+1,xx2);xx3=tmp2.indexOf("=");if(tmp2.substring(0,xx3)==key){return(unescape(tmp2.substring(xx3+1,xx2-xx1-1)));}xx1=xx2+1;}return("");};function allchk(){var i;with(document){for(i=0;i<forms[0].elements.length;i++){with(forms[0].elements[i]){if(value=="delete"){checked=true;}}}}};function del(d){self.location.href="/del.php?b=b&d="+d;};
+function FlashPlayerVer(){var flashplayer_ver=0;if(navigator.plugins && navigator.mimeTypes["application/x-shockwave-flash"]){var plugin = navigator.mimeTypes["application/x-shockwave-flash"].enabledPlugin;if(plugin){flashplayer_ver=parseInt(plugin.description.match(/\d+\.\d+/));}}else{try{var flashOCX=new ActiveXObject("ShockwaveFlash.ShockwaveFlash").GetVariable("$version").match(/([0-9]+)/);if(flashOCX){flashplayer_ver = parseInt(flashOCX[0]);}}catch(e){}}if(flashplayer_ver<=6){flashplayer_ver=0;}return flashplayer_ver;};
+function setBase(prop){document.getElementById("baseform").value=prop;}var swfloaded=false;function ChangeDraw(){if(!swfloaded){swfloaded=true;var flashvars={};var params={};var attributes={id:"oe3"};swfobject.embedSWF("/bin/oe3_7.swf","swfContents","390","135","9.0.124","/bin/expressInstall.swf",flashvars,params,attributes);}with(document){var oevs,oemd;if(getElementById("oe3").style.visibility=="visible"){txvs="visible";oevs="hidden";oemd="手書き";}else{txvs="hidden";oevs="visible";oemd="文字入力";}if(getElementById("ftxa")){getElementById("ftxa").style.visibility=txvs;}getElementById("oe3").style.visibility=oevs;getElementById("oebtn").innerHTML=oemd;}}var dispdel=0;function ddrefl(){var c=0;var ddtags=document.getElementsByTagName("table");for(var i in ddtags){if(ddtags[i].className=="deleted"){ddtags[i].style.display=dispdel?(/*@cc_on!@*/true?"table":"block"):"none";c++;}}if(c>0){document.getElementById("ddel").style.display="inline";document.getElementById("ddnum").innerHTML=c;}};function onddbut(){dispdel=1-dispdel;document.getElementById("ddbut").innerHTML=dispdel?"隠す":"見る";ddrefl();reszk();};
+function ptfk(resn){
+var flvr=swfobject.getFlashPlayerVersion();
+document.getElementById("flvr").value=flvr.major+"."+flvr.minor+"."+flvr.release;document.getElementById("scsz").value=screen.width+"x"+screen.height+"x"+screen.colorDepth;
+var cacv="";try{cacv=caco();}catch(e){};
+document.getElementById("pthc").value=cacv;
+try{lspt=window.localStorage.futabapt;fpt=true;}catch(e){fpt=false;}
+if(fpt){
+  if(lspt!=null&&lspt!=""){
+    document.getElementById("pthb").value=lspt;
+  }else{
+    if(cacv!=null&&cacv!=""){
+     window.localStorage.futabapt=cacv;
+    }
+  }
+}
+document.getElementById("js").value="on";
+if(resn>0&&reszflg){var scrly=document.documentElement.scrollTop||document.body.scrollTop;document.cookie="scrl="+resn+"."+scrly+"; max-age=60;";}
+return true;};
+function ucount(){
+var uuc=getCookie("uuc");
+if(uuc!=1){document.write("<img src=\"http://dec.2chan.net/bin/uucount.php\" width=2 height=2>");}
+document.cookie="uuc=1; max-age=3600; path=/;";
+var flashvars={};var params={};var attributes={id:"cnt"};swfobject.embedSWF("/bin/count.swf","usercounter","0","0","9.0.124","/bin/expressInstall.swf",flashvars,params,attributes);};
+function setpthd(prop){document.getElementById("pthd").value=prop;};
+
+function scrlf(resn){
+  var scrly = document.documentElement.scrollTop || document.body.scrollTop;
+  document.cookie="scrl="+resn+"."+scrly+"; max-age=60;";
+  var xmlhttp = false;
+  if(typeof ActiveXObject != "undefined"){
+    try {
+      xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    } catch (e) {
+      xmlhttp = false;
+    }
+  }
+  if(!xmlhttp && typeof XMLHttpRequest != "undefined") {
+    xmlhttp = new XMLHttpRequest();
+  }
+  contd=document.getElementById("contdisp");
+  contd.innerHTML="・・・";
+  xmlhttp.open("HEAD", "/b/res/"+resn+".htm?"+Math.random());
+  xmlhttp.onreadystatechange = function() {
+    if (xmlhttp.readyState == 4 ) {
+      if(xmlhttp.status==404){
+        contd.innerHTML="スレッドがありません";
+      }else{
+        location.href="/b/res/"+resn+".htm";
+      }
+    }
+  }
+  xmlhttp.send(null);
+  return false;
+}
+
+function scrll(){
+  var scrly=getCookie("scrl").split(".");
+  if(scrly[1]!=null &&  scrly[1]>0 && document.getElementsByName("resto").item(0).value == scrly[0]){
+   window.scroll(0,scrly[1]);
+  }
+  document.cookie="scrl=; max-age=0;";
+}
+
+if(getCookie("reszc")==1){
+  document.write("<style TYPE=\"text/css\">#ftbl{position:absolute;visibility:hidden;}</style>");
+}
+
+var reszflg=0;
+
+function reszt(){
+  var ofm=document.getElementById("ftbl");
+  var oufm=document.getElementById("ufm");
+  if(oufm==null||ofm==null){return;}
+  ofm.style.position="static";
+  oufm.style.lineHeight="0px";
+  oufm.innerHTML="";
+  ofm.style.marginLeft="auto";
+  ofm.style.visibility="visible";
+}
+
+function reszu(){
+  var ofm=document.getElementById("ftbl");
+  var oufm=document.getElementById("ufm");
+  if(oufm==null||ofm==null){return;}
+  oufm.style.lineHeight=ofm.offsetHeight+"px";
+  oufm.innerHTML="&nbsp;";
+  ofm.style.position="absolute";
+  ofm.style.left="50%";
+  ofm.style.marginLeft="-"+(ofm.offsetWidth/2)+"px";
+  ofm.style.top=(document.body.offsetTop+oufm.offsetTop)+"px";
+  ofm.style.visibility="visible";
+}
+
+function reszk(){
+  if(document.getElementById("ftbl")==null){
+    tmpobj=document.getElementById("reszb");if(tmpobj!=null){tmpobj.innerHTML="";}
+    tmpobj=document.getElementById("contres");if(tmpobj!=null){tmpobj.innerHTML="";}
+    return;
+  }
+  var resztmp=getCookie("reszc");
+  if(resztmp!=""&&resztmp!=null){
+    reszflg=resztmp;
+    if(reszflg==1){reszu();}else{reszt();}
+  }
+}
+
+function reszx(){
+  reszflg=1-reszflg;
+  document.cookie="reszc="+reszflg+"; max-age=864000; path=/b;";
+  reszk();
+  window.scroll(0,document.getElementById("ftbl").offsetTop);
+}
+
+function setoebtn(){
+  if(FlashPlayerVer()){
+    document.getElementById("oebtnd").innerHTML='<br><br><span id="oebtn" onclick="ChangeDraw()">手書き<\/span>';
+  }
+}
+
+window.onresize = reszk;
+window.onload = reszk;
+//-->
+</script>
+</head>
+<body bgcolor="#FFFFEE" text="#800000" link="#0000EE" vlink="#0000EE" alink="#FF0000">
+<p align=right>[<a href="../" target="_top">ホーム</a>]</p>
+<div style="font-size: 20pt;text-align: center;"><b>二次元裏＠ふたば</b></div>
+<hr width="90%" size=1>
+[<a href="futaba.htm">掲示板に戻る</a>]
+<table width='100%'><tr><th bgcolor='#e04000'>
+<font color='#FFFFFF'>レス送信モード</font>
+</th></tr></table>
+
+<form action="futaba.php?guid=on" method="POST" enctype="multipart/form-data" id="fm">
+<input type=hidden name=mode value="regist">
+
+<input type=hidden name="MAX_FILE_SIZE" value="512000">
+<input type=hidden id="baseform" name="baseform" value="">
+<input type=hidden id="pthb" name="pthb" value="">
+<input type=hidden id="pthc" name="pthc" value="">
+<input type=hidden id="pthd" name="pthd" value="">
+<input type=hidden id="flvr" name="flvr" value="">
+<input type=hidden id="scsz" name="scsz" value="">
+<input type=hidden id="js" name="js" value="off">
+<input type=hidden name=resto value="34693953">
+<table class="ftbl" id="ftbl">
+<tr><td class="ftdc"><b>おなまえ</b></td><td><input type=text name=name size="28"></td></tr>
+<tr><td class="ftdc"><b>E-mail</b></td><td><input type=text name=email size="28"></td></tr>
+<tr><td class="ftdc"><b>題　　名</b></td><td><input type=text name=sub size="35"><input type=submit value="返信する" onClick="ptfk(34693953)"></td></tr>
+<tr><td class="ftdc"><b>コメント</b><span id="oebtnd"></span></td><td><div id="swfContents"></div><textarea name=com cols="48" rows="4" id="ftxa"></textarea></td></tr>
+<tr><td class="ftdc"><b>添付File</b></td>
+<td><input type=file name=upfile size="35">
+[<label><input type=checkbox name=textonly value=on>画像なし</label>]</td></tr>
+<tr><td class="ftdc"><b>削除キー</b></td><td><input type=password name=pwd size=8 maxlength=8 value=""><small>(削除用.英数字で8字以内) <script type="text/javascript"><!--
+document.write('<span id="reszb" onclick="reszx()">フォーム位置切替<\/span>')//--></script>
+</small><div id="usercounter"></div></td></tr></table><table class="ftbl">
+<tr><td colspan=2 class=chui><ul>
+<li>添付可能：GIF, JPG, PNG. 500KBまで. 250x250以上は縮小.</li>
+<li>現在2565人くらいが見てます.<a href="futaba.php?mode=cat">カタログ</a> <a href="futaba.php?mode=cat&amp;sort=1">新順</a> <a href="futaba.php?mode=cat&amp;sort=2">古順</a> <a href="futaba.php?mode=cat&amp;sort=3">多順</a> <a href="futaba.php?mode=cat&amp;sort=4">少順</a> <a href="futaba.php?mode=cat&amp;sort=9&amp;guid=on">履歴</a></li>
+<li>メール欄に「ip表示」と入れてスレッドを立てるとスレッド全部をip表示にできます.</li>
+<li>政治はだめ. 同人関連のアップロード依頼はだめ.</li>
+<li>管理人への連絡は<a href="http://www.2chan.net/junbi/futaba.htm">準備板</a>へ. 削除依頼は記事番号の右の<u>del</u>を押して下さい.</li>
+<li><a href="http://www.2chan.net/ktinv.htm" target="_blank">携帯ふたば入口</a> 
+この板の保存数は22000件です. 新しい板:<a href="http://dat.2chan.net/49/futaba.htm">アクアリウム</a> <a href="http://img.2chan.net/9/futaba.htm">雑談</a></li>
+</ul><br><div style="width:468px;height:60px;"><a href="http://www.i-cute.jp/monthly-banner/6009.php" target="_blank"><img src="http://gyutto.jp/data/banner_img/102.gif" width=468 height=60 border=0 alt=""></a></div>
+<div style="width:468px;height:60px;"><a href="http://www.i-cute.jp/monthly-banner/5371.php" target="_blank"><img src="http://59.106.154.123/futaba_banner2.gif" width=468 height=60 border=0 alt=""></a></div>
+<div style="width:468px;height:60px;"><a href="http://www.i-cute.jp/monthly-banner/5731.php" target="_blank"><img src="http://aqua.dmm.co.jp/integ-inc/468_60.gif" width=468 height=60 border=0 alt=""></a></div>
+<div style="width:468px;height:60px;"><a href="http://www.getchu.com/mbanner/php/clickBanner.php?bid=972" target="_blank"><img src="http://www.getchu.com/mbanner/img/972.jpg" width=468 height=60 border=0 alt="Getchu.com　美少女ゲーム・アニメの情報＆通販サイト"></a></div>
+</td></tr></table></form><script type="text/javascript"><!--
+l();ucount();setoebtn();//--></script><noscript><img src="http://dec.2chan.net/bin/uucount.php" width=2 height=2></noscript>
+<hr><form action="futaba.php?guid=on" method=POST>広告:::<b><a href="http://www.amazon.co.jp/exec/obidos/ASIN/B0042RVJVG/futabachannel-22/ref=nosim/" target="_blank">魔法少女リリカルなのは　The MOVIE  1st＜初回限定版＞ [Blu-ray]</a></b><br>画像ファイル名：<a href="http://feb.2chan.net/may/b/src/1296908343395.jpg" target='_blank'>1296908343395.jpg</a>-(56183 B)<small>サムネ表示</small><br><a href="http://feb.2chan.net/may/b/src/1296908343395.jpg" target='_blank'><img src='http://feb.2chan.net/may/b/thumb/1296908343395s.jpg' border=0 align=left width=250 height=250 hspace=20 alt="56183 B"></a><input type=checkbox name="34693953" value=delete id=delcheck34693953><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:19:03 No.34693953 <a class=del href="javascript:void(0);" onclick="del(34693953);return(false);">del</a> 
+<small>22:58頃消えます</small>
+<blockquote>ＩＳスレ</blockquote><span id=ddel>削除された記事が<span id=ddnum>0</span>件あります.<span id=ddbut onclick="onddbut()">見る</span><br></span>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694087" value=delete id=delcheck34694087><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:19:34 No.34694087 <a class=del href="javascript:void(0);" onclick="del(34694087);return(false);">del</a>&nbsp;&nbsp;<blockquote>ちょろいもんだぜ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694109" value=delete id=delcheck34694109><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:19:38 No.34694109 <a class=del href="javascript:void(0);" onclick="del(34694109);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://feb.2chan.net/may/b/src/1296908378899.jpg" target='_blank'>1296908378899.jpg</a>-(71468 B) <small>サムネ表示</small><br><a href="http://feb.2chan.net/may/b/src/1296908378899.jpg" target='_blank'><img src='http://feb.2chan.net/may/b/thumb/1296908378899s.jpg' border=0 align=left width=250 height=188 hspace=20 alt="71468 B"></a><blockquote style="margin-left:290px;">としあき隊のメインヒロイン</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694331" value=delete id=delcheck34694331><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:20:43 No.34694331 <a class=del href="javascript:void(0);" onclick="del(34694331);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://apr.2chan.net/may/b/src/1296908443238.jpg" target='_blank'>1296908443238.jpg</a>-(225754 B) <small>サムネ表示</small><br><a href="http://apr.2chan.net/may/b/src/1296908443238.jpg" target='_blank'><img src='http://apr.2chan.net/may/b/thumb/1296908443238s.jpg' border=0 align=left width=250 height=188 hspace=20 alt="225754 B"></a><blockquote style="margin-left:290px;">ｷﾀ━━━(ﾟ∀ﾟ)━━━!!</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694347" value=delete id=delcheck34694347><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:20:46 No.34694347 <a class=del href="javascript:void(0);" onclick="del(34694347);return(false);">del</a>&nbsp;&nbsp;<blockquote>乱立し過ぎだ馬鹿</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694446" value=delete id=delcheck34694446><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:21:15<!--AnimationGIF--> No.34694446 <a class=del href="javascript:void(0);" onclick="del(34694446);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://jul.2chan.net/may/b/src/1296908475291.gif" target='_blank'>1296908475291.gif</a>-(106388 B) <small>サムネ表示</small><br><a href="http://jul.2chan.net/may/b/src/1296908475291.gif" target='_blank'><img src='http://jul.2chan.net/may/b/thumb/1296908475291s.jpg' border=0 align=left width=171 height=250 hspace=20 alt="106388 B"></a><blockquote style="margin-left:211px;">可愛い可愛い俺ののほほん</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694465" value=delete id=delcheck34694465><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:21:19 No.34694465 <a class=del href="javascript:void(0);" onclick="del(34694465);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://sep.2chan.net/may/b/src/1296908479247.png" target='_blank'>1296908479247.png</a>-(151566 B) <small>サムネ表示</small><br><a href="http://sep.2chan.net/may/b/src/1296908479247.png" target='_blank'><img src='http://sep.2chan.net/may/b/thumb/1296908479247s.jpg' border=0 align=left width=250 height=242 hspace=20 alt="151566 B"></a><blockquote style="margin-left:290px;">前スレにおける箒への態度、許せない</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694592" value=delete id=delcheck34694592><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:21:50 No.34694592 <a class=del href="javascript:void(0);" onclick="del(34694592);return(false);">del</a>&nbsp;&nbsp;<blockquote>エンディングの女の子何人まで増えるのかな<br>６人くらいかな</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694660" value=delete id=delcheck34694660><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:22:06 No.34694660 <a class=del href="javascript:void(0);" onclick="del(34694660);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://aug.2chan.net/may/b/src/1296908526455.jpg" target='_blank'>1296908526455.jpg</a>-(146659 B) <small>サムネ表示</small><br><a href="http://aug.2chan.net/may/b/src/1296908526455.jpg" target='_blank'><img src='http://aug.2chan.net/may/b/thumb/1296908526455s.jpg' border=0 align=left width=242 height=250 hspace=20 alt="146659 B"></a><blockquote style="margin-left:282px;">俺のメインヒロインなんや！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694662" value=delete id=delcheck34694662><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:22:06<!--AnimationGIF--> No.34694662 <a class=del href="javascript:void(0);" onclick="del(34694662);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://aug.2chan.net/may/b/src/1296908526459.gif" target='_blank'>1296908526459.gif</a>-(451760 B) <small>サムネ表示</small><br><a href="http://aug.2chan.net/may/b/src/1296908526459.gif" target='_blank'><img src='http://aug.2chan.net/may/b/thumb/1296908526459s.jpg' border=0 align=left width=250 height=141 hspace=20 alt="451760 B"></a><blockquote style="margin-left:290px;">あふん</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694681" value=delete id=delcheck34694681><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:22:11 No.34694681 <a class=del href="javascript:void(0);" onclick="del(34694681);return(false);">del</a>&nbsp;&nbsp;<blockquote>売り上げとかどうでもいいから人気No.1ヒロイン鈴さんを愛でようぜ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694760" value=delete id=delcheck34694760><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:22:24 No.34694760 <a class=del href="javascript:void(0);" onclick="del(34694760);return(false);">del</a>&nbsp;&nbsp;<blockquote>乱立厨さん早かったな…</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694835" value=delete id=delcheck34694835><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:22:44 No.34694835 <a class=del href="javascript:void(0);" onclick="del(34694835);return(false);">del</a>&nbsp;&nbsp;<blockquote>男はいらない</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694896" value=delete id=delcheck34694896><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:23:00 No.34694896 <a class=del href="javascript:void(0);" onclick="del(34694896);return(false);">del</a>&nbsp;&nbsp;<blockquote>http://may.2chan.net/b/res/34693213.htm<br>誰か救済レスを</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694917" value=delete id=delcheck34694917><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:23:03 No.34694917 <a class=del href="javascript:void(0);" onclick="del(34694917);return(false);">del</a>&nbsp;&nbsp;<blockquote>スレ画がちょろいさんだと安心する</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34694979" value=delete id=delcheck34694979><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:23:14 No.34694979 <a class=del href="javascript:void(0);" onclick="del(34694979);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;売り上げとかどうでもいいから人気No.1ヒロイン鈴さんを愛でようぜ</font><br>3話までしか放送してない地域もあるんで<br>もう少し待つんだ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695030" value=delete id=delcheck34695030><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:23:26 No.34695030 <a class=del href="javascript:void(0);" onclick="del(34695030);return(false);">del</a>&nbsp;&nbsp;<blockquote>語尾に酢豚つける位しないと鈴に勝ち目は無いな</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695067" value=delete id=delcheck34695067><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:23:35 No.34695067 <a class=del href="javascript:void(0);" onclick="del(34695067);return(false);">del</a>&nbsp;&nbsp;<blockquote>どんだけちょろければ気が済むんだ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695175" value=delete id=delcheck34695175><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:24:03 No.34695175 <a class=del href="javascript:void(0);" onclick="del(34695175);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;男はいらない</font><br>この作品に向いてないから引っ込んでてくれ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695183" value=delete id=delcheck34695183><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:24:04 No.34695183 <a class=del href="javascript:void(0);" onclick="del(34695183);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://feb.2chan.net/may/b/src/1296908644512.jpg" target='_blank'>1296908644512.jpg</a>-(105791 B) <small>サムネ表示</small><br><a href="http://feb.2chan.net/may/b/src/1296908644512.jpg" target='_blank'><img src='http://feb.2chan.net/may/b/thumb/1296908644512s.jpg' border=0 align=left width=250 height=250 hspace=20 alt="105791 B"></a><blockquote style="margin-left:290px;">鈴回なのに見せ場を持っていく…</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695217" value=delete id=delcheck34695217><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:24:10 No.34695217 <a class=del href="javascript:void(0);" onclick="del(34695217);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://jul.2chan.net/may/b/src/1296908650322.jpg" target='_blank'>1296908650322.jpg</a>-(92701 B) <small>サムネ表示</small><br><a href="http://jul.2chan.net/may/b/src/1296908650322.jpg" target='_blank'><img src='http://jul.2chan.net/may/b/thumb/1296908650322s.jpg' border=0 align=left width=250 height=141 hspace=20 alt="92701 B"></a><blockquote style="margin-left:290px;">ｷﾀ━━━(ﾟ∀ﾟ)━━━!!</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695222" value=delete id=delcheck34695222><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:24:11 No.34695222 <a class=del href="javascript:void(0);" onclick="del(34695222);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://feb.2chan.net/may/b/src/1296908651353.jpg" target='_blank'>1296908651353.jpg</a>-(71735 B) <small>サムネ表示</small><br><a href="http://feb.2chan.net/may/b/src/1296908651353.jpg" target='_blank'><img src='http://feb.2chan.net/may/b/thumb/1296908651353s.jpg' border=0 align=left width=250 height=141 hspace=20 alt="71735 B"></a><blockquote style="margin-left:290px;">山田っぱいの圧倒的な存在感</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695327" value=delete id=delcheck34695327><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:24:35 No.34695327 <a class=del href="javascript:void(0);" onclick="del(34695327);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;しのかわ</font></blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695357" value=delete id=delcheck34695357><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:24:38 No.34695357 <a class=del href="javascript:void(0);" onclick="del(34695357);return(false);">del</a>&nbsp;&nbsp;<blockquote>よし決めた　明日近所にあったらHGケルディムガンダム買ってくる</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695388" value=delete id=delcheck34695388><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:24:47 No.34695388 <a class=del href="javascript:void(0);" onclick="del(34695388);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;ＩＳスレ</font><br>スレ画なんか目がロンパリじゃない？</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695438" value=delete id=delcheck34695438><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:24:58 No.34695438 <a class=del href="javascript:void(0);" onclick="del(34695438);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://mar.2chan.net/may/b/src/1296908698956.jpg" target='_blank'>1296908698956.jpg</a>-(67219 B) <small>サムネ表示</small><br><a href="http://mar.2chan.net/may/b/src/1296908698956.jpg" target='_blank'><img src='http://mar.2chan.net/may/b/thumb/1296908698956s.jpg' border=0 align=left width=251 height=191 hspace=20 alt="67219 B"></a><blockquote style="margin-left:291px;"><font color="#789922">&gt;男はいらない</font></blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695495" value=delete id=delcheck34695495><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:25:10 No.34695495 <a class=del href="javascript:void(0);" onclick="del(34695495);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;鈴回なのに見せ場を持っていく…</font><br>見せ場を持ってってるんじゃなくてセシリアしか見てないだけや</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695511" value=delete id=delcheck34695511><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:25:13 No.34695511 <a class=del href="javascript:void(0);" onclick="del(34695511);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;男はいらない</font><br><br>いや、イケメンはいらないだ<br>キャラのぶっとんだオッサンならむしろ歓迎</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695521" value=delete id=delcheck34695521><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:25:14 No.34695521 <a class=del href="javascript:void(0);" onclick="del(34695521);return(false);">del</a>&nbsp;&nbsp;<blockquote>束ェ！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695594" value=delete id=delcheck34695594><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:25:36 No.34695594 <a class=del href="javascript:void(0);" onclick="del(34695594);return(false);">del</a>&nbsp;&nbsp;<blockquote>ちょろいさんはあまりにちょろすぎて寝取られそうで不安になってしまう</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695677" value=delete id=delcheck34695677><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:25:54 No.34695677 <a class=del href="javascript:void(0);" onclick="del(34695677);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;http://may.2chan.net/b/res/34693213.htm</font><br><font color="#789922">&gt;誰か救済レスを</font><br>しのののののさん単独スレとか無謀過ぎる</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695709" value=delete id=delcheck34695709><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:26:02 No.34695709 <a class=del href="javascript:void(0);" onclick="del(34695709);return(false);">del</a>&nbsp;&nbsp;<blockquote>前スレは姉さんが暴走気味だった</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695758" value=delete id=delcheck34695758><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:26:12 No.34695758 <a class=del href="javascript:void(0);" onclick="del(34695758);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;あふん </font><br>一夏さんいい尻すぎるぜ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695777" value=delete id=delcheck34695777><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:26:18 No.34695777 <a class=del href="javascript:void(0);" onclick="del(34695777);return(false);">del</a>&nbsp;&nbsp;<blockquote>紅椿はどうも箒さんがエロい妄想してないと本気出せない仕様らしいね<br>このままじゃ一生電池だよ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695785" value=delete id=delcheck34695785><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:26:19 No.34695785 <a class=del href="javascript:void(0);" onclick="del(34695785);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;ちょろいさんはあまりにちょろすぎて寝取られそうで不安になってしまう</font><br>男が出ないから寝取られる心配が無いんだな</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695863" value=delete id=delcheck34695863><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:26:37 No.34695863 <a class=del href="javascript:void(0);" onclick="del(34695863);return(false);">del</a>&nbsp;&nbsp;<blockquote>鈴は嫌いじゃないから<br>おもしろ小動物として<br>頑張って欲しい</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34695956" value=delete id=delcheck34695956><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:27:03 No.34695956 <a class=del href="javascript:void(0);" onclick="del(34695956);return(false);">del</a>&nbsp;&nbsp;<blockquote>あとメインで男っつーと60過ぎだかの校長しかいないはず</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696002" value=delete id=delcheck34696002><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:27:15 No.34696002 <a class=del href="javascript:void(0);" onclick="del(34696002);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;男が出ないから寝取られる心配が無いんだな</font><br>女子に剥かれるがな！ｷﾘｯ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696007" value=delete id=delcheck34696007><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:27:16 No.34696007 <a class=del href="javascript:void(0);" onclick="del(34696007);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;キャラのぶっとんだオッサンならむしろ歓迎</font><br>内山君救済という意味でですねわかります</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696029" value=delete id=delcheck34696029><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:27:22 No.34696029 <a class=del href="javascript:void(0);" onclick="del(34696029);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;男はいらない</font><br>渋いオッサンキャラが欲しい<br>敵役でも何でもいいから！！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696138" value=delete id=delcheck34696138><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:27:47 No.34696138 <a class=del href="javascript:void(0);" onclick="del(34696138);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://jul.2chan.net/may/b/src/1296908867153.jpg" target='_blank'>1296908867153.jpg</a>-(56081 B) <small>サムネ表示</small><br><a href="http://jul.2chan.net/may/b/src/1296908867153.jpg" target='_blank'><img src='http://jul.2chan.net/may/b/thumb/1296908867153s.jpg' border=0 align=left width=250 height=188 hspace=20 alt="56081 B"></a><blockquote style="margin-left:290px;"><font color="#789922">&gt;男はいらない</font><br>「勘弁してください・・・」</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696316" value=delete id=delcheck34696316><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:28:32 No.34696316 <a class=del href="javascript:void(0);" onclick="del(34696316);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;渋いオッサンキャラが欲しい</font><br>一夏さんですね<br>分かりますわ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696323" value=delete id=delcheck34696323><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:28:32 No.34696323 <a class=del href="javascript:void(0);" onclick="del(34696323);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;渋いオッサンキャラが欲しい</font><br><font color="#789922">&gt;敵役でも何でもいいから！！</font><br>余所へ行け</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696328" value=delete id=delcheck34696328><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:28:34 No.34696328 <a class=del href="javascript:void(0);" onclick="del(34696328);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;渋いオッサンキャラが欲しい</font><br>洋ゲーでもやっててくださいよ…</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696366" value=delete id=delcheck34696366><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:28:45 No.34696366 <a class=del href="javascript:void(0);" onclick="del(34696366);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;&gt;男はいらない</font><br><font color="#789922">&gt;「勘弁してください・・・」</font><br>掃除道具がない気がする</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696469" value=delete id=delcheck34696469><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:29:09 No.34696469 <a class=del href="javascript:void(0);" onclick="del(34696469);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;渋いオッサンキャラが欲しい</font><br>君何でISなんて観てるの？</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696532" value=delete id=delcheck34696532><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:29:25 No.34696532 <a class=del href="javascript:void(0);" onclick="del(34696532);return(false);">del</a>&nbsp;&nbsp;<blockquote>五反田は間違いなく内山くん救済キャラ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696545" value=delete id=delcheck34696545><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:29:27 No.34696545 <a class=del href="javascript:void(0);" onclick="del(34696545);return(false);">del</a>&nbsp;&nbsp;<blockquote>まー男いない方が合ってそうな作品ではあるが<br>元がＭＦな時点であり得ない話だ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696546" value=delete id=delcheck34696546><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:29:27 No.34696546 <a class=del href="javascript:void(0);" onclick="del(34696546);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;男が少ない</font></blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696634" value=delete id=delcheck34696634><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:29:51 No.34696634 <a class=del href="javascript:void(0);" onclick="del(34696634);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;男のISはいらない</font></blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696656" value=delete id=delcheck34696656><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:29:55 No.34696656 <a class=del href="javascript:void(0);" onclick="del(34696656);return(false);">del</a>&nbsp;&nbsp;<blockquote>日笠　　1985年7月16日　25歳<br>ゆかな　1975年1月6日　 36歳<br>下田　　1986年1月30日　25歳<br>花澤　　1989年2月25日　21歳<br>井上　　1985年1月20日　26歳<br>豊口　　1978年1月2日　 33歳<br>下屋　　1982年4月22日　28歳<br>内山　　1990年8月16日　20歳</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696698" value=delete id=delcheck34696698><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:30:06 No.34696698 <a class=del href="javascript:void(0);" onclick="del(34696698);return(false);">del</a>&nbsp;&nbsp;<blockquote>ちょろいさんって何でちょろいの<br>可愛いのに・・・</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696771" value=delete id=delcheck34696771><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:30:19 No.34696771 <a class=del href="javascript:void(0);" onclick="del(34696771);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://jan.2chan.net/may/b/src/1296909019679.png" target='_blank'>1296909019679.png</a>-(164138 B) <small>サムネ表示</small><br><a href="http://jan.2chan.net/may/b/src/1296909019679.png" target='_blank'><img src='http://jan.2chan.net/may/b/thumb/1296909019679s.jpg' border=0 align=left width=192 height=250 hspace=20 alt="164138 B"></a><blockquote style="margin-left:232px;"><font color="#789922">&gt;&#8206;アフレコスタジオでは女の子たちがキャッキャッとしている中、一夏役の内山君がぽつんとしていることもあります（笑） </font><br><br><br>悲劇やな・・・</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696812" value=delete id=delcheck34696812><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:30:31 No.34696812 <a class=del href="javascript:void(0);" onclick="del(34696812);return(false);">del</a>&nbsp;&nbsp;<blockquote>箒が箒でオナニーして絶叫しているのを一夏が見ている画像をください</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34696877" value=delete id=delcheck34696877><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:30:46 No.34696877 <a class=del href="javascript:void(0);" onclick="del(34696877);return(false);">del</a>&nbsp;&nbsp;<blockquote>Q.急に百合厨が沸いた？</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697008" value=delete id=delcheck34697008><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:31:16 No.34697008 <a class=del href="javascript:void(0);" onclick="del(34697008);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://mar.2chan.net/may/b/src/1296909076148.jpg" target='_blank'>1296909076148.jpg</a>-(299514 B) <small>サムネ表示</small><br><a href="http://mar.2chan.net/may/b/src/1296909076148.jpg" target='_blank'><img src='http://mar.2chan.net/may/b/thumb/1296909076148s.jpg' border=0 align=left width=250 height=172 hspace=20 alt="299514 B"></a><blockquote style="margin-left:290px;">　△<br>△　　　×</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697021" value=delete id=delcheck34697021><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:31:19 No.34697021 <a class=del href="javascript:void(0);" onclick="del(34697021);return(false);">del</a>&nbsp;&nbsp;<blockquote>一月生まれ多いな！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697047" value=delete id=delcheck34697047><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:31:24 No.34697047 <a class=del href="javascript:void(0);" onclick="del(34697047);return(false);">del</a>&nbsp;&nbsp;<blockquote>この作品は内山さんの犠牲で成り立ってるんだからもっと楽しめよ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697085" value=delete id=delcheck34697085><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:31:35 No.34697085 <a class=del href="javascript:void(0);" onclick="del(34697085);return(false);">del</a>&nbsp;&nbsp;<blockquote>スレ画に関わらず微笑むと必ず垂れ目でぱかーっと口開けるな<br>マヌケに見えるから止めて欲しいが</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697099" value=delete id=delcheck34697099><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:31:38 No.34697099 <a class=del href="javascript:void(0);" onclick="del(34697099);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://jul.2chan.net/may/b/src/1296909098988.jpg" target='_blank'>1296909098988.jpg</a>-(96465 B) <small>サムネ表示</small><br><a href="http://jul.2chan.net/may/b/src/1296909098988.jpg" target='_blank'><img src='http://jul.2chan.net/may/b/thumb/1296909098988s.jpg' border=0 align=left width=250 height=188 hspace=20 alt="96465 B"></a><blockquote style="margin-left:290px;"><font color="#789922">&gt;「勘弁してください・・・」</font><br>なんか内山君の表情に既視感があると思ったらこれだ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697194" value=delete id=delcheck34697194><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:32:00 No.34697194 <a class=del href="javascript:void(0);" onclick="del(34697194);return(false);">del</a>&nbsp;&nbsp;<blockquote>はなざーさん内山君と一つしか離れてないけど<br>ゼーガの頃から知ってるからやけに歳が離れてる感じになるのは気のせいだろうか</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697283" value=delete id=delcheck34697283><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:32:19 No.34697283 <a class=del href="javascript:void(0);" onclick="del(34697283);return(false);">del</a>&nbsp;&nbsp;<blockquote>ぽつんとしてるときもありますってことは<br>してないときもあるんだよな？<br>な？</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697354" value=delete id=delcheck34697354><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:32:36 No.34697354 <a class=del href="javascript:void(0);" onclick="del(34697354);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://aug.2chan.net/may/b/src/1296909156698.jpg" target='_blank'>1296909156698.jpg</a>-(135690 B) <small>サムネ表示</small><br><a href="http://aug.2chan.net/may/b/src/1296909156698.jpg" target='_blank'><img src='http://aug.2chan.net/may/b/thumb/1296909156698s.jpg' border=0 align=left width=250 height=188 hspace=20 alt="135690 B"></a><blockquote style="margin-left:290px;">セシリアは料理の仕方を間違ってるだけ<br>教えれば完璧な母国料理をマスターするよ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697374" value=delete id=delcheck34697374><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:32:40 No.34697374 <a class=del href="javascript:void(0);" onclick="del(34697374);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://mar.2chan.net/may/b/src/1296909160251.jpg" target='_blank'>1296909160251.jpg</a>-(130737 B) <small>サムネ表示</small><br><a href="http://mar.2chan.net/may/b/src/1296909160251.jpg" target='_blank'><img src='http://mar.2chan.net/may/b/thumb/1296909160251s.jpg' border=0 align=left width=250 height=141 hspace=20 alt="130737 B"></a><blockquote style="margin-left:290px;">ｷﾀ━━━(ﾟ∀ﾟ)━━━!!</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697386" value=delete id=delcheck34697386><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:32:44 No.34697386 <a class=del href="javascript:void(0);" onclick="del(34697386);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;ちょろく見えるから止めて欲しくないが</font></blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697398" value=delete id=delcheck34697398><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:32:47 No.34697398 <a class=del href="javascript:void(0);" onclick="del(34697398);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;　△</font><br><font color="#789922">&gt;△　　　×</font><br>×じゃなくて＊だろ？</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697399" value=delete id=delcheck34697399><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:32:47 No.34697399 <a class=del href="javascript:void(0);" onclick="del(34697399);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://mar.2chan.net/may/b/src/1296909167207.jpg" target='_blank'>1296909167207.jpg</a>-(89623 B) <small>サムネ表示</small><br><a href="http://mar.2chan.net/may/b/src/1296909167207.jpg" target='_blank'><img src='http://mar.2chan.net/may/b/thumb/1296909167207s.jpg' border=0 align=left width=250 height=181 hspace=20 alt="89623 B"></a><blockquote style="margin-left:290px;">ｷﾀ━━━(ﾟ∀ﾟ)━━━!!</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697403" value=delete id=delcheck34697403><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:32:48 No.34697403 <a class=del href="javascript:void(0);" onclick="del(34697403);return(false);">del</a>&nbsp;&nbsp;<blockquote>内山（二期とかありませんように…）</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697423" value=delete id=delcheck34697423><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:32:52 No.34697423 <a class=del href="javascript:void(0);" onclick="del(34697423);return(false);">del</a>&nbsp;&nbsp;<blockquote>. .: : : : : : : : :: :::: :: :: : ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::: <br>　　　　. . : : : :: : : :: : ::: :: : :::: :: ::: ::: :::::::::::::::::::::::::::::::::::::: <br>　　　.　. .... ..: : :: :: ::: :::::: :::::::::::: : ::::::::::::::::::::::::::::::::::::::::::::: <br>　　　　　　　 Λ＿Λ . . . .: : : ::: : :: ::::::::: ::::::::::::::::::::::::::::: <br>　　　　　 　/:彡ミ゛ヽ;）ー､　. . .: : : :::::: ::::::::::::::::::::::::::::::::: <br>　　　　　 / :::/:: ヽ、ヽ、 ::i . .:: :.: ::: . ::::::::::::::::::::::::::::::::::::::: <br>　　 　　 / :::/;;: 　 ヽ　ヽ ::ｌ　. :. :. .:: : :: :: :::::::: : :::::::::::::::::: <br>￣￣￣（_&#44;ノ ￣￣￣ヽ､_ノ￣￣￣￣</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697432" value=delete id=delcheck34697432><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:32:57 No.34697432 <a class=del href="javascript:void(0);" onclick="del(34697432);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://aug.2chan.net/may/b/src/1296909177320.jpg" target='_blank'>1296909177320.jpg</a>-(46326 B) <small>サムネ表示</small><br><a href="http://aug.2chan.net/may/b/src/1296909177320.jpg" target='_blank'><img src='http://aug.2chan.net/may/b/thumb/1296909177320s.jpg' border=0 align=left width=193 height=250 hspace=20 alt="46326 B"></a><blockquote style="margin-left:233px;">ゆかなと豊口なら内山くんを救ってくれるはず</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697440" value=delete id=delcheck34697440><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:32:58 No.34697440 <a class=del href="javascript:void(0);" onclick="del(34697440);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;悲劇やな・・・</font><br>メインはハーレム物で<br>＋としてのメカ要素って事はスタッフも理解してるんだな</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697482" value=delete id=delcheck34697482><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:33:09 No.34697482 <a class=del href="javascript:void(0);" onclick="del(34697482);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;はなざーさん内山君と一つしか離れてないけど</font><br><font color="#789922">&gt;ゼーガの頃から知ってるからやけに歳が離れてる感じになるのは気のせいだろうか</font><br>はなざーめんさんは若くしてデビューしたからなぁ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697542" value=delete id=delcheck34697542><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:33:24 No.34697542 <a class=del href="javascript:void(0);" onclick="del(34697542);return(false);">del</a>&nbsp;&nbsp;<blockquote>無人機で動かせるのに男は動かせない<br>不思議！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697554" value=delete id=delcheck34697554><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:33:27 No.34697554 <a class=del href="javascript:void(0);" onclick="del(34697554);return(false);">del</a>&nbsp;&nbsp;<blockquote>内山君「ガランシェール隊…リディ…」</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697625" value=delete id=delcheck34697625><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:33:44 No.34697625 <a class=del href="javascript:void(0);" onclick="del(34697625);return(false);">del</a>&nbsp;&nbsp;<blockquote>スレ画の声涼子たんでもいいよ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697661" value=delete id=delcheck34697661><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:33:52 No.34697661 <a class=del href="javascript:void(0);" onclick="del(34697661);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;ゆかなと豊口なら内山くんを救ってくれるはず</font><br>内山に変わって欲しい</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697678" value=delete id=delcheck34697678><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:33:56 No.34697678 <a class=del href="javascript:void(0);" onclick="del(34697678);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;内山（二期とかありませんように…）</font><br>上の画像でツートップしてるじゃないですかー！<br>諦めたまえ…</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697682" value=delete id=delcheck34697682><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:33:56 No.34697682 <a class=del href="javascript:void(0);" onclick="del(34697682);return(false);">del</a>&nbsp;&nbsp;<blockquote>イギリスから苦情が来てもおかしくないアニメ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697945" value=delete id=delcheck34697945><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:34:55 No.34697945 <a class=del href="javascript:void(0);" onclick="del(34697945);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;マヌケに見えるから止めて欲しいが</font><br>実際に間抜ｋ(ry</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34697991" value=delete id=delcheck34697991><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:35:08 No.34697991 <a class=del href="javascript:void(0);" onclick="del(34697991);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://jul.2chan.net/may/b/src/1296909308958.jpg" target='_blank'>1296909308958.jpg</a>-(252542 B) <small>サムネ表示</small><br><a href="http://jul.2chan.net/may/b/src/1296909308958.jpg" target='_blank'><img src='http://jul.2chan.net/may/b/thumb/1296909308958s.jpg' border=0 align=left width=250 height=141 hspace=20 alt="252542 B"></a><blockquote style="margin-left:290px;">ﾑﾁｬｼﾔｶﾞｯﾃ･･･</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698015" value=delete id=delcheck34698015><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:35:13 No.34698015 <a class=del href="javascript:void(0);" onclick="del(34698015);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;イギリスから苦情が来てもおかしくないアニメ</font><br>イギリス｢だいたい合ってる｣</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698066" value=delete id=delcheck34698066><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:35:25 No.34698066 <a class=del href="javascript:void(0);" onclick="del(34698066);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://apr.2chan.net/may/b/src/1296909325552.jpg" target='_blank'>1296909325552.jpg</a>-(307702 B) <small>サムネ表示</small><br><a href="http://apr.2chan.net/may/b/src/1296909325552.jpg" target='_blank'><img src='http://apr.2chan.net/may/b/thumb/1296909325552s.jpg' border=0 align=left width=195 height=250 hspace=20 alt="307702 B"></a><blockquote style="margin-left:235px;">ｷﾀ━━━(ﾟ∀ﾟ)━━━!!</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698186" value=delete id=delcheck34698186><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:35:54 No.34698186 <a class=del href="javascript:void(0);" onclick="del(34698186);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;ﾑﾁｬｼﾔｶﾞｯﾃ･･･</font><br>おいやめろ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698258" value=delete id=delcheck34698258><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:36:11 No.34698258 <a class=del href="javascript:void(0);" onclick="del(34698258);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;セシリアは料理の仕方を間違ってるだけ</font><br><font color="#789922">&gt;教えれば完璧な母国料理をマスターするよ</font><br>なぜ一皿に盛り付けようとする・・・</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698291" value=delete id=delcheck34698291><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:36:20 No.34698291 <a class=del href="javascript:void(0);" onclick="del(34698291);return(false);">del</a>&nbsp;&nbsp;<blockquote>ふたばＩＳスレで最大の不測の事態は<br>内山くんの素材化</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698324" value=delete id=delcheck34698324><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:36:27 No.34698324 <a class=del href="javascript:void(0);" onclick="del(34698324);return(false);">del</a>&nbsp;&nbsp;<blockquote>イギリスのオタ｢Cyoro Kawaii！！｣</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698357" value=delete id=delcheck34698357><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:36:35 No.34698357 <a class=del href="javascript:void(0);" onclick="del(34698357);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;渋いオッサンキャラが欲しい</font><br><font color="#789922">&gt;敵役でも何でもいいから！！</font><br><br>素手でＩＳを木っ端微塵にするようなやつを頼む<br>馬でもいいから！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698382" value=delete id=delcheck34698382><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:36:41 No.34698382 <a class=del href="javascript:void(0);" onclick="del(34698382);return(false);">del</a>&nbsp;&nbsp;<blockquote>作者ブログでテンション高めにうらやましいなー！とか言ってる場合じゃないんちゃう？・・・</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698406" value=delete id=delcheck34698406><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:36:46 No.34698406 <a class=del href="javascript:void(0);" onclick="del(34698406);return(false);">del</a>&nbsp;&nbsp;<blockquote>内山君、2期を阻止するために作者の家に突撃する、か…</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698438" value=delete id=delcheck34698438><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:36:55 No.34698438 <a class=del href="javascript:void(0);" onclick="del(34698438);return(false);">del</a>&nbsp;&nbsp;<blockquote>EDは最終回でクラス女子全員とかやってくれたらステキ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698460" value=delete id=delcheck34698460><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:37:00 No.34698460 <a class=del href="javascript:void(0);" onclick="del(34698460);return(false);">del</a>&nbsp;&nbsp;<blockquote>糞アニメ乙！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698471" value=delete id=delcheck34698471><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:37:03 No.34698471 <a class=del href="javascript:void(0);" onclick="del(34698471);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;&gt;ゼーガの頃から知ってるからやけに歳が離れてる感じになるのは気のせいだろうか</font><br><font color="#789922">&gt;はなざーめんさんは若くしてデビューしたからなぁ</font><br>日笠の方が年上だったのか<br>花澤さん主役でデビューだったから年下とばかり思ってた</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698606" value=delete id=delcheck34698606><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:37:32 No.34698606 <a class=del href="javascript:void(0);" onclick="del(34698606);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;渋いオッサンキャラが欲しい</font><br><font color="#789922">&gt;敵役でも何でもいいから！！</font><br>高二病か</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698630" value=delete id=delcheck34698630><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:37:37 No.34698630 <a class=del href="javascript:void(0);" onclick="del(34698630);return(false);">del</a>&nbsp;&nbsp;<blockquote>なんか場違いなのが湧いてるが気のせいなんやな<br>喜劇やな</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698639" value=delete id=delcheck34698639><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:37:38 No.34698639 <a class=del href="javascript:void(0);" onclick="del(34698639);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;一夏役の内山君がぽつんとしていることもあります（笑）</font><br><font color="#789922">&gt;内山（二期とかありませんように…）</font><br>強くおなりなさい･･･！！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698743" value=delete id=delcheck34698743><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:38:04 No.34698743 <a class=del href="javascript:void(0);" onclick="del(34698743);return(false);">del</a>&nbsp;&nbsp;<blockquote>ＥＤの脚の動きを目で追ってたら酔ってきた</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698764" value=delete id=delcheck34698764><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:38:08 No.34698764 <a class=del href="javascript:void(0);" onclick="del(34698764);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;渋いオッサンキャラが欲しい</font><br><font color="#789922">&gt;敵役でも何でもいいから！！</font><br><br>適役で「忍野」みたいなの期待したい<br>でも、出るとしても2期があったら、だろうけどね</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698774" value=delete id=delcheck34698774><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:38:12 No.34698774 <a class=del href="javascript:void(0);" onclick="del(34698774);return(false);">del</a>&nbsp;&nbsp;<blockquote>内山さんHPが限りなくゼロに近いじゃないですか</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698842" value=delete id=delcheck34698842><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:38:31 No.34698842 <a class=del href="javascript:void(0);" onclick="del(34698842);return(false);">del</a>&nbsp;&nbsp;<blockquote>女だらけのスーパーでバイトを始めた若い男の子って感じやな＞内山くん</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34698960" value=delete id=delcheck34698960><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:38:58 No.34698960 <a class=del href="javascript:void(0);" onclick="del(34698960);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://mar.2chan.net/may/b/src/1296909538059.jpg" target='_blank'>1296909538059.jpg</a>-(289241 B) <small>サムネ表示</small><br><a href="http://mar.2chan.net/may/b/src/1296909538059.jpg" target='_blank'><img src='http://mar.2chan.net/may/b/thumb/1296909538059s.jpg' border=0 align=left width=250 height=189 hspace=20 alt="289241 B"></a><blockquote style="margin-left:290px;">こいつで弓弦を頃す！！<br>もう手段は選べない！！</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34699003" value=delete id=delcheck34699003><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:39:10 No.34699003 <a class=del href="javascript:void(0);" onclick="del(34699003);return(false);">del</a>&nbsp;&nbsp;<blockquote>何に勝てなかったんだよ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34699048" value=delete id=delcheck34699048><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:39:21 No.34699048 <a class=del href="javascript:void(0);" onclick="del(34699048);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://feb.2chan.net/may/b/src/1296909561066.png" target='_blank'>1296909561066.png</a>-(17838 B) <small>サムネ表示</small><br><a href="http://feb.2chan.net/may/b/src/1296909561066.png" target='_blank'><img src='http://feb.2chan.net/may/b/thumb/1296909561066s.jpg' border=0 align=left width=90 height=128 hspace=20 alt="17838 B"></a><blockquote style="margin-left:130px;"><font color="#789922">&gt;ふたばＩＳスレで最大の不測の事態は</font><br><font color="#789922">&gt;内山くんの素材化</font><br>(´；ω；｀)</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34699075" value=delete id=delcheck34699075><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:39:27 No.34699075 <a class=del href="javascript:void(0);" onclick="del(34699075);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://jul.2chan.net/may/b/src/1296909567078.jpg" target='_blank'>1296909567078.jpg</a>-(416335 B) <small>サムネ表示</small><br><a href="http://jul.2chan.net/may/b/src/1296909567078.jpg" target='_blank'><img src='http://jul.2chan.net/may/b/thumb/1296909567078s.jpg' border=0 align=left width=251 height=141 hspace=20 alt="416335 B"></a><blockquote style="margin-left:291px;"><font color="#789922">&gt;EDは最終回でクラス女子全員とかやってくれたらステキ</font><br>全員で大合唱とか</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34699088" value=delete id=delcheck34699088><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:39:31 No.34699088 <a class=del href="javascript:void(0);" onclick="del(34699088);return(false);">del</a>&nbsp;&nbsp;<blockquote>通報？</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34699128" value=delete id=delcheck34699128><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:39:45 No.34699128 <a class=del href="javascript:void(0);" onclick="del(34699128);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;糞アニメ乙！</font><br>ちょろいさんはウンコなんてしないよ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34699148" value=delete id=delcheck34699148><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:39:51 No.34699148 <a class=del href="javascript:void(0);" onclick="del(34699148);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://apr.2chan.net/may/b/src/1296909591548.jpg" target='_blank'>1296909591548.jpg</a>-(110495 B) <small>サムネ表示</small><br><a href="http://apr.2chan.net/may/b/src/1296909591548.jpg" target='_blank'><img src='http://apr.2chan.net/may/b/thumb/1296909591548s.jpg' border=0 align=left width=250 height=141 hspace=20 alt="110495 B"></a><blockquote style="margin-left:290px;">はぁ～<br>ちょろかわ・・・</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34699282" value=delete id=delcheck34699282><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:40:31 No.34699282 <a class=del href="javascript:void(0);" onclick="del(34699282);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;Cyoro</font><br>これだとサイオロになってしまうんやな</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34699305" value=delete id=delcheck34699305><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:40:38 No.34699305 <a class=del href="javascript:void(0);" onclick="del(34699305);return(false);">del</a>&nbsp;&nbsp;<blockquote>もう収録は個別部屋の方がいいんじゃないかな</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34699313" value=delete id=delcheck34699313><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:40:39 No.34699313 <a class=del href="javascript:void(0);" onclick="del(34699313);return(false);">del</a>&nbsp;&nbsp;<br> &nbsp; &nbsp; <a href="http://aug.2chan.net/may/b/src/1296909639219.jpg" target='_blank'>1296909639219.jpg</a>-(7773 B) <small>サムネ表示</small><br><a href="http://aug.2chan.net/may/b/src/1296909639219.jpg" target='_blank'><img src='http://aug.2chan.net/may/b/thumb/1296909639219s.jpg' border=0 align=left width=250 height=141 hspace=20 alt="7773 B"></a><blockquote style="margin-left:290px;">渋いおばさんキャラでもいいぞ</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34699327" value=delete id=delcheck34699327><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:40:45 No.34699327 <a class=del href="javascript:void(0);" onclick="del(34699327);return(false);">del</a>&nbsp;&nbsp;<blockquote>内山君と宮野を</blockquote></td></tr></table>
+<table border=0><tr><td nowrap align=right valign=top>…</td><td bgcolor='#F0E0D6'>
+<input type=checkbox name="34699338" value=delete id=delcheck34699338><font color='#cc1105'><b>無念</b></font> 
+Name <font color='#117743'><b>としあき </b></font> 11/02/05(土)21:40:48 No.34699338 <a class=del href="javascript:void(0);" onclick="del(34699338);return(false);">del</a>&nbsp;&nbsp;<blockquote><font color="#789922">&gt;全員で大合唱とか</font><br>出席番号１番さん埋めろやコラ</blockquote></td></tr></table>
+<br clear=left style="line-height:0;">
+<script type="text/javascript"><!--
+document.write('<span id="contres">[<a href="res/34693953.htm" onClick="scrlf(34693953);return false;">リロード<\/a>]<span id="contdisp">22:58頃消えます<\/span><br><\/span>');
+//--></script><hr>
+<div class="delform">
+<input type=hidden name=mode value=usrdel>【記事削除】[<input type=checkbox name=onlyimgdel value=on>画像だけ消す]<br>
+削除キー<input type=password name=pwd size=8 maxlength=8 value="">
+<input type=submit value="削除"></div></form>
+<script type="text/javascript"><!--
+l();ddrefl();
+//--></script><div id=ufm></div>
+<div align=center><div style="width:468px;height:60px;"><a href="http://dl.getchu.com/index.php?action=gcosla" target="_blank"><img src="http://rrd.2chan.net/dec/ad/src/1295235112543.gif" width=468 height=60 border=0 alt="商業・同人ダウンロード_DL.Getchu.com(ディーエルゲッチュコム)"></a></div>
+<div style="width:468px;height:60px;"><a href="http://www.i-cute.jp/monthly-banner/6402.php" target="_blank"><img src="http://img.digiket.net/cg/banner/468_60_002.gif" width=468 height=60 border=0 alt=""></a></div>
+<table class="ama"><tr><td><a href="http://www.amazon.co.jp/%E3%82%BF%E3%82%AB%E3%83%A9%E3%83%88%E3%83%9F%E3%83%BC-%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%BC-UN13-TF%E3%83%A6%E3%83%8A%E3%82%A4%E3%83%86%E3%83%83%E3%83%89-%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9C%E3%83%83%E3%83%88%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9/dp/B0046XR7CQ%3FSubscriptionId%3D0XQKY64EREXJAJKTDNG2%26tag%3Dfutabachanmay-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0046XR7CQ" target='_blank'><img src='http://ecx.images-amazon.com/images/I/51a8MubSGKL._SL160_.jpg' border=0 align=left width=153 height=160 hspace=20 alt=''></a>
+<blockquote>『 トランスフォーマー UN13 TFユナイテッド オートボットトラックス 』<br><div style="font-size:0pt;display:none;">http://www.amazon.co.jp/dp/B0046XR7CQ?tag=futabachanmay-22<br></div>タカラトミー<br>形式：おもちゃ＆ホビー<br><small><strike>参考価格：￥ 2,415</strike></small><br>価格：<font size='+2' color='#ff0000'>￥ 1,932</font><br><a href="http://www.amazon.co.jp/%E3%82%BF%E3%82%AB%E3%83%A9%E3%83%88%E3%83%9F%E3%83%BC-%E3%83%88%E3%83%A9%E3%83%B3%E3%82%B9%E3%83%95%E3%82%A9%E3%83%BC%E3%83%9E%E3%83%BC-UN13-TF%E3%83%A6%E3%83%8A%E3%82%A4%E3%83%86%E3%83%83%E3%83%89-%E3%82%AA%E3%83%BC%E3%83%88%E3%83%9C%E3%83%83%E3%83%88%E3%83%88%E3%83%A9%E3%83%83%E3%82%AF%E3%82%B9/dp/B0046XR7CQ%3FSubscriptionId%3D0XQKY64EREXJAJKTDNG2%26tag%3Dfutabachanmay-22%26linkCode%3Dxm2%26camp%3D2025%26creative%3D165953%26creativeASIN%3DB0046XR7CQ" target='_blank'><img src="http://rcm-images.amazon.com/images/G/09/buttons/buy-from-tan.gif" width=90 height=28 border=0 alt=''></a><br><form method="get" action="http://www.amazon.co.jp/gp/search" target="_blank"><input type="text" name="keywords" size="30" value=""><input type="hidden" name="tag" value="futabachanmay-22"><input type="hidden" name="__mk_ja_JP" value="カタカナ"><input type="hidden" name="search-alias" value="aps"><input type="hidden" name="linkCode" value="as2"><input type=submit value="amazon検索"></form></blockquote></td></tr></table>
+
+<small><!-- GazouBBS v3.0 --><!-- ふたば改0.8 -->
+- <a href="http://php.s3.to" target="_top">GazouBBS</a> + <a href="http://www.2chan.net/" target="_top">futaba</a>-
+</small></div><script type="text/javascript"><!--
+scrll();setTimeout(function(){reszk();},1000);setTimeout(function(){reszk();},50);//--></script></body></html>
